@@ -13,6 +13,7 @@ require __DIR__ . '/includes/header.php';
 
 <main class="section-container pt-40 pb-32 max-w-3xl mx-auto">
     <div class="text-center mb-20 reveal active">
+        <?php echo angleGlyph(75, 'w-12 h-12 mx-auto mb-4'); ?>
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Book a Time</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">Inquire.</h1>
         <p class="text-lg text-brand-gray-600 font-light leading-relaxed mt-10 max-w-xl mx-auto">

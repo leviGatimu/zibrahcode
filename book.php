@@ -108,6 +108,11 @@ require __DIR__ . '/includes/header.php';
                     actually lives, and it is that angle, not the argument, that determines whether a conflict
                     opens or closes.
                 </p>
+                <div class="mt-10 pt-8 border-t border-brand-gray-100">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gray-500 mb-4">Reading the angle</p>
+                    <?php echo angleScale(); ?>
+                    <a href="/framework.php" class="inline-block mt-5 text-xs font-bold uppercase tracking-widest text-brand-gray-600 hover:text-brand-gold transition-colors border-b border-brand-gray-300 hover:border-brand-gold pb-1">How the model works &rarr;</a>
+                </div>
             </div>
         </div>
     </div>

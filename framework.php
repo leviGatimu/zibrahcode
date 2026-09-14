@@ -12,16 +12,6 @@ $extraJsonLd = [
 
 $axioms = require __DIR__ . '/includes/axioms.php';
 
-// How to read the angle between truth and perception — the three postures the
-// model distinguishes. Language follows the site's own posts: "When belief
-// remains open, its angles are wide. When belief hardens, angles narrow. When
-// belief closes, angles lock."
-$angleStates = [
-    ['degrees' => 75, 'name' => 'Open', 'sub' => 'Wide angle', 'body' => 'Belief stays responsive. Listening works, correction lands, disagreement is information rather than threat.'],
-    ['degrees' => 30, 'name' => 'Hardening', 'sub' => 'Narrowing angle', 'body' => 'Certainty accelerates faster than understanding. Reality is still acknowledged but no longer obeyed.'],
-    ['degrees' => 8, 'name' => 'Closed', 'sub' => 'Locked angle', 'body' => 'Belief can no longer rotate. Facts remain, but correction is ineffective &mdash; not because facts disappear, but because nothing moves.'],
-];
-
 $applications = [
     ['title' => 'Leadership', 'body' => 'Why decisions harden under pressure &mdash; and how to keep options open long enough for correction to matter.'],
     ['title' => 'Conflict &amp; Mediation', 'body' => 'A side-neutral way to read a dispute: the geometry is visible before anyone has to be declared right.'],
@@ -32,26 +22,6 @@ $furtherReading = [
     ['slug' => 'zibrah-code-foundational-structure', 'title' => 'Zibrah Code Foundational Structure', 'blurb' => 'The two independent lines &mdash; and why the angle between them is where belief lives.'],
     ['slug' => 'angles-show-what-words-cannot-tell', 'title' => 'Angles Show What Words Cannot Tell', 'blurb' => 'How belief moves, narrows and locks &mdash; and why arguments rarely interrupt the pattern.'],
 ];
-
-/** Small inline diagram of an angle between the truth axis and a perception line. */
-function angleGlyph(int $degrees): string
-{
-    $ox = 16; $oy = 84; $len = 68;
-    $px = $ox + $len * cos(deg2rad($degrees));
-    $py = $oy - $len * sin(deg2rad($degrees));
-    $r = 26;
-    $ax = $ox + $r * cos(deg2rad($degrees));
-    $ay = $oy - $r * sin(deg2rad($degrees));
-    return sprintf(
-        '<svg viewBox="0 0 100 100" class="w-24 h-24" aria-hidden="true">'
-        . '<path d="M %1$d %2$d L %3$d %2$d" stroke="#1A1A1A" stroke-width="2" fill="none"/>'
-        . '<path d="M %1$d %2$d L %4$.1f %5$.1f" stroke="#1A1A1A" stroke-width="2" fill="none"/>'
-        . '<path d="M %6$d %2$d A %8$d %8$d 0 0 0 %9$.1f %10$.1f" stroke="#B89441" stroke-width="2.5" fill="none"/>'
-        . '<circle cx="%1$d" cy="%2$d" r="3" fill="#B89441"/>'
-        . '</svg>',
-        $ox, $oy, $ox + $len, $px, $py, $ox + $r, 0, $r, $ax, $ay
-    );
-}
 
 require __DIR__ . '/includes/header.php';
 ?>
@@ -91,19 +61,7 @@ require __DIR__ . '/includes/header.php';
             <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Belief does not collapse suddenly. It closes gradually.</h2>
             <p class="text-lg text-brand-gray-600 font-light leading-relaxed">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right &mdash; but each is visible, and visibility is the beginning of correction.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <?php foreach ($angleStates as $i => $state): ?>
-                <div class="card bg-brand-gray-50 p-8 md:p-10 reveal active">
-                    <div class="flex items-start justify-between mb-6">
-                        <?php echo angleGlyph($state['degrees']); ?>
-                        <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gray-400"><?php echo sprintf('%02d', $i + 1); ?></span>
-                    </div>
-                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-2"><?php echo e($state['sub']); ?></p>
-                    <h3 class="serif text-3xl font-bold text-brand-black mb-4"><?php echo e($state['name']); ?></h3>
-                    <p class="text-brand-gray-600 font-light leading-relaxed"><?php echo $state['body']; ?></p>
-                </div>
-            <?php endforeach; ?>
-        </div>
+        <?php require __DIR__ . '/includes/angle-cards.php'; ?>
     </div>
 </section>
 

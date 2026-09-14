@@ -313,3 +313,60 @@ function handleVideoUpload(array $file, string $subDir, string $baseName, int $m
     }
     return 'uploads/' . trim($subDir, '/') . '/' . $filename;
 }
+
+/**
+ * Inline SVG of the angle between the truth axis (horizontal) and a perception
+ * line — the model's core picture. Used site-wide as a brand device.
+ * $stroke is the axis colour; the arc and origin are always gold.
+ */
+function angleGlyph(int $degrees, string $class = 'w-24 h-24', string $stroke = '#1A1A1A'): string
+{
+    $ox = 16; $oy = 84; $len = 68;
+    $px = $ox + $len * cos(deg2rad($degrees));
+    $py = $oy - $len * sin(deg2rad($degrees));
+    $r = 26;
+    $ax = $ox + $r * cos(deg2rad($degrees));
+    $ay = $oy - $r * sin(deg2rad($degrees));
+    return sprintf(
+        '<svg viewBox="0 0 100 100" class="%11$s" aria-hidden="true">'
+        . '<path d="M %1$d %2$d L %3$d %2$d" stroke="%12$s" stroke-width="2" fill="none"/>'
+        . '<path d="M %1$d %2$d L %4$.1f %5$.1f" stroke="%12$s" stroke-width="2" fill="none"/>'
+        . '<path d="M %6$d %2$d A %8$d %8$d 0 0 0 %9$.1f %10$.1f" stroke="#B89441" stroke-width="2.5" fill="none"/>'
+        . '<circle cx="%1$d" cy="%2$d" r="3" fill="#B89441"/>'
+        . '</svg>',
+        $ox, $oy, $ox + $len, $px, $py, $ox + $r, 0, $r, $ax, $ay, e($class), e($stroke)
+    );
+}
+
+/**
+ * The three postures the model distinguishes, read off the angle. Language
+ * follows the site's own posts: "When belief remains open, its angles are
+ * wide. When belief hardens, angles narrow. When belief closes, angles lock."
+ */
+function angleStates(): array
+{
+    return [
+        ['degrees' => 75, 'name' => 'Open', 'sub' => 'Wide angle', 'body' => 'Belief stays responsive. Listening works, correction lands, disagreement is information rather than threat.'],
+        ['degrees' => 30, 'name' => 'Hardening', 'sub' => 'Narrowing angle', 'body' => 'Certainty accelerates faster than understanding. Reality is still acknowledged but no longer obeyed.'],
+        ['degrees' => 8, 'name' => 'Closed', 'sub' => 'Locked angle', 'body' => 'Belief can no longer rotate. Facts remain, but correction is ineffective &mdash; not because facts disappear, but because nothing moves.'],
+    ];
+}
+
+/**
+ * Compact one-line version of the three states (glyph + name each), for
+ * places that reference the model without explaining it: book page, footer.
+ * $onDark flips the axis colour for dark backgrounds.
+ */
+function angleScale(bool $onDark = false, string $class = ''): string
+{
+    $stroke = $onDark ? '#FFFFFF' : '#1A1A1A';
+    $text = $onDark ? 'text-white/60' : 'text-brand-gray-600';
+    $html = '<ul class="flex flex-wrap items-center gap-x-8 gap-y-4 ' . e($class) . '" aria-label="Reading the angle: open, hardening, closed">';
+    foreach (angleStates() as $state) {
+        $html .= '<li class="flex items-center gap-3">'
+            . angleGlyph($state['degrees'], 'w-10 h-10', $stroke)
+            . '<span class="text-[10px] font-bold uppercase tracking-[0.3em] ' . $text . '">' . e($state['name']) . '</span>'
+            . '</li>';
+    }
+    return $html . '</ul>';
+}
