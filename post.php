@@ -190,7 +190,7 @@ if (count($related) < 3) {
                 </div>
             </div>
 
-            <div class="article-body drop-cap serif text-2xl text-brand-gray-700 leading-relaxed space-y-8 reveal active">
+            <div class="article-body drop-cap serif text-2xl text-brand-gray-700 leading-relaxed reveal active">
                 <?php echo $post['body']; ?>
             </div>
         </article>

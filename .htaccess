@@ -5,7 +5,10 @@ RewriteEngine On
 # so without this they would be served as plain text. Never expose it.
 RewriteRule ^storage(/|$) - [F,L]
 
+# Force HTTPS in production. Skipped on localhost so the site can be run and
+# tested on a plain-HTTP XAMPP vhost (config.php detects local dev the same way).
 RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:[0-9]+)?$ [NC]
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Redirect root to /home
 RewriteRule ^$ /home [L,R=302]

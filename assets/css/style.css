@@ -152,6 +152,17 @@ h1, h2, h3, h4, h5, .serif {
 }
 [x-cloak] { display: none !important; }
 
+/* Honeypot field (includes/spam-guard.php): off-screen rather than display:none
+   so it stays in the DOM for form-filling bots while people never see it. */
+.spam-guard-field {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 /* Visible keyboard-focus ring, site-wide — mouse/touch clicks don't trigger
    :focus-visible, so this only shows up for keyboard navigation. */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
@@ -178,6 +189,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         background: transparent !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
+    }
+}
+
+/* Mobile bottom tab bar (includes/nav.php): reserve room under the page so the
+   footer is never hidden behind it, and respect the iPhone home-indicator inset. */
+@media (max-width: 1023px) {
+    body.has-tab-bar {
+        padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+    }
+    .mobile-tab-bar {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    .mobile-more-sheet {
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom));
     }
 }
 
@@ -256,6 +281,24 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Rich-text elements inside a post body (post.php's .article-body), so
    images/headings/quotes/lists inserted via the admin editor render well. */
+
+/* Post bodies come straight out of the Quill editor, where every Enter is its
+   own <p> with no margin, a blank line is <p><br></p>, and tabs/multiple
+   spaces are kept (white-space: pre-wrap). Render exactly that, so the spacing
+   an author sees while writing is the spacing readers see — no extra gap
+   between paragraphs (that broke poems, where each line is its own <p>). */
+.article-body p,
+.article-body h2, .article-body h3,
+.article-body blockquote,
+.article-body ul, .article-body ol {
+    margin: 0;
+}
+.article-body p, .article-body li, .article-body blockquote,
+.article-body h2, .article-body h3 {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    tab-size: 4;
+}
 .article-body img {
     width: 100%;
     height: auto;
@@ -267,7 +310,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     font-weight: 700;
     color: #1A1A1A;
     line-height: 1.2;
-    margin-top: 1em;
 }
 .article-body blockquote {
     border-left: 4px solid #B89441;

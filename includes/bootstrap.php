@@ -103,6 +103,7 @@ require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/auth.php';
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/mailer.php';
+require_once __DIR__ . '/spam-guard.php';
 
 // Establish the DB connection now so schema auto-provisioning runs on every request.
 getDb();

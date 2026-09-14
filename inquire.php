@@ -22,6 +22,7 @@ require __DIR__ . '/includes/header.php';
 
     <form action="/actions/inquire-submit" method="POST" class="space-y-10 reveal active">
         <?php echo csrfField(); ?>
+        <?php echo spamGuardFields(); ?>
         <div class="grid md:grid-cols-2 gap-10">
             <div class="space-y-4">
                 <label for="inquire-name" class="text-xs uppercase tracking-[0.4em] text-brand-black font-black">Full Name</label>

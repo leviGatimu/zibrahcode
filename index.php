@@ -290,6 +290,7 @@ $latestEpisode = getDb()->query(
                 Join our institutional correspondence for strategic insights on geometric modeling and upcoming publications.</p>
             <form action="/actions/newsletter-subscribe" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto reveal">
                 <?php echo csrfField(); ?>
+                <?php echo spamGuardFields(); ?>
                 <input type="hidden" name="source" value="homepage_form">
                 <div class="space-y-3">
                     <label class="text-xs uppercase tracking-[0.3em] text-brand-black font-black">Full Name</label>

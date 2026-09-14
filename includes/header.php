@@ -170,8 +170,8 @@ $twitterCardType = ($ogImageWidth / max($ogImageHeight, 1)) >= 1.3 ? 'summary_la
     <meta name="csrf-token" content="<?php echo e(csrfToken()); ?>">
 </head>
 
-<body x-data="{ modalBook: false, scrolled: false, mobileMenu: false }" @scroll.window="scrolled = (window.pageYOffset > 50)"
-    class="antialiased selection:bg-brand-gold/20 selection:text-brand-gold">
+<body x-data="{ modalBook: false, scrolled: false, moreSheet: false }" @scroll.window="scrolled = (window.pageYOffset > 50)"
+    class="has-tab-bar antialiased selection:bg-brand-gold/20 selection:text-brand-gold">
 
     <?php require __DIR__ . '/nav.php'; ?>
     <?php require __DIR__ . '/flash.php'; ?>

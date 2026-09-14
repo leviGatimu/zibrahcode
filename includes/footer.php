@@ -13,6 +13,7 @@
                     </p>
                     <form action="/actions/newsletter-subscribe" method="POST" class="flex max-w-sm mb-10">
                         <?php echo csrfField(); ?>
+                        <?php echo spamGuardFields(); ?>
                         <input type="email" name="email" required placeholder="Your email"
                             class="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-brand-gold transition-all">
                         <button type="submit" class="btn-gold text-[10px] px-6">Join</button>
