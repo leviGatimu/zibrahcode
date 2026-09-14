@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /account/
+Disallow: /actions/
+Disallow: /uploads/
+Disallow: /includes/
+
+Sitemap: https://zibrahcode.com/sitemap.xml

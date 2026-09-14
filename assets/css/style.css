@@ -1,0 +1,296 @@
+/* Zibrah Code — shared design system (black / white / gold) */
+
+html {
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+}
+
+h1, h2, h3, h4, h5, .serif {
+    font-family: 'EB Garamond', serif;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+@media (min-width: 768px) {
+    .section-container {
+        padding: 0 2.5rem;
+    }
+}
+
+.hero-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+}
+
+@media (min-width: 1025px) {
+    .hero-split {
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 0.5rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/* Buttons: "Buy Now" / commerce CTA is always solid gold; general buttons are black with gold hover */
+.btn-premium {
+    background: #1A1A1A;
+    color: white;
+    padding: 1.25rem 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+.btn-premium:hover {
+    background: #B89441;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.btn-gold {
+    background: #B89441;
+    color: #1A1A1A;
+    padding: 1rem 2.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+.btn-gold:hover {
+    background: #D4B876;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons placed on dark sections invert */
+.btn-invert {
+    background: white;
+    color: #1A1A1A;
+    padding: 1.25rem 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+.btn-invert:hover {
+    background: #B89441;
+    color: white;
+}
+
+/* Nav "Buy Now": black by default, gold on hover, text always white */
+.btn-gold.btn-buy {
+    background: #1A1A1A;
+    color: #FFFFFF;
+}
+.btn-gold.btn-buy:hover {
+    background: #B89441;
+    color: #FFFFFF;
+}
+
+/* Standard-size form fields — replaces the old oversized px-8/py-6/text-lg inputs */
+.form-input, .form-textarea {
+    width: 100%;
+    background: #FAFAFA;
+    border: 1px solid #E5E5E5;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #1A1A1A;
+    transition: border-color 0.3s ease;
+}
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #B89441;
+    box-shadow: 0 0 0 3px rgba(184, 148, 65, 0.25);
+}
+.form-input:disabled {
+    background: #F2F2F2;
+    color: #737373;
+}
+.form-textarea {
+    resize: vertical;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.97);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+[x-cloak] { display: none !important; }
+
+/* Visible keyboard-focus ring, site-wide — mouse/touch clicks don't trigger
+   :focus-visible, so this only shows up for keyboard navigation. */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #B89441;
+    outline-offset: 2px;
+}
+
+.nav-translucent {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px) saturate(160%);
+}
+.nav-scrolled {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(25px) saturate(180%);
+    border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+}
+
+/* Opt-in (pages with a full-bleed mobile hero directly under the nav, e.g.
+   post.php): no background until scrolled, so the nav sits invisibly over
+   the hero image at the top. Mobile only — desktop keeps the default
+   always-translucent nav untouched. */
+@media (max-width: 1023px) {
+    .nav-mobile-transparent-top:not(.nav-scrolled) {
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+}
+
+/* Active nav item: solid gold underline. Inactive: animated gold underline on hover */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #B89441;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+.nav-link.active {
+    color: #B89441 !important;
+}
+.nav-link.active::after {
+    width: 100%;
+}
+
+.axiom-item {
+    border-left: 1px solid rgba(184, 148, 65, 0.25);
+    padding-left: 1.25rem;
+    transition: all 0.5s ease;
+}
+@media (min-width: 768px) {
+    .axiom-item {
+        padding-left: 3rem;
+    }
+}
+.axiom-item:hover { border-left-color: #B89441; }
+
+/* Gold divider rule between major sections */
+.gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #B89441, transparent);
+    border: none;
+}
+
+
+/* Cards: default gray border, featured cards get a gold border + hover glow */
+.card {
+    border: 1px solid #E5E5E5;
+    transition: all 0.4s ease;
+}
+.card:hover {
+    border-color: #1A1A1A;
+}
+.card-featured {
+    border: 1px solid #B89441;
+    transition: all 0.4s ease;
+}
+.card-featured:hover {
+    box-shadow: 0 20px 50px -10px rgba(184, 148, 65, 0.35);
+}
+
+/* Editorial drop cap — used on long-form narrative copy (e.g. About page bio) */
+.drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    float: left;
+    font-size: 5.5rem;
+    line-height: 0.75;
+    padding-right: 0.6rem;
+    padding-top: 0.3rem;
+    font-weight: 900;
+    color: #B89441;
+}
+
+/* Rich-text elements inside a post body (post.php's .article-body), so
+   images/headings/quotes/lists inserted via the admin editor render well. */
+.article-body img {
+    width: 100%;
+    height: auto;
+    margin: 2.5rem 0;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+.article-body h2, .article-body h3 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+    color: #1A1A1A;
+    line-height: 1.2;
+    margin-top: 1em;
+}
+.article-body blockquote {
+    border-left: 4px solid #B89441;
+    padding-left: 2rem;
+    font-style: italic;
+}
+.article-body ul, .article-body ol {
+    padding-left: 1.5rem;
+}
+.article-body ul { list-style: disc; }
+.article-body ol { list-style: decimal; }
+.article-body a {
+    color: #B89441;
+    text-decoration: underline;
+}
+
+/* Empty-state panels (e.g. podcast listing before first upload) */
+.empty-state {
+    border: 1px dashed rgba(184, 148, 65, 0.4);
+    background: #FAFAFA;
+}
+
+.audio-player {
+    width: 100%;
+    accent-color: #B89441;
+}

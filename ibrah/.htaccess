@@ -1,0 +1,14 @@
+ErrorDocument 404 /404.php
+
+# Prevent direct browsing of the uploads and includes directories
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# Block direct web access to Composer internals
+RewriteEngine On
+RewriteRule ^vendor/ - [F,L]
+RewriteRule ^composer\.(json|lock)$ - [F,L]
+
+# Serve the dynamically generated sitemap at the conventional /sitemap.xml URL
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
