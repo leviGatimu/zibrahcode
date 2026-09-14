@@ -98,19 +98,7 @@ $axioms = require __DIR__ . '/includes/axioms.php';
     </div>
 </section>
 
-<!-- 3. READING THE ANGLE -->
-<section class="py-20 md:py-32 bg-white">
-    <div class="section-container">
-        <div class="max-w-2xl mb-12 md:mb-16">
-            <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Reading the Angle</h4>
-            <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Belief does not collapse suddenly. It closes gradually.</h2>
-            <p class="text-lg text-brand-gray-600 font-light leading-relaxed">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right &mdash; but each is visible, and visibility is the beginning of correction.</p>
-        </div>
-        <?php require __DIR__ . '/includes/angle-cards.php'; ?>
-    </div>
-</section>
-
-<!-- 4. THE FRAMEWORK -->
+<!-- 3. THE FRAMEWORK -->
 <section class="py-20 md:py-32 bg-brand-black text-white overflow-hidden relative">
     <div class="absolute -top-32 -right-32 w-[500px] h-[500px] border border-white/5 rounded-full pointer-events-none" aria-hidden="true"></div>
     <div class="section-container relative z-10">
@@ -133,7 +121,7 @@ $axioms = require __DIR__ . '/includes/axioms.php';
     </div>
 </section>
 
-<!-- 5. THE BOOK -->
+<!-- 4. THE BOOK -->
 <section class="py-20 md:py-32 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -164,7 +152,7 @@ $axioms = require __DIR__ . '/includes/axioms.php';
     </div>
 </section>
 
-<!-- 6. THE AUTHOR -->
+<!-- 5. THE AUTHOR -->
 <section class="py-20 md:py-32 bg-brand-gray-50 border-y border-brand-gray-100">
     <div class="section-container">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -199,8 +187,20 @@ $axioms = require __DIR__ . '/includes/axioms.php';
     </div>
 </section>
 
-<!-- 7. FROM THE BLOG -->
+<!-- 6. READING THE ANGLE -->
 <section class="py-20 md:py-32 bg-white">
+    <div class="section-container">
+        <div class="max-w-2xl mb-12 md:mb-16">
+            <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Reading the Angle</h4>
+            <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Belief does not collapse suddenly. It closes gradually.</h2>
+            <p class="text-lg text-brand-gray-600 font-light leading-relaxed">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right &mdash; but each is visible, and visibility is the beginning of correction.</p>
+        </div>
+        <?php require __DIR__ . '/includes/angle-cards.php'; ?>
+    </div>
+</section>
+
+<!-- 7. FROM THE BLOG -->
+<section class="py-20 md:py-32 bg-brand-gray-50 border-y border-brand-gray-100">
     <div class="section-container">
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12 md:mb-16">
             <div class="max-w-2xl">
@@ -231,7 +231,7 @@ $axioms = require __DIR__ . '/includes/axioms.php';
 </section>
 
 <!-- 8. THE PODCAST -->
-<section class="py-20 md:py-32 bg-brand-gray-50 border-y border-brand-gray-100">
+<section class="py-20 md:py-32 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div class="lg:col-span-5">
@@ -261,7 +261,7 @@ $axioms = require __DIR__ . '/includes/axioms.php';
 </section>
 
 <!-- 9. CONNECT -->
-<section id="connect" class="py-20 md:py-32 bg-white">
+<section id="connect" class="py-20 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
     <div class="section-container">
         <div class="max-w-2xl mx-auto text-center">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Stay in Touch</h4>
