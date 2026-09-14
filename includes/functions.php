@@ -352,21 +352,3 @@ function angleStates(): array
     ];
 }
 
-/**
- * Compact one-line version of the three states (glyph + name each), for
- * places that reference the model without explaining it: book page, footer.
- * $onDark flips the axis colour for dark backgrounds.
- */
-function angleScale(bool $onDark = false, string $class = ''): string
-{
-    $stroke = $onDark ? '#FFFFFF' : '#1A1A1A';
-    $text = $onDark ? 'text-white/60' : 'text-brand-gray-600';
-    $html = '<ul class="flex flex-wrap items-center gap-x-6 gap-y-3 ' . e($class) . '" aria-label="Reading the angle: open, hardening, closed">';
-    foreach (angleStates() as $state) {
-        $html .= '<li class="flex items-center gap-2">'
-            . angleGlyph($state['degrees'], 'w-8 h-8', $stroke)
-            . '<span class="text-[9px] font-bold uppercase tracking-[0.25em] ' . $text . '">' . e($state['name']) . '</span>'
-            . '</li>';
-    }
-    return $html . '</ul>';
-}

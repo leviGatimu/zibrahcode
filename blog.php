@@ -61,7 +61,6 @@ $categories = $db->query('SELECT DISTINCT category FROM posts WHERE status = "pu
 ?>
 
 <div class="pt-28 md:pt-40 pb-8 section-container text-center reveal active">
-    <?php echo angleGlyph(75, 'w-12 h-12 mx-auto mb-4'); ?>
     <h1 class="text-4xl sm:text-5xl font-display font-black text-brand-black uppercase tracking-tight mb-4">Blog & Insights</h1>
     <hr class="gold-divider w-24 mx-auto">
 </div>

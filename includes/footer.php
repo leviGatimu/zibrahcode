@@ -11,7 +11,6 @@
                     <p class="text-white/50 text-lg serif italic font-light leading-relaxed max-w-lg mb-10">
                         "Strategic Intelligence and Epistemic Alignment Systems. Modeling the geometry of human disagreement and the architecture of wisdom."
                     </p>
-                    <?php echo angleScale(true, 'mb-10'); ?>
                     <form action="/actions/newsletter-subscribe" method="POST" class="flex max-w-sm mb-10">
                         <?php echo csrfField(); ?>
                         <?php echo spamGuardFields(); ?>
