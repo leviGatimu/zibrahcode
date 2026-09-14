@@ -30,8 +30,8 @@
                 <div class="lg:col-span-3 lg:col-start-6">
                     <h5 class="text-brand-gold font-bold text-xs uppercase tracking-[0.4em] mb-10">Explore</h5>
                     <ul class="space-y-5">
-                        <li><a href="/about.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">About</a></li>
                         <li><a href="/book.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">The Book</a></li>
+                        <li><a href="/about.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">The Author</a></li>
                         <li><a href="/framework.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Framework</a></li>
                         <li><a href="/blog.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Blog</a></li>
                         <li><a href="/podcast.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Podcast</a></li>

@@ -8,7 +8,7 @@ $activeNav = 'about';
 $ogImage = SITE_URL . '/assets/images/auther.jpeg';
 $extraJsonLd = [
     '{"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Ibrahim Ngugi Gatimu","alternateName":"Ibrahim Ngugi","jobTitle":"Author, Finance Professional & Social Entrepreneur","image":"' . SITE_URL . '/assets/images/auther.jpeg","url":"' . PORTFOLIO_URL . '/","homeLocation":{"@type":"Place","name":"Kigali, Rwanda"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Jomo Kenyatta University of Agriculture and Technology"},{"@type":"CollegeOrUniversity","name":"Strathmore University"}],"sameAs":["' . PORTFOLIO_URL . '/","' . AMAZON_URL . '","' . YOUTUBE_URL . '","' . X_URL . '"]}}',
-    '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"' . SITE_URL . '/"},{"@type":"ListItem","position":2,"name":"About","item":"' . SITE_URL . '/about.php"}]}',
+    '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"' . SITE_URL . '/"},{"@type":"ListItem","position":2,"name":"The Author","item":"' . SITE_URL . '/about.php"}]}',
 ];
 
 // Content below mirrors Ibrahim's portfolio site (PORTFOLIO_URL) so the two stay in step.
