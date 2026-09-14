@@ -1,7 +1,9 @@
 # HANDOFF
 
 ## Current Task
-Four fixes requested 2026-09-14: blog spacing must match the Quill editor; bot spam on
+About page remake (2026-09-14): pulled bio, journey, ventures, engagements and stats from Ibrahim's portfolio (PORTFOLIO_URL in config.php); replaced assets/images/auther.jpeg with the 1254px portrait from the portfolio (also used on home + OG). Portfolio testimonials deliberately NOT copied (unverified quotes).
+
+Previous: Four fixes requested 2026-09-14: blog spacing must match the Quill editor; bot spam on
 contact/inquire/newsletter forms; mobile bottom tab bar instead of the sidebar; desktop
 header grouped into fewer items.
 
@@ -44,4 +46,5 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-14: About page rebuilt around portfolio content + new portrait (ASSETS_VERSION 1.0.37).
 - 2026-09-14: blog spacing fix + migration, spam guard, mobile bottom bar, header grouping.

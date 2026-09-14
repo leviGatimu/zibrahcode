@@ -19,8 +19,11 @@ define('AMAZON_URL', 'https://www.amazon.com/Zibrah-Code-Geometry-Truth-Wisdom-e
 define('YOUTUBE_URL', 'https://www.youtube.com/@zibrahcode');
 define('X_URL', 'https://x.com/zlbrahcode');
 
+// Ibrahim's personal portfolio site (bio, journey, ventures) — linked from the About page.
+define('PORTFOLIO_URL', 'https://ibrahim.zibrahcode.com');
+
 // Assets versioning to bust cache
-define('ASSETS_VERSION', '1.0.36');
+define('ASSETS_VERSION', '1.0.37');
 
 // How long a login stays valid, in seconds. Deliberately long: authors work in
 // the post editor for hours at a stretch without the browser making a single
