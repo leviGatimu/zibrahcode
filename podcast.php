@@ -20,8 +20,8 @@ $extraJsonLd = [
 require __DIR__ . '/includes/header.php';
 ?>
 
-<main class="section-container pt-40 pb-32">
-    <div class="text-center mb-24 reveal active">
+<main class="section-container pt-32 pb-20">
+    <div class="text-center mb-16 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Listen In</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">The Podcast.</h1>
         <p class="text-xl text-brand-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-10">Conversations on truth, perception, belief, and leadership — extending the Zibrah Code framework into voice.</p>

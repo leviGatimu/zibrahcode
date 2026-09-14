@@ -9,7 +9,7 @@ $activeNav = '';
 $robotsMeta = 'noindex, follow';
 require __DIR__ . '/includes/header.php';
 ?>
-<main class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white text-center px-6 pt-32 pb-24">
+<main class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white text-center px-6 pt-20 pb-16">
 
     <!-- Ambient geometric construction, drawn in behind the content -->
     <svg class="absolute w-[640px] h-[640px] max-w-[90vw] max-h-[90vw] pointer-events-none" viewBox="0 0 600 600" aria-hidden="true">

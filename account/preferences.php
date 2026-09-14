@@ -16,7 +16,7 @@ $subscription = $subStmt->fetch();
 $isSubscribed = $subscription ? $subscription['status'] === 'subscribed' : (bool) $user['newsletter_opt_in'];
 ?>
 
-<main class="section-container pt-40 pb-32 max-w-5xl mx-auto">
+<main class="section-container pt-32 pb-20 max-w-5xl mx-auto">
     <div class="mb-16 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-3">My Account</h4>
         <h1 class="text-4xl md:text-5xl serif text-brand-black leading-none tracking-tighter font-black">Preferences.</h1>

@@ -1,7 +1,9 @@
 # HANDOFF
 
 ## Current Task
-Four fixes requested 2026-09-14: blog spacing must match the Quill editor; bot spam on
+Normalize oversized content across all public pages (2026-09-14, after the four fixes below shipped as a4c4751).
+
+Previous task: Four fixes requested 2026-09-14: blog spacing must match the Quill editor; bot spam on
 contact/inquire/newsletter forms; mobile bottom tab bar instead of the sidebar; desktop
 header grouped into fewer items.
 
@@ -21,8 +23,10 @@ pushing is the owner's call.
       hamburger/sidebar removed; body gets bottom padding via `body.has-tab-bar`
 - [x] Desktop header: Home · About · The Book · Framework · Insights ▾ (Blog, Podcast) ·
       Connect ▾ (Events, Inquire, Contact) · Sign In · Buy Now
-- [x] ASSETS_VERSION bumped to 1.0.36
-- [ ] Push to main (owner decision)
+- [x] ASSETS_VERSION bumped (now 1.0.37)
+- [x] a4c4751 pushed to production by owner
+- [x] Sizing pass: Tailwind fontSize 4xl–9xl compressed in includes/header.php (36→32, 48→40, 60→48, 72→56, 96→64px); arbitrary [9rem]/[7rem]/[6rem] headlines folded into scale; article body text-2xl→text-xl (post.php + editor preview); drop cap 5.5→4.5rem; section rhythm py/pt/pb/mt/mb 40→24, 32→20, 28→20, 24→16 on public pages (page-top pt-40→pt-32 to clear the fixed nav); form submit py-8→py-5
+- [ ] Push sizing commit (owner)
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -34,7 +38,7 @@ Migrations run automatically on first request after deploy (includes/db.php). 03
 were re-tested from scratch on a DB copy via runMigrations().
 
 Known, out of scope (not changed):
-- config.php commits live DB/SMTP passwords and APP_SECRET to git.
+- config.php commits live DB/SMTP passwords and APP_SECRET to git (owner chose to leave for now; note the repo is cloned directly into public_html, so untracking it would delete it on the next cPanel pull).
 - CSP `connect-src` blocks GA4 beacons to analytics.google.com / www.google.com — Google
   Analytics is probably recording nothing. Add `https://analytics.google.com
   https://www.google.com https://stats.g.doubleclick.net` to connect-src.

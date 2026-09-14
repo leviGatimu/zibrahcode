@@ -12,7 +12,7 @@ require __DIR__ . '/../includes/header.php';
 $user = currentUser();
 ?>
 
-<main class="section-container pt-40 pb-32 max-w-5xl mx-auto">
+<main class="section-container pt-32 pb-20 max-w-5xl mx-auto">
     <div class="flex items-center gap-6 mb-16 reveal active">
         <?php if (!empty($user['avatar_path'])): ?>
             <img id="profile-avatar-preview" src="/<?php echo e($user['avatar_path']); ?>" alt="<?php echo e($user['name']); ?>" class="w-20 h-20 rounded-full object-cover flex-shrink-0">

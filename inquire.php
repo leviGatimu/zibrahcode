@@ -11,7 +11,7 @@ $extraJsonLd = [
 require __DIR__ . '/includes/header.php';
 ?>
 
-<main class="section-container pt-40 pb-32 max-w-3xl mx-auto">
+<main class="section-container pt-32 pb-20 max-w-3xl mx-auto">
     <div class="text-center mb-20 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Book a Time</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">Inquire.</h1>
@@ -68,7 +68,7 @@ require __DIR__ . '/includes/header.php';
             <label for="inquire-message" class="text-xs uppercase tracking-[0.4em] text-brand-black font-black">Message</label>
             <textarea name="message" id="inquire-message" rows="6" placeholder="Tell us a bit about what you'd like to discuss..." class="form-textarea"></textarea>
         </div>
-        <button type="submit" class="btn-premium w-full py-8 text-sm tracking-[0.4em]">Request a Time</button>
+        <button type="submit" class="btn-premium w-full py-5 text-sm tracking-[0.4em]">Request a Time</button>
     </form>
 </main>
 

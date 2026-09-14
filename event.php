@@ -39,7 +39,7 @@ $extraJsonLd = [
 require __DIR__ . '/includes/header.php';
 ?>
 
-<main class="section-container pt-40 pb-32 max-w-4xl mx-auto">
+<main class="section-container pt-32 pb-20 max-w-4xl mx-auto">
     <div class="mb-10">
         <a href="/events.php" class="text-xs font-black uppercase tracking-widest text-brand-gray-400 hover:text-brand-gold transition-colors">← Back to Events</a>
     </div>

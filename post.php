@@ -114,7 +114,7 @@ if (count($related) < 3) {
     </div>
 </header>
 
-<main class="pt-16 lg:pt-40 pb-24 px-8 md:px-16 max-w-7xl mx-auto">
+<main class="pt-16 lg:pt-32 pb-16 px-8 md:px-16 max-w-7xl mx-auto">
     <a href="/blog.php" class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-brand-gray-500 hover:text-brand-gold transition-colors mb-10 py-2 -my-2 reveal active">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -190,14 +190,14 @@ if (count($related) < 3) {
                 </div>
             </div>
 
-            <div class="article-body drop-cap serif text-2xl text-brand-gray-700 leading-relaxed reveal active">
+            <div class="article-body drop-cap serif text-xl text-brand-gray-700 leading-relaxed reveal active">
                 <?php echo $post['body']; ?>
             </div>
         </article>
 
         <!-- RELATED POSTS — sticky sidebar on desktop, unchanged stacked position on mobile -->
         <?php if ($related): ?>
-            <aside class="mt-24 lg:mt-0 pt-16 lg:pt-0 border-t lg:border-t-0 border-brand-gray-100 reveal active lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-32">
+            <aside class="mt-16 lg:mt-0 pt-16 lg:pt-0 border-t lg:border-t-0 border-brand-gray-100 reveal active lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-32">
                 <h3 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">More Perspectives</h3>
                 <div class="grid sm:grid-cols-3 lg:grid-cols-1 gap-10">
                     <?php foreach ($related as $more): ?>

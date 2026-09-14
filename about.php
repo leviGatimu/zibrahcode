@@ -26,7 +26,7 @@ require __DIR__ . '/includes/header.php';
 </header>
 
 <!-- BOXED PHOTO HEADER — desktop only, sits below the nav, no overlap -->
-<div class="hidden lg:block section-container pt-40 pb-16">
+<div class="hidden lg:block section-container pt-32 pb-16">
     <div class="grid lg:grid-cols-5 gap-16 items-center">
         <div class="lg:col-span-3 reveal active">
             <p class="text-brand-gold font-bold text-xs tracking-[0.5em] uppercase mb-6">Author &middot; Facilitator &middot; Audit Practitioner</p>
@@ -42,7 +42,7 @@ require __DIR__ . '/includes/header.php';
 </div>
 
 <!-- QUOTE + INTRO ASYMMETRIC ROW -->
-<section class="py-24 md:py-32 bg-white">
+<section class="py-16 md:py-20 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16 items-start">
             <div class="lg:col-span-2 reveal active">
@@ -83,7 +83,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- AUTHOR PORTFOLIO -->
-<section class="py-24 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
+<section class="py-16 md:py-20 bg-brand-gray-50 border-t border-brand-gray-100">
     <div class="section-container">
         <div class="max-w-xl mb-20 text-center mx-auto reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">All from the Author.</h4>
@@ -127,7 +127,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- CTA -->
-<section class="py-24 bg-white text-center border-t border-brand-gray-100">
+<section class="py-16 bg-white text-center border-t border-brand-gray-100">
     <div class="section-container reveal active">
         <p class="text-2xl serif italic text-brand-gray-600 mb-10 max-w-xl mx-auto">Want the full framework behind the story?</p>
         <a href="/framework.php" class="btn-premium">Explore the Framework</a>

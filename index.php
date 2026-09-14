@@ -46,7 +46,7 @@ $latestEpisode = getDb()->query(
 <header class="section-container lg:min-h-[80vh] flex items-center pt-24 lg:pt-20 relative overflow-hidden">
     <div class="hero-split gap-12 lg:gap-16 w-full relative z-10">
         <div class="reveal active order-2 lg:order-1">
-            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[9rem] font-display leading-none text-brand-black mb-10 tracking-tighter uppercase font-black">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display leading-none text-brand-black mb-10 tracking-tighter uppercase font-black">
                 Zibrah Code<span class="text-xl align-top ml-2 font-normal opacity-30">™</span>
             </h1>
             <h2 class="text-2xl md:text-2xl lg:text-4xl serif leading-tight text-brand-gray-600 mb-10 font-light italic opacity-90">
@@ -79,7 +79,7 @@ $latestEpisode = getDb()->query(
     <div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
         <div class="w-[1200px] h-[1200px] border border-brand-gold rounded-full animate-[spin_60s_linear_infinite]"></div>
     </div>
-    <div class="section-container text-center max-w-6xl relative z-10 py-32">
+    <div class="section-container text-center max-w-6xl relative z-10 py-20">
         <h2 class="text-3xl sm:text-4xl md:text-7xl serif text-brand-black leading-tight tracking-tighter font-black">What is Zibrah Code?</h2>
         <p class="text-2xl sm:text-3xl md:text-5xl lg:text-4xl font-sans font-extralight leading-[1.3] reveal tracking-tight px-2 sm:px-6 italic text-brand-black mt-10">
             It's a new way to understand <span class="text-brand-gold font-normal">conflict, belief</span> and
@@ -95,8 +95,8 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- WHY THIS BOOK MATTERS -->
-<section class="py-40 bg-white overflow-hidden">
-    <div class="section-container text-center mb-24 reveal">
+<section class="py-24 bg-white overflow-hidden">
+    <div class="section-container text-center mb-16 reveal">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Strategic Impact</h4>
         <h2 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-tight tracking-tighter font-black">Why This Book Matters.</h2>
     </div>
@@ -120,7 +120,7 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- FRAMEWORK TEASER (3 of 5 axioms) -->
-<section id="framework" class="py-40 pattern-bg border-y border-brand-gray-100 relative overflow-hidden">
+<section id="framework" class="py-24 pattern-bg border-y border-brand-gray-100 relative overflow-hidden">
     <div class="section-container relative z-10">
         <div class="grid lg:grid-cols-12 gap-24">
             <div class="lg:col-span-4 reveal">
@@ -148,7 +148,7 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- ABOUT THE BOOK TEASER -->
-<section class="py-40 bg-white overflow-hidden">
+<section class="py-24 bg-white overflow-hidden">
     <div class="section-container">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-32 items-start">
             <div class="reveal order-2 lg:order-1">
@@ -172,12 +172,12 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- BUY CTA -->
-<section class="py-40 bg-brand-black text-white overflow-hidden relative">
+<section class="py-24 bg-brand-black text-white overflow-hidden relative">
     <div class="zebra-wedge absolute" style="width: 260px; height: 260px; top: -60px; right: -60px; clip-path: polygon(30% 0, 100% 0, 100% 70%);"></div>
     <div class="zebra-wedge absolute" style="width: 260px; height: 260px; bottom: -60px; left: -60px; clip-path: polygon(0 30%, 0 100%, 70% 100%);"></div>
     <div class="section-container grid lg:grid-cols-2 gap-10 lg:gap-32 items-center relative z-10">
         <div class="reveal order-2 lg:order-1">
-            <h3 class="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] serif mb-12 leading-none font-black tracking-tighter">
+            <h3 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl serif mb-12 leading-none font-black tracking-tighter">
                 Acquire <br> Your Copy Now!</h3>
             <p class="text-xl sm:text-2xl md:text-2xl text-white/50 mb-16 font-light leading-relaxed max-w-xl italic">Available in print
                 and digital formats via Amazon. A foundational text for leaders, thinkers, and strategists.</p>
@@ -196,12 +196,12 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- AUTHOR TEASER -->
-<section id="author" class="py-40 bg-white overflow-hidden">
+<section id="author" class="py-24 bg-white overflow-hidden">
     <div class="section-container">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-32 items-center">
             <div class="reveal order-2 lg:order-1">
                 <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-12">The Author</h4>
-                <h2 class="text-4xl sm:text-5xl md:text-[7rem] serif text-brand-black leading-none mb-16 tracking-tighter uppercase font-black">
+                <h2 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none mb-16 tracking-tighter uppercase font-black">
                     Ibrahim <br> Ngugi.</h2>
                 <div class="space-y-12 text-xl sm:text-2xl text-brand-gray-600 font-light leading-relaxed max-w-xl italic">
                     <p>Ibrahim Ngugi is an author, a facilitator, and an audit practitioner with extensive
@@ -230,7 +230,7 @@ $latestEpisode = getDb()->query(
 <div class="pattern-bg pattern-bg-fixed" style="height: 220px;" aria-hidden="true"></div>
 
 <!-- RECENT BLOGS -->
-<section class="py-40 bg-brand-gray-50 border-y border-brand-gray-100 overflow-hidden">
+<section class="py-24 bg-brand-gray-50 border-y border-brand-gray-100 overflow-hidden">
     <div class="section-container">
         <div class="max-w-xl mb-20 text-center mx-auto reveal">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">Latest Insights</h4>
@@ -259,7 +259,7 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- LATEST EPISODE -->
-<section class="py-40 bg-white overflow-hidden">
+<section class="py-24 bg-white overflow-hidden">
     <div class="section-container">
         <div class="max-w-xl mb-20 text-center mx-auto reveal">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">Listen In</h4>
@@ -281,7 +281,7 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- CONNECT -->
-<section id="connect" class="py-40 bg-white border-t border-brand-gray-100">
+<section id="connect" class="py-24 bg-white border-t border-brand-gray-100">
     <div class="section-container">
         <div class="max-w-3xl mx-auto text-center">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Institutional Correspondence</h4>

@@ -46,8 +46,8 @@ function eventCard(array $event): string
 }
 ?>
 
-<main class="section-container pt-40 pb-32">
-    <div class="text-center mb-24 reveal active">
+<main class="section-container pt-32 pb-20">
+    <div class="text-center mb-16 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Appearances</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">Events.</h1>
         <p class="text-xl text-brand-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-10">Talks, book signings, and appearances — where to find Ibrahim Ngugi and the Zibrah Code framework in person.</p>
@@ -61,7 +61,7 @@ function eventCard(array $event): string
         </div>
     <?php else: ?>
         <?php if ($upcomingEvents): ?>
-            <div class="mb-28">
+            <div class="mb-20">
                 <h2 class="text-xs font-black uppercase tracking-widest text-brand-gray-400 mb-10 reveal active">Upcoming Events</h2>
                 <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                     <?php foreach ($upcomingEvents as $event): ?>
