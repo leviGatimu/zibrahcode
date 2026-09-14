@@ -20,7 +20,7 @@ define('YOUTUBE_URL', 'https://www.youtube.com/@zibrahcode');
 define('X_URL', 'https://x.com/zlbrahcode');
 
 // Assets versioning to bust cache
-define('ASSETS_VERSION', '1.0.37');
+define('ASSETS_VERSION', '1.0.36');
 
 // How long a login stays valid, in seconds. Deliberately long: authors work in
 // the post editor for hours at a stretch without the browser making a single

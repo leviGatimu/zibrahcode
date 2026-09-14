@@ -40,7 +40,7 @@ $axioms = [
 ?>
 
 <!-- HERO -->
-<header class="section-container pt-32 pb-16 text-center relative overflow-hidden">
+<header class="section-container pt-40 pb-24 text-center relative overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] pointer-events-none flex items-center justify-center">
         <div class="w-[900px] h-[900px] border border-brand-gold rounded-full animate-[spin_60s_linear_infinite]"></div>
     </div>
@@ -54,7 +54,7 @@ $axioms = [
 <!-- AXIOMS -->
 <section class="bg-white overflow-hidden">
     <?php foreach ($axioms as $i => $axiom): ?>
-        <div class="relative py-20 md:py-20 <?php echo $i % 2 === 0 ? 'bg-white' : 'bg-brand-gray-50'; ?> <?php echo $i > 0 ? 'border-t border-brand-gray-100' : ''; ?>">
+        <div class="relative py-20 md:py-28 <?php echo $i % 2 === 0 ? 'bg-white' : 'bg-brand-gray-50'; ?> <?php echo $i > 0 ? 'border-t border-brand-gray-100' : ''; ?>">
             <div class="hidden lg:flex absolute inset-0 items-center pointer-events-none overflow-hidden <?php echo $i % 2 === 0 ? 'justify-end' : 'justify-start'; ?>">
                 <span class="text-[20rem] font-display font-black text-brand-black/[0.03] leading-none select-none"><?php echo e($axiom['number']); ?></span>
             </div>
@@ -73,7 +73,7 @@ $axioms = [
 </section>
 
 <!-- CLOSING QUOTE + CTA -->
-<section class="py-20 bg-brand-black text-white text-center overflow-hidden">
+<section class="py-32 bg-brand-black text-white text-center overflow-hidden">
     <div class="section-container reveal active max-w-3xl mx-auto">
         <p class="text-3xl md:text-4xl serif italic leading-snug mb-14">Angles show what words cannot tell.</p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-8">

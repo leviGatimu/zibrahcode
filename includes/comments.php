@@ -45,7 +45,7 @@ if ($commentIds) {
     }
 }
 ?>
-<section id="comments" class="mt-16 pt-16 border-t border-brand-gray-200">
+<section id="comments" class="mt-24 pt-16 border-t border-brand-gray-200">
     <h3 class="text-3xl serif font-black text-brand-black mb-10"><?php echo count($comments); ?> Comment<?php echo count($comments) === 1 ? '' : 's'; ?></h3>
 
     <div class="space-y-6 mb-16">

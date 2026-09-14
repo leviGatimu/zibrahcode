@@ -33,7 +33,7 @@ if ($user = currentUser()) {
 }
 ?>
 
-<main class="section-container pt-32 pb-20 max-w-4xl mx-auto">
+<main class="section-container pt-40 pb-32 max-w-4xl mx-auto">
     <div class="mb-10">
         <?php if ($episode['episode_number']): ?>
             <span class="text-brand-gold font-black text-sm">EPISODE <?php echo (int) $episode['episode_number']; ?></span>

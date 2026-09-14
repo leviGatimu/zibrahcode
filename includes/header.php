@@ -153,17 +153,6 @@ $twitterCardType = ($ogImageWidth / max($ogImageHeight, 1)) >= 1.3 ? 'summary_la
                             slate: '#525252'
                         }
                     },
-                    // Display sizes are compressed from Tailwind's defaults (4xl 36px … 8xl 96px).
-                    // Headlines were reading as oversized on every page; tightening the scale
-                    // here keeps the relative hierarchy each page already declares.
-                    fontSize: {
-                        '4xl': ['2rem', { lineHeight: '1.15' }],
-                        '5xl': ['2.5rem', { lineHeight: '1.1' }],
-                        '6xl': ['3rem', { lineHeight: '1.05' }],
-                        '7xl': ['3.5rem', { lineHeight: '1' }],
-                        '8xl': ['4rem', { lineHeight: '1' }],
-                        '9xl': ['5rem', { lineHeight: '1' }],
-                    },
                     fontFamily: {
                         serif: ['"EB Garamond"', 'serif'],
                         display: ['"Playfair Display"', 'serif'],

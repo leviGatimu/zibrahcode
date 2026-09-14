@@ -26,7 +26,7 @@ require __DIR__ . '/includes/header.php';
 </header>
 
 <!-- BOXED COVER HEADER — desktop only, sits below the nav, no overlap -->
-<div class="hidden lg:block section-container pt-32 pb-16">
+<div class="hidden lg:block section-container pt-40 pb-16">
     <div class="grid lg:grid-cols-5 gap-16 items-center">
         <div class="lg:col-span-3 reveal active">
             <p class="text-brand-gold font-bold text-xs tracking-[0.5em] uppercase mb-6">About the Book</p>
@@ -44,7 +44,7 @@ require __DIR__ . '/includes/header.php';
 </div>
 
 <!-- QUOTE + INTRO ASYMMETRIC ROW -->
-<section class="py-16 md:py-20 bg-white">
+<section class="py-24 md:py-32 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16 items-start">
             <div class="lg:col-span-2 reveal active">
@@ -90,8 +90,8 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- WHY THIS BOOK MATTERS -->
-<section class="py-16 md:py-20 bg-white">
-    <div class="section-container text-center mb-16 reveal active">
+<section class="py-24 md:py-32 bg-white">
+    <div class="section-container text-center mb-24 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Strategic Impact</h4>
         <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black leading-tight tracking-tighter font-black">Why This Book Matters.</h2>
     </div>
@@ -115,7 +115,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- BUY CTA -->
-<section class="py-16 md:py-20 bg-brand-black text-white text-center overflow-hidden border-t border-white/5">
+<section class="py-24 md:py-32 bg-brand-black text-white text-center overflow-hidden border-t border-white/5">
     <div class="section-container reveal active">
         <h3 class="text-4xl sm:text-5xl md:text-7xl serif mb-10 leading-none font-black tracking-tighter">Acquire Your Copy Now.</h3>
         <p class="text-xl sm:text-2xl md:text-2xl text-white/50 mb-12 font-light leading-relaxed max-w-xl mx-auto italic">Available in print

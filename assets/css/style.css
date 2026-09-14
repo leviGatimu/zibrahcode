@@ -271,7 +271,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .drop-cap::first-letter {
     font-family: 'Playfair Display', serif;
     float: left;
-    font-size: 4.5rem;
+    font-size: 5.5rem;
     line-height: 0.75;
     padding-right: 0.6rem;
     padding-top: 0.3rem;

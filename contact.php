@@ -11,7 +11,7 @@ $extraJsonLd = [
 require __DIR__ . '/includes/header.php';
 ?>
 
-<main class="section-container pt-32 pb-20 max-w-3xl mx-auto">
+<main class="section-container pt-40 pb-32 max-w-3xl mx-auto">
     <div class="text-center mb-20 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Get in Touch</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">Contact.</h1>
@@ -38,7 +38,7 @@ require __DIR__ . '/includes/header.php';
             <label for="contact-message" class="text-xs uppercase tracking-[0.4em] text-brand-black font-black">Message</label>
             <textarea name="message" id="contact-message" required rows="6" class="form-textarea"></textarea>
         </div>
-        <button type="submit" class="btn-premium w-full py-5 text-sm tracking-[0.4em]">Send Message</button>
+        <button type="submit" class="btn-premium w-full py-8 text-sm tracking-[0.4em]">Send Message</button>
     </form>
 </main>
 

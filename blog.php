@@ -60,12 +60,12 @@ $latestUpdates = $db->query('SELECT title, slug, featured_image_path, published_
 $categories = $db->query('SELECT DISTINCT category FROM posts WHERE status = "published" AND category IS NOT NULL ORDER BY category')->fetchAll(PDO::FETCH_COLUMN);
 ?>
 
-<div class="pt-32 pb-8 section-container text-center reveal active">
+<div class="pt-40 pb-8 section-container text-center reveal active">
     <h1 class="text-4xl sm:text-5xl font-display font-black text-brand-black uppercase tracking-tight mb-4">Blog & Insights</h1>
     <hr class="gold-divider w-24 mx-auto">
 </div>
 
-<main class="max-w-6xl mx-auto px-6 md:px-24 pb-20 pt-16">
+<main class="max-w-6xl mx-auto px-6 md:px-24 pb-32 pt-16">
     <div class="grid lg:grid-cols-12 gap-16">
         <!-- POSTS -->
         <div class="lg:col-span-8">

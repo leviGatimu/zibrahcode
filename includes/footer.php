@@ -1,9 +1,9 @@
     <!-- FOOTER -->
-    <footer class="pt-20 pb-16 bg-brand-black text-white relative overflow-hidden border-t border-white/5">
+    <footer class="pt-32 pb-16 bg-brand-black text-white relative overflow-hidden border-t border-white/5">
         <div class="absolute -bottom-64 -right-64 w-[800px] h-[800px] border border-white/5 rounded-full pointer-events-none"></div>
         <div class="absolute -bottom-96 -right-96 w-[800px] h-[800px] border border-white/5 rounded-full pointer-events-none opacity-50"></div>
         <div class="section-container relative z-10">
-            <div class="grid lg:grid-cols-12 gap-16 mb-16">
+            <div class="grid lg:grid-cols-12 gap-16 mb-24">
                 <div class="lg:col-span-4">
                     <div class="text-3xl font-display font-black tracking-[0.3em] text-white uppercase mb-8">
                         ZIBRAH CODE<span class="text-brand-gold">™</span>

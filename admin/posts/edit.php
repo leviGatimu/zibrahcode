@@ -338,7 +338,7 @@ require __DIR__ . '/../includes/admin-header.php';
                     </span>
                 </div>
 
-                <div id="preview-body" class="article-body drop-cap serif text-xl text-brand-gray-700 leading-relaxed"><?php echo $form['body']; ?></div>
+                <div id="preview-body" class="article-body drop-cap serif text-2xl text-brand-gray-700 leading-relaxed"><?php echo $form['body']; ?></div>
             </div>
         </div>
     </div>
