@@ -79,7 +79,7 @@ $latestEpisode = getDb()->query(
     <div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
         <div class="w-[1200px] h-[1200px] border border-brand-gold rounded-full"></div>
     </div>
-    <div class="section-container text-center max-w-6xl relative z-10 py-32">
+    <div class="section-container text-center max-w-6xl relative z-10 py-16 md:py-32">
         <h2 class="text-3xl sm:text-4xl md:text-7xl serif text-brand-black leading-tight tracking-tighter font-black">What is Zibrah Code?</h2>
         <p class="text-2xl sm:text-3xl md:text-5xl lg:text-4xl font-sans font-extralight leading-[1.3] tracking-tight px-2 sm:px-6 italic text-brand-black mt-10">
             It's a new way to understand <span class="text-brand-gold font-normal">conflict, belief</span> and
@@ -95,9 +95,9 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- READING THE ANGLE -->
-<section class="py-40 bg-white overflow-hidden">
+<section class="py-20 md:py-40 bg-white overflow-hidden">
     <div class="section-container">
-        <div class="max-w-2xl mx-auto text-center mb-16">
+        <div class="max-w-2xl mx-auto text-center mb-10 md:mb-16">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Reading the Angle</h4>
             <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black leading-tight tracking-tighter font-black">Belief does not collapse suddenly. It closes gradually.</h2>
             <p class="text-lg sm:text-xl text-brand-gray-600 font-light leading-relaxed mt-8">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right &mdash; but each is visible, and visibility is the beginning of correction.</p>
@@ -110,7 +110,7 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- FRAMEWORK TEASER (3 of 5 axioms) -->
-<section id="framework" class="py-40 pattern-bg border-y border-brand-gray-100 relative overflow-hidden">
+<section id="framework" class="py-20 md:py-40 pattern-bg border-y border-brand-gray-100 relative overflow-hidden">
     <div class="section-container relative z-10">
         <div class="grid lg:grid-cols-12 gap-24">
             <div class="lg:col-span-4">
@@ -138,12 +138,12 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- ABOUT THE BOOK TEASER -->
-<section class="py-40 bg-white overflow-hidden">
+<section class="py-20 md:py-40 bg-white overflow-hidden">
     <div class="section-container">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-32 items-start">
             <div class="order-2 lg:order-1">
                 <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-12">About the Book</h4>
-                <h2 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none mb-16 tracking-tighter uppercase font-black">The Zibrah <br> Code.</h2>
+                <h2 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none mb-10 md:mb-16 tracking-tighter uppercase font-black">The Zibrah <br> Code.</h2>
                 <div class="space-y-12 text-xl sm:text-2xl md:text-2xl text-brand-gray-600 font-light leading-[1.4] italic md:pr-12">
                     <p>The Zibrah Code introduces a geometric way of seeing how belief, judgment, and perception
                         interact under pressure. By mapping movement between truth and perception, the model reveals
@@ -153,8 +153,8 @@ $latestEpisode = getDb()->query(
                 <a href="/book.php" class="btn-premium inline-block mt-10">Read More About the Book</a>
             </div>
             <div class="order-1 lg:order-2 flex flex-col justify-center lg:translate-x-16">
-                <a href="/book.php" class="flex justify-center items-center h-[460px] sm:h-[600px] lg:h-[820px] w-full group">
-                    <img src="/assets/images/book.png" alt="Zibrah Code Book by Ibrahim Ngugi" class="w-[145%] sm:w-[115%] lg:w-[150%] max-w-none h-auto transition-transform duration-1000 group-hover:scale-105" loading="lazy">
+                <a href="/book.php" class="flex justify-center items-center sm:h-[600px] lg:h-[820px] w-full group">
+                    <img src="/assets/images/book.png" alt="Zibrah Code Book by Ibrahim Ngugi" class="w-full sm:w-[115%] lg:w-[150%] sm:max-w-none h-auto transition-transform duration-1000 group-hover:scale-105" loading="lazy">
                 </a>
             </div>
         </div>
@@ -162,14 +162,14 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- BUY CTA -->
-<section class="py-40 bg-brand-black text-white overflow-hidden relative">
+<section class="py-20 md:py-40 bg-brand-black text-white overflow-hidden relative">
     <div class="zebra-wedge absolute" style="width: 260px; height: 260px; top: -60px; right: -60px; clip-path: polygon(30% 0, 100% 0, 100% 70%);"></div>
     <div class="zebra-wedge absolute" style="width: 260px; height: 260px; bottom: -60px; left: -60px; clip-path: polygon(0 30%, 0 100%, 70% 100%);"></div>
     <div class="section-container grid lg:grid-cols-2 gap-10 lg:gap-32 items-center relative z-10">
         <div class="order-2 lg:order-1">
             <h3 class="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] serif mb-12 leading-none font-black tracking-tighter">
                 Acquire <br> Your Copy Now!</h3>
-            <p class="text-xl sm:text-2xl md:text-2xl text-white/50 mb-16 font-light leading-relaxed max-w-xl italic">Available in print
+            <p class="text-xl sm:text-2xl md:text-2xl text-white/50 mb-10 md:mb-16 font-light leading-relaxed max-w-xl italic">Available in print
                 and digital formats via Amazon. A foundational text for leaders, thinkers, and strategists.</p>
             <div class="flex items-center gap-12">
                 <a href="<?php echo e(AMAZON_URL); ?>" target="_blank" rel="noopener"
@@ -180,18 +180,18 @@ $latestEpisode = getDb()->query(
         </div>
         <div class="order-1 lg:order-2 relative lg:translate-x-24 flex justify-center">
             <img src="/assets/images/goodasset.png" alt="Zibrah Code available in ebook and print, by Ibrahim Ngugi"
-                class="w-[160%] sm:w-[120%] lg:w-[160%] max-w-none h-auto" loading="lazy">
+                class="w-full sm:w-[120%] lg:w-[160%] sm:max-w-none h-auto" loading="lazy">
         </div>
     </div>
 </section>
 
 <!-- AUTHOR TEASER -->
-<section id="author" class="py-40 bg-white overflow-hidden">
+<section id="author" class="py-20 md:py-40 bg-white overflow-hidden">
     <div class="section-container">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-32 items-center">
             <div class="order-2 lg:order-1">
                 <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-12">The Author</h4>
-                <h2 class="text-4xl sm:text-5xl md:text-[7rem] serif text-brand-black leading-none mb-16 tracking-tighter uppercase font-black">
+                <h2 class="text-4xl sm:text-5xl md:text-[7rem] serif text-brand-black leading-none mb-10 md:mb-16 tracking-tighter uppercase font-black">
                     Ibrahim <br> Ngugi.</h2>
                 <div class="space-y-12 text-xl sm:text-2xl text-brand-gray-600 font-light leading-relaxed max-w-xl italic">
                     <p>Ibrahim Ngugi is an author, a facilitator, and an audit practitioner with extensive
@@ -220,9 +220,9 @@ $latestEpisode = getDb()->query(
 <div class="pattern-bg pattern-bg-fixed" style="height: 220px;" aria-hidden="true"></div>
 
 <!-- RECENT BLOGS -->
-<section class="py-40 bg-brand-gray-50 border-y border-brand-gray-100 overflow-hidden">
+<section class="py-20 md:py-40 bg-brand-gray-50 border-y border-brand-gray-100 overflow-hidden">
     <div class="section-container">
-        <div class="max-w-xl mb-20 text-center mx-auto">
+        <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">Latest Insights</h4>
             <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight italic">From the Blog.</h2>
         </div>
@@ -242,16 +242,16 @@ $latestEpisode = getDb()->query(
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
-        <div class="mt-20 text-center">
+        <div class="mt-12 md:mt-20 text-center">
             <a href="/blog.php" class="btn-premium">View All Insights</a>
         </div>
     </div>
 </section>
 
 <!-- LATEST EPISODE -->
-<section class="py-40 bg-white overflow-hidden">
+<section class="py-20 md:py-40 bg-white overflow-hidden">
     <div class="section-container">
-        <div class="max-w-xl mb-20 text-center mx-auto">
+        <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">Listen In</h4>
             <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight italic">The Podcast.</h2>
         </div>
@@ -271,12 +271,12 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- CONNECT -->
-<section id="connect" class="py-40 bg-white border-t border-brand-gray-100">
+<section id="connect" class="py-20 md:py-40 bg-white border-t border-brand-gray-100">
     <div class="section-container">
         <div class="max-w-3xl mx-auto text-center">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Institutional Correspondence</h4>
             <h2 class="text-5xl sm:text-6xl md:text-8xl serif leading-none mb-10 font-black text-brand-black tracking-tighter">Connect.</h2>
-            <p class="text-lg sm:text-xl text-brand-gray-600 mb-16 font-light max-w-xl mx-auto leading-relaxed italic">
+            <p class="text-lg sm:text-xl text-brand-gray-600 mb-10 md:mb-16 font-light max-w-xl mx-auto leading-relaxed italic">
                 Join our institutional correspondence for strategic insights on geometric modeling and upcoming publications.</p>
             <form action="/actions/newsletter-subscribe" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
                 <?php echo csrfField(); ?>

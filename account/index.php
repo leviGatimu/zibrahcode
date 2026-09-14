@@ -12,8 +12,8 @@ require __DIR__ . '/../includes/header.php';
 $user = currentUser();
 ?>
 
-<main class="section-container pt-40 pb-32 max-w-5xl mx-auto">
-    <div class="flex items-center gap-6 mb-16 reveal active">
+<main class="section-container pt-28 md:pt-40 pb-16 md:pb-32 max-w-5xl mx-auto">
+    <div class="flex items-center gap-6 mb-10 md:mb-16 reveal active">
         <?php if (!empty($user['avatar_path'])): ?>
             <img id="profile-avatar-preview" src="/<?php echo e($user['avatar_path']); ?>" alt="<?php echo e($user['name']); ?>" class="w-20 h-20 rounded-full object-cover flex-shrink-0">
         <?php else: ?>
@@ -28,7 +28,7 @@ $user = currentUser();
         </div>
     </div>
 
-    <nav class="flex gap-8 border-b border-brand-gray-200 mb-16">
+    <nav class="flex gap-8 border-b border-brand-gray-200 mb-10 md:mb-16">
         <span class="pb-4 text-xs font-black uppercase tracking-widest text-brand-gold border-b-2 border-brand-gold">Profile</span>
         <a href="/account/bookmarks.php" class="pb-4 text-xs font-black uppercase tracking-widest text-brand-gray-500 hover:text-brand-black">Bookmarks</a>
         <a href="/account/preferences.php" class="pb-4 text-xs font-black uppercase tracking-widest text-brand-gray-500 hover:text-brand-black">Preferences</a>

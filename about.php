@@ -57,7 +57,7 @@ require __DIR__ . '/includes/header.php';
 </header>
 
 <!-- BOXED PHOTO HEADER — desktop only, sits below the nav, no overlap -->
-<div class="hidden lg:block section-container pt-40 pb-16">
+<div class="hidden lg:block section-container pt-28 md:pt-40 pb-16">
     <div class="grid lg:grid-cols-5 gap-16 items-center">
         <div class="lg:col-span-3 reveal active">
             <p class="text-brand-gold font-bold text-xs tracking-[0.5em] uppercase mb-6">Author &middot; Finance Professional &middot; Social Entrepreneur</p>
@@ -87,7 +87,7 @@ require __DIR__ . '/includes/header.php';
 </div>
 
 <!-- BIOGRAPHY + QUICK FACTS -->
-<section class="py-24 md:py-32 bg-white">
+<section class="py-16 md:py-32 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16 items-start">
             <div class="lg:col-span-3 reveal active">
@@ -150,7 +150,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- STAT STRIP -->
-<section class="py-20 bg-brand-black text-white">
+<section class="py-14 md:py-20 bg-brand-black text-white">
     <div class="section-container grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
         <?php foreach ($stats as $stat): ?>
             <div class="reveal active">
@@ -162,7 +162,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- JOURNEY TIMELINE -->
-<section class="py-24 md:py-32 bg-white border-t border-brand-gray-100">
+<section class="py-16 md:py-32 bg-white border-t border-brand-gray-100">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16">
             <div class="lg:col-span-2 reveal active">
@@ -186,9 +186,9 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- VENTURES -->
-<section class="py-24 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
+<section class="py-16 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
     <div class="section-container">
-        <div class="max-w-2xl mb-16 reveal active">
+        <div class="max-w-2xl mb-10 md:mb-16 reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Ventures</h4>
             <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Organizations he has built.</h2>
             <p class="text-lg text-brand-gray-600 font-light leading-relaxed">Driving the transformation of African leadership across the non-profit and professional sectors.</p>
@@ -208,7 +208,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- AREAS OF ENGAGEMENT -->
-<section class="py-24 md:py-32 bg-white border-t border-brand-gray-100">
+<section class="py-16 md:py-32 bg-white border-t border-brand-gray-100">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16">
             <div class="lg:col-span-2 reveal active">
@@ -231,9 +231,9 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- AUTHOR PORTFOLIO -->
-<section class="py-24 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
+<section class="py-16 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
     <div class="section-container">
-        <div class="max-w-xl mb-20 text-center mx-auto reveal active">
+        <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">The Author</h4>
             <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight italic">Two frameworks.</h2>
             <p class="text-lg text-brand-gray-600 font-light leading-relaxed mt-6">Two decades in the making.</p>
@@ -276,7 +276,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- CTA -->
-<section class="py-24 bg-white text-center border-t border-brand-gray-100">
+<section class="py-16 md:py-24 bg-white text-center border-t border-brand-gray-100">
     <div class="section-container reveal active">
         <p class="text-3xl md:text-4xl serif italic text-brand-black leading-snug max-w-2xl mx-auto mb-4">Structure is not the whole of wisdom. But without it, wisdom has nowhere to stand.</p>
         <p class="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-12">Ibrahim Ngugi Gatimu</p>

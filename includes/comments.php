@@ -45,10 +45,10 @@ if ($commentIds) {
     }
 }
 ?>
-<section id="comments" class="mt-24 pt-16 border-t border-brand-gray-200">
+<section id="comments" class="mt-12 md:mt-24 pt-16 border-t border-brand-gray-200">
     <h3 class="text-3xl serif font-black text-brand-black mb-10"><?php echo count($comments); ?> Comment<?php echo count($comments) === 1 ? '' : 's'; ?></h3>
 
-    <div class="space-y-6 mb-16">
+    <div class="space-y-6 mb-10 md:mb-16">
         <?php foreach ($comments as $comment): ?>
             <div class="flex gap-4 pb-6 border-b border-brand-gray-100 <?php echo $comment['is_pinned'] ? 'bg-brand-gold/5 -mx-4 px-4 pt-4' : ''; ?>">
                 <div class="w-10 h-10 rounded-full bg-brand-gold/15 text-brand-gold font-bold text-sm flex items-center justify-center flex-shrink-0">

@@ -28,7 +28,7 @@ require __DIR__ . '/includes/header.php';
 
 <!-- HERO: the model itself -->
 <header class="bg-brand-gray-50 border-b border-brand-gray-100 overflow-hidden">
-    <div class="section-container pt-32 lg:pt-40 pb-16 lg:pb-24">
+    <div class="section-container pt-24 lg:pt-40 pb-16 lg:pb-24">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div class="lg:col-span-6 reveal active">
                 <p class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">The Framework</p>
@@ -54,9 +54,9 @@ require __DIR__ . '/includes/header.php';
 </header>
 
 <!-- READING THE ANGLE -->
-<section class="py-24 md:py-32 bg-white">
+<section class="py-16 md:py-32 bg-white">
     <div class="section-container">
-        <div class="max-w-2xl mb-16 reveal active">
+        <div class="max-w-2xl mb-10 md:mb-16 reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Reading the Angle</h4>
             <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Belief does not collapse suddenly. It closes gradually.</h2>
             <p class="text-lg text-brand-gray-600 font-light leading-relaxed">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right &mdash; but each is visible, and visibility is the beginning of correction.</p>
@@ -66,7 +66,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- THE FIVE AXIOMS -->
-<section id="axioms" class="py-24 md:py-32 bg-brand-black text-white overflow-hidden relative scroll-mt-24">
+<section id="axioms" class="py-16 md:py-32 bg-brand-black text-white overflow-hidden relative scroll-mt-24">
     <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] border border-white/5 rounded-full pointer-events-none" aria-hidden="true"></div>
     <div class="section-container relative z-10">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
@@ -105,7 +105,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- WHERE IT APPLIES -->
-<section class="py-24 md:py-32 bg-white border-b border-brand-gray-100">
+<section class="py-16 md:py-32 bg-white border-b border-brand-gray-100">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16">
             <div class="lg:col-span-2 reveal active">
@@ -127,7 +127,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- FURTHER READING + CTA -->
-<section class="py-24 md:py-32 bg-brand-gray-50">
+<section class="py-16 md:py-32 bg-brand-gray-50">
     <div class="section-container">
         <div class="grid lg:grid-cols-2 gap-16 items-start">
             <div class="reveal active">

@@ -22,7 +22,7 @@ $activeNav = '';
 $robotsMeta = 'noindex, nofollow';
 require __DIR__ . '/../includes/header.php';
 ?>
-<main class="section-container pt-48 pb-32 text-center min-h-[50vh] flex flex-col items-center justify-center">
+<main class="section-container pt-48 pb-16 md:pb-32 text-center min-h-[50vh] flex flex-col items-center justify-center">
     <p class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10"><?php echo $valid ? 'Unsubscribed' : 'Link Invalid'; ?></p>
     <?php if ($valid): ?>
         <h1 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tighter mb-10">You've been unsubscribed.</h1>

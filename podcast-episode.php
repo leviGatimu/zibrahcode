@@ -33,7 +33,7 @@ if ($user = currentUser()) {
 }
 ?>
 
-<main class="section-container pt-40 pb-32 max-w-4xl mx-auto">
+<main class="section-container pt-28 md:pt-40 pb-16 md:pb-32 max-w-4xl mx-auto">
     <div class="mb-10">
         <?php if ($episode['episode_number']): ?>
             <span class="text-brand-gold font-black text-sm">EPISODE <?php echo (int) $episode['episode_number']; ?></span>
@@ -55,7 +55,7 @@ if ($user = currentUser()) {
         <img src="/<?php echo e($episode['cover_image_path']); ?>" alt="<?php echo e($episode['title']); ?>" class="w-full h-auto mb-10 shadow-2xl">
     <?php endif; ?>
 
-    <div class="bg-brand-gray-50 border border-brand-gray-200 p-8 mb-16">
+    <div class="bg-brand-gray-50 border border-brand-gray-200 p-8 mb-10 md:mb-16">
         <audio controls class="audio-player">
             <source src="/<?php echo e($episode['audio_file_path']); ?>" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -63,7 +63,7 @@ if ($user = currentUser()) {
     </div>
 
     <?php if ($episode['show_notes']): ?>
-        <div class="serif text-xl text-brand-gray-700 leading-relaxed space-y-6 mb-16">
+        <div class="serif text-xl text-brand-gray-700 leading-relaxed space-y-6 mb-10 md:mb-16">
             <?php echo $episode['show_notes']; ?>
         </div>
     <?php endif; ?>

@@ -20,8 +20,8 @@ $extraJsonLd = [
 require __DIR__ . '/includes/header.php';
 ?>
 
-<main class="section-container pt-40 pb-32">
-    <div class="text-center mb-24 reveal active">
+<main class="section-container pt-28 md:pt-40 pb-16 md:pb-32">
+    <div class="text-center mb-12 md:mb-24 reveal active">
         <?php echo angleGlyph(75, 'w-12 h-12 mx-auto mb-4'); ?>
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Listen In</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">The Podcast.</h1>

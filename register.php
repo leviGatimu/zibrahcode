@@ -14,8 +14,8 @@ $redirectTarget = safeRedirectPath($_GET['redirect'] ?? null, '/account/index.ph
 require __DIR__ . '/includes/header.php';
 ?>
 
-<main class="section-container pt-40 pb-32 max-w-md mx-auto">
-    <div class="text-center mb-16 reveal active">
+<main class="section-container pt-28 md:pt-40 pb-16 md:pb-32 max-w-md mx-auto">
+    <div class="text-center mb-10 md:mb-16 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Join Us</h4>
         <h1 class="text-5xl md:text-6xl serif text-brand-black leading-none tracking-tighter font-black">Create Account.</h1>
     </div>

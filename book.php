@@ -48,7 +48,7 @@ require __DIR__ . '/includes/header.php';
 
 <!-- HERO -->
 <header class="bg-brand-gray-50 border-b border-brand-gray-100 overflow-hidden">
-    <div class="section-container pt-32 lg:pt-40 pb-16 lg:pb-24">
+    <div class="section-container pt-24 lg:pt-40 pb-16 lg:pb-24">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
             <!-- Cover: shown whole, never cropped -->
@@ -86,7 +86,7 @@ require __DIR__ . '/includes/header.php';
 </header>
 
 <!-- WHAT THE BOOK ARGUES -->
-<section class="py-24 md:py-32 bg-white">
+<section class="py-16 md:py-32 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16 items-start">
             <div class="lg:col-span-2 reveal active">
@@ -119,7 +119,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- INSIDE THE BOOK: THE FIVE AXIOMS -->
-<section class="py-24 md:py-32 bg-brand-black text-white overflow-hidden relative">
+<section class="py-16 md:py-32 bg-brand-black text-white overflow-hidden relative">
     <div class="absolute -top-24 -right-24 w-[500px] h-[500px] border border-white/5 rounded-full pointer-events-none" aria-hidden="true"></div>
     <div class="section-container relative z-10">
         <div class="grid lg:grid-cols-5 gap-16">
@@ -145,9 +145,9 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- WHO IT'S FOR -->
-<section class="py-24 md:py-32 bg-white border-b border-brand-gray-100">
+<section class="py-16 md:py-32 bg-white border-b border-brand-gray-100">
     <div class="section-container">
-        <div class="max-w-2xl mb-16 reveal active">
+        <div class="max-w-2xl mb-10 md:mb-16 reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Who It&rsquo;s For</h4>
             <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight">Written for the moment before a decision hardens.</h2>
         </div>
@@ -164,7 +164,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- DETAILS + AUTHOR -->
-<section class="py-24 md:py-32 bg-brand-gray-50">
+<section class="py-16 md:py-32 bg-brand-gray-50">
     <div class="section-container grid lg:grid-cols-2 gap-16 items-start">
         <div class="reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Details</h4>
@@ -203,7 +203,7 @@ require __DIR__ . '/includes/header.php';
 </section>
 
 <!-- BUY CTA -->
-<section class="py-24 md:py-32 bg-white text-center">
+<section class="py-16 md:py-32 bg-white text-center">
     <div class="section-container reveal active">
         <img src="/assets/images/Front page.png" alt="" aria-hidden="true" class="w-28 h-auto mx-auto shadow-xl mb-10" loading="lazy">
         <h3 class="text-4xl sm:text-5xl md:text-6xl serif mb-6 leading-none font-black tracking-tighter text-brand-black">Get your copy.</h3>
