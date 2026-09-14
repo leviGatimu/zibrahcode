@@ -213,7 +213,7 @@ $latestEpisode = getDb()->query(
             <div class="reveal order-1 lg:order-2 relative flex justify-center items-center">
                 <div class="relative z-10 w-full max-w-md bg-white p-8 shadow-2xl border border-brand-gray-100">
                     <div class="aspect-[4/5] overflow-hidden relative group">
-                        <img src="/assets/images/auther.jpeg" alt="Ibrahim Ngugi — Author of Zibrah Code"
+                        <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi — Author of Zibrah Code"
                             class="w-full h-full object-cover transition-all duration-[2s]" loading="lazy">
                     </div>
                     <div class="mt-10 text-center">

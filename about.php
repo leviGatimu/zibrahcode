@@ -45,7 +45,7 @@ require __DIR__ . '/includes/header.php';
 
 <!-- FULL-BLEED PHOTO HERO — mobile only -->
 <header class="lg:hidden relative h-[65vh] min-h-[440px] w-full overflow-hidden mt-0">
-    <img src="/assets/images/auther.jpeg" alt="Ibrahim Ngugi Gatimu — Author of Zibrah Code"
+    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu — Author of Zibrah Code"
         class="absolute inset-0 w-full h-full object-cover object-top" fetchpriority="high">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
     <div class="absolute inset-0 bg-brand-black/20"></div>
@@ -74,7 +74,7 @@ require __DIR__ . '/includes/header.php';
         <div class="lg:col-span-2 reveal active">
             <div class="relative">
                 <div class="aspect-[4/5] overflow-hidden shadow-2xl">
-                    <img src="/assets/images/auther.jpeg" alt="Ibrahim Ngugi Gatimu — Author of Zibrah Code"
+                    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu — Author of Zibrah Code"
                         class="w-full h-full object-cover object-top" fetchpriority="high">
                 </div>
                 <div class="absolute -bottom-6 -left-6 bg-brand-black text-white px-6 py-4 shadow-xl">
