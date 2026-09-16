@@ -1,22 +1,22 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Footer remake (owner: "it's AI slop"). includes/footer.php rewritten.
+2026-09-16: Footer, second pass. Owner rejected the three-tier colophon (f52cd99) and asked
+for the ORIGINAL structure and content with a professional UI. Restored: brand block
+(wordmark, quote, newsletter, socials) | Explore | Company (incl. Admin link) | bottom bar
+(copyright "Zibrah Research Collective" / tagline / author name).
 
 ## Status
-Solved, uncommitted. Awaiting owner's go-ahead to commit/push (main deploys to production).
+Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] New three-tier footer: wordmark + real book subtitle + "A book and framework by
-      Ibrahim Ngugi." | plainly worded newsletter form (source=footer, sr-only label) |
-      one row of site links + external links (Amazon, YouTube, X) | credit line + Sign in /
-      Your account (currentUser()).
-- [x] Removed: invented quote, decorative rings, "Company" column, Admin link,
-      "Zibrah Research Collective", tagline strip, tracking-[0.4em] everywhere.
-- [x] Verified headless at 1280 and 390: no horizontal overflow, last link clears the mobile
-      tab bar by 44px, form submit recorded with source=footer (test row deleted).
-- [ ] Follow-up candidate: the home "Connect." section ("Institutional Correspondence")
-      has the same tone problem and now duplicates the footer form.
+- [x] Styling: gold hairline on top, quote as a gold-ruled blockquote, boxed input + solid
+      gold Join button, bordered square social icons, sans small-caps column headings (h5
+      needed font-sans; global rule makes h5 serif), readable bottom bar (text-xs white/50).
+- [x] Decorative rings dropped; tracking-[0.4em] gone except the wordmark (0.3em).
+- [x] Kept from the colophon pass: source=footer hidden field, sr-only email label.
+- [x] Phone: link columns sit side by side (grid-cols-2); brand spans both. Verified at 390
+      and 1280, no overflow, last line clears the tab bar by 43px.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -37,7 +37,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
-- 2026-09-16: Footer rebuilt as a quiet three-tier colophon.
+- 2026-09-16: Footer restyled on its original structure (owner rejected the colophon layout).
 - 2026-09-16: Dash purge across public copy + migration 034; home section separator lines removed.
 - 2026-09-15: Home page rebuilt on one section system (eyebrow → serif h2 4xl/5xl → light body → CTA; alternating white/gray-50/black). Removed dead cruft: undefined pattern-bg/zebra-wedge classes, the 'Details' button whose modal never existed (modalBook state dropped from header.php). Angle devices trimmed back to the framework + home cards only (footer strip, page-header marks, book strip removed; angleScale() deleted).
 - 2026-09-14: Mobile pass — vertical rhythm is now responsive on all public pages (unprefixed py/pt/pb/mb/mt 40/32/24/20/16 get phone values, original kept behind md:), home book/asset images fit the phone width, footer angle strip fits one row. Desktop values unchanged (owner rejected desktop-scale changes earlier).
