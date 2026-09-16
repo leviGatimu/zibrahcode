@@ -1,25 +1,17 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Home page sections restyled on the framework/book/author section system (owner:
-"home don't look good", likes book and author).
+2026-09-16: Footer, third pass ("still ain't professional").
 
 ## Status
-Solved. Committed and pushed; production auto-deploys from `main`.
+Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] Hero kept (ZIBRAH CODE wordmark, subtitle, tagline, CTAs) but tidied: straight cover with
-      shadow, no rotated ghost back cover, no gold ring; CTAs use the shared button + link pair.
-- [x] Sections after the hero rebuilt with the shared classes (eyebrow 0.6em, serif h2 4xl/5xl
-      font-black, body text-lg gray-600 font-light, 2/5:3/5 and 12-col grids, white/black/grey-50):
-      What is Zibrah Code (grey) · Reading the Angle (white, angle-cards) · Five axioms (black,
-      all five titles from includes/axioms.php linking to framework.php#axiom-N) · The Book (white, image right,
-      book.png) · Get the Book (black, goodasset.png) · The Author (grey) · Latest blog + podcast (white, one
-      section) · Newsletter (grey, name+email form,
-      source=homepage_form kept).
-- [x] Removed: giant italic statements, 8xl uppercase teaser headings, 150%-width images,
-      zebra wedges, pattern divider, the dead "Details" button (modalBook), "Institutional
-      Correspondence" copy. Height 10083 -> 7295 at 1280. Verified 390/1280: no overflow.
+- [x] Same content, balanced 12-col grid: brand + description + newsletter (5) | Explore (2) |
+      Company (2) | Follow (2, YouTube/X as text links with inline icons). All type small and
+      regular weight; white column headings; white Join button; no italics, no bordered icon
+      boxes, no gold hairline, no big quote. Bottom bar: three plain 12px lines at 40% white.
+- [x] Verified 1280/390: no overflow; link columns pair up on phones.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -40,6 +32,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Footer rebalanced into a quiet four-column layout (third pass).
 - 2026-09-16: Home page sections restyled on the shared section system; hero tidied.
 - 2026-09-16: Book + author pages rebuilt as sectioned pages on the framework system (after two rejected one-column 'brief' versions).
 - 2026-09-16: Fonts: Poppins (cover face) for brand/headings/UI + Source Serif 4 for post bodies only; Inter dropped.
