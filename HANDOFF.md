@@ -5,7 +5,7 @@
 "home don't look good", likes book and author).
 
 ## Status
-Solved, uncommitted. Awaiting go-ahead to commit/push.
+Solved. Committed and pushed; production auto-deploys from `main`.
 
 ## Progress
 - [x] Hero kept (ZIBRAH CODE wordmark, subtitle, tagline, CTAs) but tidied: straight cover with
@@ -13,9 +13,9 @@ Solved, uncommitted. Awaiting go-ahead to commit/push.
 - [x] Sections after the hero rebuilt with the shared classes (eyebrow 0.6em, serif h2 4xl/5xl
       font-black, body text-lg gray-600 font-light, 2/5:3/5 and 12-col grids, white/black/grey-50):
       What is Zibrah Code (grey) · Reading the Angle (white, angle-cards) · Five axioms (black,
-      all five titles from includes/axioms.php linking to framework.php#axiom-N) · The Book (white,
-      book.png) · The Author (grey, portrait in white panel) · Latest blog + podcast (white, one
-      section) · Get the Book (black, goodasset.png) · Newsletter (grey, name+email form,
+      all five titles from includes/axioms.php linking to framework.php#axiom-N) · The Book (white, image right,
+      book.png) · Get the Book (black, goodasset.png) · The Author (grey) · Latest blog + podcast (white, one
+      section) · Newsletter (grey, name+email form,
       source=homepage_form kept).
 - [x] Removed: giant italic statements, 8xl uppercase teaser headings, 150%-width images,
       zebra wedges, pattern divider, the dead "Details" button (modalBook), "Institutional

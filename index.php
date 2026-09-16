@@ -138,12 +138,12 @@ $latestEpisode = getDb()->query(
 <section class="py-16 md:py-32 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <figure class="lg:col-span-6 reveal active">
+            <figure class="lg:col-span-6 lg:order-2 reveal active">
                 <a href="/book.php" class="block">
                     <img src="/assets/images/book.png" alt="Zibrah Code Book by Ibrahim Ngugi" class="w-full h-auto" loading="lazy">
                 </a>
             </figure>
-            <div class="lg:col-span-6 reveal active">
+            <div class="lg:col-span-6 lg:order-1 reveal active">
                 <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">The Book</h4>
                 <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">The Geometry of Truth and Wisdom.</h2>
                 <p class="text-lg text-brand-gray-600 font-light leading-relaxed max-w-xl mb-10">
@@ -161,7 +161,27 @@ $latestEpisode = getDb()->query(
     </div>
 </section>
 
-<!-- 6. THE AUTHOR -->
+<!-- 6. GET THE BOOK -->
+<section class="py-16 md:py-32 bg-brand-black text-white overflow-hidden">
+    <div class="section-container">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="lg:col-span-6 reveal active">
+                <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Get the Book</h4>
+                <h2 class="text-4xl sm:text-5xl serif font-black tracking-tight leading-tight mb-6">Available now in print and on Kindle.</h2>
+                <p class="text-lg text-white/60 font-light leading-relaxed max-w-xl mb-10">A foundational text for leaders, thinkers and strategists. Sold through Amazon in both formats.</p>
+                <div class="flex flex-wrap items-center gap-6">
+                    <a href="<?php echo e(AMAZON_URL); ?>" target="_blank" rel="noopener" class="btn-invert">Buy on Amazon</a>
+                    <a href="/book.php" class="text-xs font-bold uppercase tracking-widest text-white/60 hover:text-brand-gold transition-colors border-b border-white/30 hover:border-brand-gold pb-1">About the Book &rarr;</a>
+                </div>
+            </div>
+            <figure class="lg:col-span-6 reveal active">
+                <img src="/assets/images/goodasset.png" alt="Zibrah Code available in ebook and print, by Ibrahim Ngugi" class="w-full h-auto" loading="lazy">
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- 7. THE AUTHOR -->
 <section id="author" class="py-16 md:py-32 bg-brand-gray-50 border-y border-brand-gray-100">
     <div class="section-container">
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -190,7 +210,7 @@ $latestEpisode = getDb()->query(
     </div>
 </section>
 
-<!-- 7. LATEST: BLOG + PODCAST -->
+<!-- 8. LATEST: BLOG + PODCAST -->
 <section class="py-16 md:py-32 bg-white">
     <div class="section-container">
         <div class="grid lg:grid-cols-5 gap-16">
@@ -233,26 +253,6 @@ $latestEpisode = getDb()->query(
                     </a>
                 <?php endif; ?>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- 8. GET THE BOOK -->
-<section class="py-16 md:py-32 bg-brand-black text-white overflow-hidden">
-    <div class="section-container">
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div class="lg:col-span-6 reveal active">
-                <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Get the Book</h4>
-                <h2 class="text-4xl sm:text-5xl serif font-black tracking-tight leading-tight mb-6">Available now in print and on Kindle.</h2>
-                <p class="text-lg text-white/60 font-light leading-relaxed max-w-xl mb-10">A foundational text for leaders, thinkers and strategists. Sold through Amazon in both formats.</p>
-                <div class="flex flex-wrap items-center gap-6">
-                    <a href="<?php echo e(AMAZON_URL); ?>" target="_blank" rel="noopener" class="btn-invert">Buy on Amazon</a>
-                    <a href="/book.php" class="text-xs font-bold uppercase tracking-widest text-white/60 hover:text-brand-gold transition-colors border-b border-white/30 hover:border-brand-gold pb-1">About the Book &rarr;</a>
-                </div>
-            </div>
-            <figure class="lg:col-span-6 reveal active">
-                <img src="/assets/images/goodasset.png" alt="Zibrah Code available in ebook and print, by Ibrahim Ngugi" class="w-full h-auto" loading="lazy">
-            </figure>
         </div>
     </div>
 </section>
