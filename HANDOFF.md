@@ -1,31 +1,25 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Book and author pages rebuilt AGAIN as full sectioned pages on the framework
-page's system. Owner rejected the two-column "brief" versions ("those are not pages, those
-are briefs; look at framework, it has different sections, do the same").
+2026-09-16: Home page sections restyled on the framework/book/author section system (owner:
+"home don't look good", likes book and author).
 
 ## Status
 Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] Both pages copy framework.php's structure and classes exactly: grey-50 page-header band
-      (eyebrow, serif h1 sentence, intro, two CTAs, figure-in-white-panel with caption) then
-      full-width sections alternating white / black / white / grey-50, each with
-      eyebrow -> h2 -> body and the 2/5 : 3/5 grid or the sticky 4/12 : 8/12 grid.
-- [x] Book: header, The Argument, Inside the Book (black, five axioms with lead sentences),
-      Who It's For (axiom-item columns), The Author (photo + bio + "Also by"), Get the Book
-      (CTA + facts table).
-- [x] Author: header, Biography (3 paragraphs + education/affiliations/based-in list),
-      In Numbers (black stat band), The Journey, Ventures, Areas of Engagement, Books (two
-      cards + closing quote). All content from the previous version kept.
-- [x] Verified 390/1280: no overflow, no heading leaves its column. Lazy cover images in the
-      Books cards load on scroll (headless full-page capture fires before them; not a bug).
-
-## Lesson
-Owner's objection to the earlier hero was its LOOK (8xl uppercase, ghost back cover, gold
-frame, chips), not the presence of a page header. The framework-style header is accepted.
-Do not collapse sub-pages into a single two-column layout.
+- [x] Hero kept (ZIBRAH CODE wordmark, subtitle, tagline, CTAs) but tidied: straight cover with
+      shadow, no rotated ghost back cover, no gold ring; CTAs use the shared button + link pair.
+- [x] Sections after the hero rebuilt with the shared classes (eyebrow 0.6em, serif h2 4xl/5xl
+      font-black, body text-lg gray-600 font-light, 2/5:3/5 and 12-col grids, white/black/grey-50):
+      What is Zibrah Code (grey) · Reading the Angle (white, angle-cards) · Five axioms (black,
+      all five titles from includes/axioms.php linking to framework.php#axiom-N) · The Book (white,
+      book.png) · The Author (grey, portrait in white panel) · Latest blog + podcast (white, one
+      section) · Get the Book (black, goodasset.png) · Newsletter (grey, name+email form,
+      source=homepage_form kept).
+- [x] Removed: giant italic statements, 8xl uppercase teaser headings, 150%-width images,
+      zebra wedges, pattern divider, the dead "Details" button (modalBook), "Institutional
+      Correspondence" copy. Height 10083 -> 7295 at 1280. Verified 390/1280: no overflow.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -46,6 +40,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Home page sections restyled on the shared section system; hero tidied.
 - 2026-09-16: Book + author pages rebuilt as sectioned pages on the framework system (after two rejected one-column 'brief' versions).
 - 2026-09-16: Fonts: Poppins (cover face) for brand/headings/UI + Source Serif 4 for post bodies only; Inter dropped.
 - 2026-09-16: Footer restyled on its original structure (owner rejected the colophon layout).
