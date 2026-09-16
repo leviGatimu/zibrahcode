@@ -29,11 +29,11 @@ $adminNavItems = [
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <!-- Fonts must match includes/header.php exactly. The post editor's preview
-         renders real article markup, and the blog's body copy is EB Garamond at
+         renders real article markup, and the blog's body copy is the serif at
          weight 400 with italics for blockquotes. Loading only 600/700 here left
          the browser synthesising those faces, which is why the preview never
          looked like the published page. -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@200..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // Mirrors the public theme in includes/header.php. The admin previously
@@ -61,10 +61,11 @@ $adminNavItems = [
                             slate: '#525252'
                         }
                     },
+                    // Two typefaces only; defined once in style.css (:root)
                     fontFamily: {
-                        serif: ['"EB Garamond"', 'serif'],
-                        display: ['"Playfair Display"', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
+                        serif: ['var(--font-serif)'],
+                        display: ['var(--font-serif)'],
+                        sans: ['var(--font-sans)'],
                     }
                 }
             }
@@ -74,7 +75,7 @@ $adminNavItems = [
     <link rel="stylesheet" href="/assets/css/style.css?v=<?php echo ASSETS_VERSION; ?>">
     <meta name="csrf-token" content="<?php echo e(csrfToken()); ?>">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: var(--font-sans); }
         [x-cloak] { display: none !important; }
         table { min-width: 640px; }
     </style>

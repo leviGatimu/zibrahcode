@@ -1,20 +1,26 @@
 /* Zibrah Code — shared design system (black / white / gold) */
 
+/* The site's two typefaces. Change them here and nowhere else. */
+:root {
+    --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
 html {
     overflow-x: hidden;
 }
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
     background-color: #FFFFFF;
     color: #1A1A1A;
 }
 
-h1, h2, h3, h4, h5, .serif {
-    font-family: 'EB Garamond', serif;
-}
-
-.font-display {
-    font-family: 'Playfair Display', serif;
+/* The serif is loaded at 400-700 only, so font-black headings render as Bold:
+   the heavier and the large-optical-size cuts are the high-contrast look this
+   site moved away from. The text cut (opsz 24) is used at every size. */
+h1, h2, h3, h4, h5, .serif, .font-display {
+    font-family: var(--font-serif);
+    font-variation-settings: 'opsz' 24;
 }
 
 .section-container {
@@ -269,7 +275,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Editorial drop cap — used on long-form narrative copy (e.g. About page bio) */
 .drop-cap::first-letter {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-serif);
     float: left;
     font-size: 5.5rem;
     line-height: 0.75;
@@ -306,7 +312,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
 }
 .article-body h2, .article-body h3 {
-    font-family: 'EB Garamond', serif;
+    font-family: var(--font-serif);
     font-weight: 700;
     color: #1A1A1A;
     line-height: 1.2;

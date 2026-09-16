@@ -39,7 +39,7 @@ require __DIR__ . '/includes/header.php';
 
 <style>
 .draw-404 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-serif);
     font-size: 150px;
     font-weight: 900;
     fill: none;

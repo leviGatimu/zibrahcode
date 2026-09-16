@@ -1,22 +1,25 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Footer, second pass. Owner rejected the three-tier colophon (f52cd99) and asked
-for the ORIGINAL structure and content with a professional UI. Restored: brand block
-(wordmark, quote, newsletter, socials) | Explore | Company (incl. Admin link) | bottom bar
-(copyright "Zibrah Research Collective" / tagline / author name).
+2026-09-16: Typography reduced to exactly two typefaces. Owner hated EB Garamond italic
+and Playfair Display Black ("we are using many fonts, I want 2 professional fonts").
 
 ## Status
 Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] Styling: gold hairline on top, quote as a gold-ruled blockquote, boxed input + solid
-      gold Join button, bordered square social icons, sans small-caps column headings (h5
-      needed font-sans; global rule makes h5 serif), readable bottom bar (text-xs white/50).
-- [x] Decorative rings dropped; tracking-[0.4em] gone except the wordmark (0.3em).
-- [x] Kept from the colophon pass: source=footer hidden field, sr-only email label.
-- [x] Phone: link columns sit side by side (grid-cols-2); brand spans both. Verified at 390
-      and 1280, no overflow, last line clears the tab bar by 43px.
+- [x] Source Serif 4 (headings, wordmark, quotes, article body) + Inter (everything else).
+      EB Garamond and Playfair Display removed everywhere (public + admin + 404).
+- [x] Single source of truth: `--font-serif` / `--font-sans` in style.css :root; Tailwind
+      fontFamily (header.php, admin-header.php, admin/login.php, admin/setup.php) and every
+      CSS rule reference the variables. `font-display` is now an alias of the serif.
+- [x] Serif loaded at wght 400-700 only, so the 145 `font-black` usages render as Bold, and
+      headings use `font-variation-settings: 'opsz' 24` (text cut). Both on purpose: the
+      900/display cut recreated the high-contrast Playfair look the owner rejected.
+- [x] ASSETS_VERSION 1.0.38. Verified headless: only 'Inter' and 'Source Serif 4' computed on
+      the home page; hero, footer, article body and admin login checked visually.
+- [ ] Pre-existing, out of scope: .htaccess has no `ErrorDocument 404 /404.php`, so unknown
+      URLs show Apache's bare 404 instead of 404.php.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -37,6 +40,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Fonts cut to Source Serif 4 + Inter, declared once as CSS variables.
 - 2026-09-16: Footer restyled on its original structure (owner rejected the colophon layout).
 - 2026-09-16: Dash purge across public copy + migration 034; home section separator lines removed.
 - 2026-09-15: Home page rebuilt on one section system (eyebrow → serif h2 4xl/5xl → light body → CTA; alternating white/gray-50/black). Removed dead cruft: undefined pattern-bg/zebra-wedge classes, the 'Details' button whose modal never existed (modalBook state dropped from header.php). Angle devices trimmed back to the framework + home cards only (footer strip, page-header marks, book strip removed; angleScale() deleted).

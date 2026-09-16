@@ -45,11 +45,11 @@ $pageTitle = 'Admin Login | Zibrah Code';
     <title><?php echo e($pageTitle); ?></title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&family=EB+Garamond:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@200..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { brand: { black: '#1A1A1A', gold: '#B89441', 'gold-light': '#D4B876' } }, fontFamily: { display: ['"Playfair Display"', 'serif'], serif: ['"EB Garamond"', 'serif'], sans: ['Inter', 'sans-serif'] } } }
+            theme: { extend: { colors: { brand: { black: '#1A1A1A', gold: '#B89441', 'gold-light': '#D4B876' } }, fontFamily: { display: ['var(--font-serif)'], serif: ['var(--font-serif)'], sans: ['var(--font-sans)'] } } }
         }
     </script>
     <link rel="stylesheet" href="/assets/css/style.css?v=<?php echo ASSETS_VERSION; ?>">
