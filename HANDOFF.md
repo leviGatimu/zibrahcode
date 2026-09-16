@@ -4,7 +4,7 @@
 2026-09-16: Blog listing (blog.php) restyled on the site's section system.
 
 ## Status
-Solved, uncommitted. Awaiting go-ahead to commit/push.
+Solved. Committed and pushed; production auto-deploys from `main`.
 
 ## Progress
 - [x] Page header band (eyebrow "Insights", serif h1, intro) with the search form in the
