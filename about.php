@@ -40,61 +40,87 @@ $engagements = [
     ['title' => 'Youth Mentorship', 'body' => 'Guiding young professionals and entrepreneurs through the LTD-U dialogue-based mentorship framework.'],
 ];
 
+$books = [
+    ['title' => 'The 13th Professional', 'sub' => 'A blueprint for values-based professional excellence.', 'image' => '/assets/images/profesional.jpg', 'href' => 'https://www.amazon.com/13TH-PROFESSIONAL-MINDSETS-Professional-Organizational-ebook/dp/B0D2WQCMHJ/', 'external' => true],
+    ['title' => 'Zibrah Code', 'sub' => 'The Geometry of Truth and Wisdom Model in Leadership, Judgment, and Conflict.', 'image' => '/assets/images/Front page.png', 'href' => '/book.php', 'external' => false],
+];
+
+// Facts are rendered once and placed twice: under the portrait on desktop,
+// at the end of the page on phones (so the name follows the portrait there).
+ob_start();
+?>
+<dl class="border-t border-brand-gray-200">
+    <div class="grid grid-cols-[7rem_1fr] gap-4 py-3 border-b border-brand-gray-100 text-sm">
+        <dt class="text-brand-gray-500">Based in</dt>
+        <dd class="text-brand-black">Kigali, Rwanda</dd>
+    </div>
+    <div class="grid grid-cols-[7rem_1fr] gap-4 py-3 border-b border-brand-gray-100 text-sm">
+        <dt class="text-brand-gray-500">Education</dt>
+        <dd class="text-brand-black">B.Comm (Finance), First Class Honors<br><span class="text-brand-gray-500">JKUAT &amp; Strathmore University</span></dd>
+    </div>
+    <div class="grid grid-cols-[7rem_1fr] gap-4 py-3 border-b border-brand-gray-100 text-sm">
+        <dt class="text-brand-gray-500">Author of</dt>
+        <dd class="text-brand-black">The 13th Professional<br>Zibrah Code&trade;</dd>
+    </div>
+    <div class="grid grid-cols-[7rem_1fr] gap-4 py-3 border-b border-brand-gray-100 text-sm">
+        <dt class="text-brand-gray-500">Affiliations</dt>
+        <dd class="text-brand-black">JKUAT &middot; Strathmore University &middot; ICPAK &middot; ICPAR &middot; SoW!SE Africa</dd>
+    </div>
+    <div class="grid grid-cols-[7rem_1fr] gap-4 py-3 border-b border-brand-gray-100 text-sm">
+        <dt class="text-brand-gray-500">Portfolio</dt>
+        <dd><a href="<?php echo e(PORTFOLIO_URL); ?>/" target="_blank" rel="noopener" class="text-brand-black underline decoration-brand-gray-300 hover:decoration-brand-gold">ibrahim.zibrahcode.com</a></dd>
+    </div>
+</dl>
+<?php
+$factsHtml = ob_get_clean();
+
 require __DIR__ . '/includes/header.php';
 ?>
 
-<!-- FULL-BLEED PHOTO HERO — mobile only -->
-<header class="lg:hidden relative h-[65vh] min-h-[440px] w-full overflow-hidden mt-0">
-    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu, Author of Zibrah Code"
-        class="absolute inset-0 w-full h-full object-cover object-top" fetchpriority="high">
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
-    <div class="absolute inset-0 bg-brand-black/20"></div>
-    <div class="absolute bottom-0 left-0 right-0 section-container pb-14 reveal active">
-        <p class="text-brand-gold font-bold text-xs tracking-[0.5em] uppercase mb-6">Author &middot; Finance Professional &middot; Social Entrepreneur</p>
-        <h1 class="text-6xl sm:text-7xl font-display font-black text-white uppercase tracking-tighter leading-[0.85]">Ibrahim<br>Ngugi.</h1>
-        <p class="text-white/60 text-xs uppercase tracking-[0.3em] mt-6">Kigali, Rwanda</p>
-    </div>
-</header>
+<main class="section-container pt-28 lg:pt-36 pb-20 lg:pb-32">
+    <nav aria-label="Breadcrumb" class="text-xs text-brand-gray-500 mb-10 lg:mb-14">
+        <a href="/index.php" class="hover:text-brand-black transition-colors">Home</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-brand-black">The Author</span>
+    </nav>
 
-<!-- BOXED PHOTO HEADER — desktop only, sits below the nav, no overlap -->
-<div class="hidden lg:block section-container pt-28 md:pt-40 pb-16">
-    <div class="grid lg:grid-cols-5 gap-16 items-center">
-        <div class="lg:col-span-3 reveal active">
-            <p class="text-brand-gold font-bold text-xs tracking-[0.5em] uppercase mb-6">Author &middot; Finance Professional &middot; Social Entrepreneur</p>
-            <h1 class="text-7xl xl:text-8xl font-display font-black text-brand-black uppercase tracking-tighter leading-[0.9]">Ibrahim<br>Ngugi<span class="text-brand-gold">.</span></h1>
-            <p class="text-xl text-brand-gray-600 font-light leading-relaxed max-w-xl mt-10">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+
+        <!-- Portrait + facts -->
+        <aside class="lg:col-span-4 lg:sticky lg:top-28">
+            <div class="aspect-[4/5] overflow-hidden max-w-[300px] sm:max-w-[360px] lg:max-w-none mx-auto">
+                <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu, Author of Zibrah Code"
+                    class="w-full h-full object-cover object-top" fetchpriority="high">
+            </div>
+            <div class="hidden lg:block mt-10"><?php echo $factsHtml; ?></div>
+        </aside>
+
+        <!-- Everything about the author, in reading order -->
+        <article class="lg:col-span-8 max-w-3xl">
+            <h1 class="text-4xl sm:text-5xl font-bold text-brand-black leading-tight">Ibrahim Ngugi Gatimu<span class="text-brand-gold">.</span></h1>
+            <p class="text-sm text-brand-gray-500 mt-3">Author &middot; Finance Professional &middot; Social Entrepreneur</p>
+            <p class="text-xl sm:text-2xl text-brand-gray-700 font-light leading-snug mt-6">
                 Finance professional turned author and mentor, helping African leaders and entrepreneurs
                 build careers and institutions rooted in unshakeable values.
             </p>
-            <div class="flex flex-wrap items-center gap-6 mt-10">
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-4 mt-8">
                 <a href="/inquire.php" class="btn-premium">Get in Touch</a>
-                <a href="<?php echo e(PORTFOLIO_URL); ?>/" target="_blank" rel="noopener" class="text-xs font-bold uppercase tracking-widest text-brand-gray-600 hover:text-brand-gold transition-colors border-b border-brand-gray-300 hover:border-brand-gold pb-1">Full Portfolio &rarr;</a>
+                <a href="/book.php" class="text-sm font-semibold text-brand-black hover:text-brand-gold transition-colors">The book &rarr;</a>
             </div>
-        </div>
-        <div class="lg:col-span-2 reveal active">
-            <div class="relative">
-                <div class="aspect-[4/5] overflow-hidden shadow-2xl">
-                    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu, Author of Zibrah Code"
-                        class="w-full h-full object-cover object-top" fetchpriority="high">
-                </div>
-                <div class="absolute -bottom-6 -left-6 bg-brand-black text-white px-6 py-4 shadow-xl">
-                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold">Based in</p>
-                    <p class="text-sm font-bold uppercase tracking-widest mt-1">Kigali, Rwanda</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- BIOGRAPHY + QUICK FACTS -->
-<section class="py-16 md:py-32 bg-white">
-    <div class="section-container">
-        <div class="grid lg:grid-cols-5 gap-16 items-start">
-            <div class="lg:col-span-3 reveal active">
-                <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Biography</h4>
-                <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-10">A legacy of principled leadership.</h2>
-                <div class="space-y-8 text-lg sm:text-xl text-brand-gray-700 font-light leading-relaxed">
-                    <p class="drop-cap">
+            <dl class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-14 pt-10 border-t border-brand-gray-200">
+                <?php foreach ($stats as $stat): ?>
+                    <div>
+                        <dd class="text-3xl sm:text-4xl font-bold text-brand-black leading-none"><?php echo $stat['value']; ?></dd>
+                        <dt class="text-sm text-brand-gray-500 mt-2 leading-snug"><?php echo $stat['label']; ?></dt>
+                    </div>
+                <?php endforeach; ?>
+            </dl>
+
+            <section class="mt-12 pt-10 border-t border-brand-gray-200">
+                <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold mb-5">Biography</h2>
+                <div class="space-y-6 text-lg text-brand-gray-700 font-light leading-relaxed">
+                    <p>
                         Ibrahim Ngugi Gatimu is a finance professional, author and social entrepreneur with over two
                         decades of leadership experience across East and Central Africa, including Ethiopia and the
                         DR Congo. A graduate of Strathmore University and holder of a First Class Honors degree from
@@ -114,177 +140,80 @@ require __DIR__ . '/includes/header.php';
                         finding the gap between what a system claims and what it actually does.
                     </p>
                 </div>
-            </div>
+            </section>
 
-            <aside class="lg:col-span-2 reveal active">
-                <div class="bg-brand-gray-50 border border-brand-gray-200 p-8 md:p-10 space-y-8">
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-2">Education</p>
-                        <p class="serif text-lg font-bold text-brand-black">B.Comm (Finance), First Class Honors</p>
-                        <p class="text-sm text-brand-gray-600">JKUAT &amp; Strathmore University</p>
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-2">Author of</p>
-                        <p class="serif text-lg font-bold text-brand-black">The 13th Professional &amp; ZIBRAH CODE&trade;</p>
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-2">Core pillars</p>
-                        <p class="serif text-lg font-bold text-brand-black">Values-Based Leadership &amp; Entrepreneurial Empowerment</p>
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Affiliated &amp; certified</p>
-                        <ul class="flex flex-wrap gap-2">
-                            <?php foreach (['JKUAT', 'Strathmore University', 'ICPAK', 'ICPAR', 'SoW!SE Africa'] as $affiliation): ?>
-                                <li class="text-[11px] font-bold uppercase tracking-widest text-brand-black bg-white border border-brand-gray-200 px-3 py-2"><?php echo e($affiliation); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <blockquote class="border-l-4 border-brand-gold pl-6 pt-2">
-                        <p class="serif italic text-xl text-brand-black leading-snug">&ldquo;Nobody is born a failure.&rdquo;</p>
-                        <cite class="not-italic text-[10px] uppercase tracking-[0.3em] text-brand-gray-500 block mt-3">Core philosophy</cite>
-                    </blockquote>
-                </div>
-            </aside>
-        </div>
-    </div>
-</section>
+            <section class="mt-12 pt-10 border-t border-brand-gray-200">
+                <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold mb-6">The journey</h2>
+                <ol class="divide-y divide-brand-gray-100">
+                    <?php foreach ($journey as $step): ?>
+                        <li class="grid sm:grid-cols-[7rem_1fr] gap-x-4 gap-y-1 py-4 first:pt-0">
+                            <span class="text-sm text-brand-gray-500 pt-0.5"><?php echo $step['when']; ?></span>
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-black"><?php echo $step['title']; ?></h3>
+                                <p class="text-brand-gray-600 font-light leading-relaxed mt-0.5"><?php echo $step['body']; ?></p>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
+                <a href="<?php echo e(PORTFOLIO_URL); ?>/journey.php" target="_blank" rel="noopener" class="inline-block mt-6 text-sm font-semibold text-brand-black hover:text-brand-gold transition-colors">Full journey &rarr;</a>
+            </section>
 
-<!-- STAT STRIP -->
-<section class="py-14 md:py-20 bg-brand-black text-white">
-    <div class="section-container grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-        <?php foreach ($stats as $stat): ?>
-            <div class="reveal active">
-                <p class="text-5xl md:text-6xl font-display font-black text-brand-gold mb-3"><?php echo $stat['value']; ?></p>
-                <p class="text-xs uppercase tracking-[0.3em] text-white/50 leading-relaxed"><?php echo $stat['label']; ?></p>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</section>
+            <section class="mt-12 pt-10 border-t border-brand-gray-200">
+                <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold mb-6">Organizations he has built</h2>
+                <ul class="divide-y divide-brand-gray-100">
+                    <?php foreach ($ventures as $venture): ?>
+                        <li class="py-5 first:pt-0">
+                            <p class="text-xs text-brand-gray-500 mb-1"><?php echo e($venture['kind']); ?></p>
+                            <h3 class="text-lg font-semibold">
+                                <a href="<?php echo e($venture['href']); ?>" <?php echo $venture['external'] ? 'target="_blank" rel="noopener"' : ''; ?> class="text-brand-black hover:text-brand-gold transition-colors"><?php echo e($venture['name']); ?> &rarr;</a>
+                            </h3>
+                            <p class="text-brand-gray-600 font-light leading-relaxed mt-1"><?php echo $venture['body']; ?></p>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </section>
 
-<!-- JOURNEY TIMELINE -->
-<section class="py-16 md:py-32 bg-white border-t border-brand-gray-100">
-    <div class="section-container">
-        <div class="grid lg:grid-cols-5 gap-16">
-            <div class="lg:col-span-2 reveal active">
-                <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">The Journey</h4>
-                <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Milestones along the way.</h2>
-                <p class="text-lg text-brand-gray-600 font-light leading-relaxed max-w-md">From academic distinction to founding organizations that shape African leadership.</p>
-                <a href="<?php echo e(PORTFOLIO_URL); ?>/journey.php" target="_blank" rel="noopener" class="inline-block mt-8 text-xs font-bold uppercase tracking-widest text-brand-gray-600 hover:text-brand-gold transition-colors border-b border-brand-gray-300 hover:border-brand-gold pb-1">Full journey &rarr;</a>
-            </div>
-            <ol class="lg:col-span-3 border-l border-brand-gray-200 reveal active">
-                <?php foreach ($journey as $i => $step): ?>
-                    <li class="relative pl-10 <?php echo $i < count($journey) - 1 ? 'pb-12' : ''; ?>">
-                        <span class="absolute -left-[5px] top-2 w-[9px] h-[9px] bg-brand-gold" aria-hidden="true"></span>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-2"><?php echo $step['when']; ?></p>
-                        <h3 class="serif text-2xl font-bold text-brand-black mb-2"><?php echo $step['title']; ?></h3>
-                        <p class="text-brand-gray-600 font-light leading-relaxed"><?php echo $step['body']; ?></p>
-                    </li>
-                <?php endforeach; ?>
-            </ol>
-        </div>
-    </div>
-</section>
+            <section class="mt-12 pt-10 border-t border-brand-gray-200">
+                <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold mb-6">Areas of engagement</h2>
+                <ul class="grid sm:grid-cols-2 gap-x-10 gap-y-6">
+                    <?php foreach ($engagements as $item): ?>
+                        <li>
+                            <h3 class="text-lg font-semibold text-brand-black"><?php echo $item['title']; ?></h3>
+                            <p class="text-brand-gray-600 font-light leading-relaxed mt-1"><?php echo $item['body']; ?></p>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <a href="/inquire.php" class="inline-block mt-8 text-sm font-semibold text-brand-black hover:text-brand-gold transition-colors">Book a time &rarr;</a>
+            </section>
 
-<!-- VENTURES -->
-<section class="py-16 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
-    <div class="section-container">
-        <div class="max-w-2xl mb-10 md:mb-16 reveal active">
-            <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Ventures</h4>
-            <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Organizations he has built.</h2>
-            <p class="text-lg text-brand-gray-600 font-light leading-relaxed">Driving the transformation of African leadership across the non-profit and professional sectors.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <?php foreach ($ventures as $venture): ?>
-                <a href="<?php echo e($venture['href']); ?>" <?php echo $venture['external'] ? 'target="_blank" rel="noopener"' : ''; ?>
-                   class="card group bg-white p-10 flex flex-col reveal active">
-                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-6"><?php echo e($venture['kind']); ?></p>
-                    <h3 class="serif text-3xl font-black text-brand-black mb-4 group-hover:text-brand-gold transition-colors"><?php echo e($venture['name']); ?></h3>
-                    <p class="text-brand-gray-600 font-light leading-relaxed flex-grow"><?php echo $venture['body']; ?></p>
-                    <span class="inline-block mt-8 text-xs font-bold uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">Explore &rarr;</span>
-                </a>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
+            <section class="mt-12 pt-10 border-t border-brand-gray-200">
+                <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold mb-6">Books</h2>
+                <ul class="space-y-6">
+                    <?php foreach ($books as $book): ?>
+                        <li>
+                            <a href="<?php echo e($book['href']); ?>" <?php echo $book['external'] ? 'target="_blank" rel="noopener"' : ''; ?> class="group flex gap-6 items-center">
+                                <img src="<?php echo e($book['image']); ?>" alt="<?php echo e($book['title']); ?> cover" class="w-16 h-auto shadow-md flex-shrink-0" loading="lazy">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-brand-black group-hover:text-brand-gold transition-colors"><?php echo e($book['title']); ?></h3>
+                                    <p class="text-brand-gray-600 font-light leading-relaxed mt-0.5"><?php echo e($book['sub']); ?></p>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </section>
 
-<!-- AREAS OF ENGAGEMENT -->
-<section class="py-16 md:py-32 bg-white border-t border-brand-gray-100">
-    <div class="section-container">
-        <div class="grid lg:grid-cols-5 gap-16">
-            <div class="lg:col-span-2 reveal active">
-                <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Expertise</h4>
-                <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Areas of engagement.</h2>
-                <p class="text-lg text-brand-gray-600 font-light leading-relaxed max-w-md mb-10">Available for leadership consulting, speaking, financial advisory and mentorship.</p>
-                <a href="/inquire.php" class="btn-premium">Book a Time</a>
-            </div>
-            <div class="lg:col-span-3 grid sm:grid-cols-2 gap-x-12 gap-y-10 reveal active">
-                <?php foreach ($engagements as $i => $item): ?>
-                    <div class="axiom-item">
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gold mb-3"><?php echo sprintf('%02d', $i + 1); ?></p>
-                        <h3 class="serif text-2xl font-bold text-brand-black mb-3"><?php echo $item['title']; ?></h3>
-                        <p class="text-brand-gray-600 font-light leading-relaxed"><?php echo $item['body']; ?></p>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-</section>
+            <blockquote class="mt-12 pt-10 border-t border-brand-gray-200">
+                <p class="text-xl sm:text-2xl text-brand-black font-light leading-snug">&ldquo;Structure is not the whole of wisdom. But without it, wisdom has nowhere to stand.&rdquo;</p>
+                <cite class="not-italic text-sm text-brand-gray-500 block mt-3">Ibrahim Ngugi Gatimu</cite>
+            </blockquote>
 
-<!-- AUTHOR PORTFOLIO -->
-<section class="py-16 md:py-32 bg-brand-gray-50 border-t border-brand-gray-100">
-    <div class="section-container">
-        <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto reveal active">
-            <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">The Author</h4>
-            <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight">Two frameworks.</h2>
-            <p class="text-lg text-brand-gray-600 font-light leading-relaxed mt-6">Two decades in the making.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
-            <div class="group">
-                <div class="relative">
-                    <div class="aspect-[3/4.5] bg-brand-black relative overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-12 transition-all duration-700 group-hover:scale-[1.03]">
-                        <img src="/assets/images/profesional.jpg" alt="The 13th Professional by Ibrahim Ngugi" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-                        <div class="absolute bottom-0 left-0 w-full h-2 bg-brand-gold"></div>
-                        <div class="absolute inset-0 bg-brand-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                            <a href="https://www.amazon.com/13TH-PROFESSIONAL-MINDSETS-Professional-Organizational-ebook/dp/B0D2WQCMHJ/" target="_blank" rel="noopener"
-                                class="border border-white text-white px-8 py-3 text-[10px] uppercase tracking-widest hover:bg-white hover:text-brand-black transition-all">View on Amazon</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 text-center">
-                    <h5 class="text-2xl serif font-bold text-brand-black mb-1">The 13th Professional</h5>
-                    <p class="text-sm text-brand-gold uppercase tracking-widest font-semibold mb-2">Values-Based Leadership</p>
-                    <p class="text-sm text-brand-gray-600 font-bold italic">A blueprint for values-based professional excellence.</p>
-                </div>
-            </div>
-            <div class="group">
-                <div class="relative">
-                    <div class="aspect-[3/4.5] relative overflow-hidden shadow-2xl flex items-center justify-center p-6 md:p-12 transition-all duration-700 group-hover:scale-[1.03] border-4 border-white">
-                        <img src="/assets/images/Front page.png" alt="Zibrah Code: The Geometry of Truth and Wisdom" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-                        <div class="absolute inset-0 bg-brand-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                            <a href="/book.php" class="border border-white text-white px-8 py-3 text-[10px] uppercase tracking-widest hover:bg-white hover:text-brand-black transition-all">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 text-center">
-                    <h5 class="text-2xl serif font-bold text-brand-black mb-1">The Zibrah Code</h5>
-                    <p class="text-sm text-brand-gold uppercase tracking-widest font-semibold mb-2">The Geometry of Truth and Wisdom</p>
-                    <p class="text-sm text-brand-gray-600 font-bold italic">Angles show what words cannot tell.</p>
-                </div>
-            </div>
-        </div>
+            <section class="lg:hidden mt-12 pt-10 border-t border-brand-gray-200">
+                <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-brand-gold mb-6">At a glance</h2>
+                <?php echo $factsHtml; ?>
+            </section>
+        </article>
     </div>
-</section>
-
-<!-- CTA -->
-<section class="py-16 md:py-24 bg-white text-center border-t border-brand-gray-100">
-    <div class="section-container reveal active">
-        <p class="text-3xl md:text-4xl serif italic text-brand-black leading-snug max-w-2xl mx-auto mb-4">Structure is not the whole of wisdom. But without it, wisdom has nowhere to stand.</p>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-12">Ibrahim Ngugi Gatimu</p>
-        <div class="flex flex-wrap justify-center items-center gap-6">
-            <a href="/framework.php" class="btn-premium">Explore the Framework</a>
-            <a href="<?php echo e(PORTFOLIO_URL); ?>/" target="_blank" rel="noopener" class="text-xs font-bold uppercase tracking-widest text-brand-gray-600 hover:text-brand-gold transition-colors border-b border-brand-gray-300 hover:border-brand-gold pb-1">Visit ibrahim.zibrahcode.com &rarr;</a>
-        </div>
-    </div>
-</section>
+</main>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>

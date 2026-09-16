@@ -1,22 +1,22 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Book page rebuilt as a product page (owner: a hero on a sub-page makes no
-sense, too much info, style/structure it better).
+2026-09-16: Author page rebuilt on the same product-page pattern as the book page (owner
+likes the content, rejected the hero and the section-band structure).
 
 ## Status
 Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] No hero, no alternating bands, no repeated CTA/pull quote. One layout: breadcrumb, then
-      cover (sticky on desktop) + facts on the left, and on the right in reading order: title,
-      subtitle, author, Buy on Amazon, About the book (one paragraph), Inside the book (five
-      axioms, lead sentence each), Who it's for (three lines), About the author.
-- [x] Facts (Formats/Language/Subjects/Available at + "Also by the author") are rendered once
-      via ob_start into $factsHtml and placed under the cover on lg, after the author on phones
-      so the title follows the cover there.
-- [x] SEO head (Book + Breadcrumb JSON-LD, meta, canonical) unchanged. Page height 5634 -> ~3200
-      at 1280. Verified at 390/1280: no overflow.
+- [x] No hero (both the mobile full-bleed and desktop boxed variants removed). Breadcrumb,
+      then sticky portrait + facts (Based in, Education, Author of, Affiliations, Portfolio)
+      on the left; right column in reading order: name, role, intro, Get in Touch, four stats,
+      Biography (same three paragraphs), Journey, Organizations, Areas of engagement, Books
+      (two thumbnail rows instead of hover cards), closing quote.
+- [x] All content kept ($stats/$journey/$ventures/$engagements untouched; books moved to a
+      $books array). Facts rendered once via ob_start; after the quote on phones.
+- [x] SEO head (ProfilePage + Breadcrumb JSON-LD) unchanged. Height 6894 -> 4140 at 1280.
+      Verified 390/1280: no overflow.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -37,6 +37,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Author page rebuilt on the product-page pattern (no hero).
 - 2026-09-16: Book page rebuilt as a compact product page (no hero).
 - 2026-09-16: Fonts: Poppins (cover face) for brand/headings/UI + Source Serif 4 for post bodies only; Inter dropped.
 - 2026-09-16: Footer restyled on its original structure (owner rejected the colophon layout).
