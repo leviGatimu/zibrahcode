@@ -1,25 +1,24 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Typography reduced to exactly two typefaces. Owner hated EB Garamond italic
-and Playfair Display Black ("we are using many fonts, I want 2 professional fonts").
+2026-09-16: Owner wants the book cover's typeface on the site. Identified as Poppins
+("ZIBRAH" Bold / "CODE" Light / subtitle Regular).
 
 ## Status
 Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] Source Serif 4 (headings, wordmark, quotes, article body) + Inter (everything else).
-      EB Garamond and Playfair Display removed everywhere (public + admin + 404).
-- [x] Single source of truth: `--font-serif` / `--font-sans` in style.css :root; Tailwind
-      fontFamily (header.php, admin-header.php, admin/login.php, admin/setup.php) and every
-      CSS rule reference the variables. `font-display` is now an alias of the serif.
-- [x] Serif loaded at wght 400-700 only, so the 145 `font-black` usages render as Bold, and
-      headings use `font-variation-settings: 'opsz' 24` (text cut). Both on purpose: the
-      900/display cut recreated the high-contrast Playfair look the owner rejected.
-- [x] ASSETS_VERSION 1.0.38. Verified headless: only 'Inter' and 'Source Serif 4' computed on
-      the home page; hero, footer, article body and admin login checked visually.
-- [ ] Pre-existing, out of scope: .htaccess has no `ErrorDocument 404 /404.php`, so unknown
-      URLs show Apache's bare 404 instead of 404.php.
+- [x] --font-sans = Poppins (body, UI, every heading incl. `.serif`/`.font-display`);
+      --font-serif = Source Serif 4, now used ONLY by `.article-body` (post reading), with
+      in-article h2/h3 back in Poppins. Inter removed. Still exactly two fonts.
+- [x] Poppins loaded 200-700 (+ italic 300/400/700) so font-black renders as Bold, matching
+      the cover weight. Italic dropped from the four big display headings (cover is upright;
+      bold italic was being synthesised).
+- [x] Wordmarks (hero, desktop nav, mobile nav, footer) use the cover's split: ZIBRAH bold,
+      CODE light. Hero subtitle upright. "Key Statements." resized 8xl->6xl (Poppins is
+      wider; it collided with the right column). ASSETS_VERSION 1.0.39.
+- [x] Verified headless at 390/1280 on all public pages: no overflow, no h1/h2 leaving its
+      column; only Poppins (+ serif on posts) computed.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -40,7 +39,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
-- 2026-09-16: Fonts cut to Source Serif 4 + Inter, declared once as CSS variables.
+- 2026-09-16: Fonts: Poppins (cover face) for brand/headings/UI + Source Serif 4 for post bodies only; Inter dropped.
 - 2026-09-16: Footer restyled on its original structure (owner rejected the colophon layout).
 - 2026-09-16: Dash purge across public copy + migration 034; home section separator lines removed.
 - 2026-09-15: Home page rebuilt on one section system (eyebrow → serif h2 4xl/5xl → light body → CTA; alternating white/gray-50/black). Removed dead cruft: undefined pattern-bg/zebra-wedge classes, the 'Details' button whose modal never existed (modalBook state dropped from header.php). Angle devices trimmed back to the framework + home cards only (footer strip, page-header marks, book strip removed; angleScale() deleted).

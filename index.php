@@ -46,10 +46,11 @@ $latestEpisode = getDb()->query(
 <header class="section-container lg:min-h-[80vh] flex items-center pt-24 lg:pt-20 relative overflow-hidden">
     <div class="hero-split gap-12 lg:gap-16 w-full relative z-10">
         <div class="active order-2 lg:order-1">
-            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[9rem] font-display leading-none text-brand-black mb-10 tracking-tighter uppercase font-black">
-                Zibrah Code<span class="text-xl align-top ml-2 font-normal opacity-30">™</span>
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] font-display leading-none text-brand-black mb-10 uppercase">
+                <span class="block font-bold">Zibrah</span>
+                <span class="block font-light">Code<span class="text-xl align-top ml-2 font-normal opacity-30">™</span></span>
             </h1>
-            <h2 class="text-2xl md:text-2xl lg:text-4xl serif leading-tight text-brand-gray-600 mb-10 font-light italic opacity-90">
+            <h2 class="text-2xl md:text-2xl lg:text-4xl serif leading-tight text-brand-gray-600 mb-10 font-light opacity-90">
                 The Geometry of Truth and Wisdom Model
             </h2>
             <p class="text-sm md:text-lg uppercase text-brand-gold mb-12 opacity-90 font-bold">
@@ -115,7 +116,7 @@ $latestEpisode = getDb()->query(
         <div class="grid lg:grid-cols-12 gap-24">
             <div class="lg:col-span-4">
                 <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">The Framework</h4>
-                <h2 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black italic mb-12">Key <br> Statements.</h2>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl serif text-brand-black leading-none tracking-tight font-black mb-12">Key <br> Statements.</h2>
                 <p class="text-xl text-brand-gray-600 font-light leading-relaxed mb-10">A specialized collection of axiomatic principles that define the Zibrah Code model's structural logic.</p>
                 <a href="/framework.php" class="text-xs font-black uppercase tracking-[0.4em] border-b-2 border-brand-gold pb-2 hover:text-brand-gold transition-all">See the Full Framework →</a>
             </div>
@@ -224,7 +225,7 @@ $latestEpisode = getDb()->query(
     <div class="section-container">
         <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">Latest Insights</h4>
-            <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight italic">From the Blog.</h2>
+            <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight">From the Blog.</h2>
         </div>
         <?php if ($recentPosts): ?>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
@@ -253,7 +254,7 @@ $latestEpisode = getDb()->query(
     <div class="section-container">
         <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">Listen In</h4>
-            <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight italic">The Podcast.</h2>
+            <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight">The Podcast.</h2>
         </div>
         <?php if ($latestEpisode): ?>
             <div class="max-w-2xl mx-auto card-featured p-12">

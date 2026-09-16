@@ -34,9 +34,9 @@ $pageTitle = 'Admin Setup | Zibrah Code';
     <meta charset="UTF-8">
     <title><?php echo e($pageTitle); ?></title>
     <meta name="robots" content="noindex, nofollow">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { brand: { black: '#1A1A1A', gold: '#B89441' } }, fontFamily: { display: ['var(--font-serif)'], sans: ['var(--font-sans)'] } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { black: '#1A1A1A', gold: '#B89441' } }, fontFamily: { display: ['var(--font-sans)'], sans: ['var(--font-sans)'] } } } }</script>
 </head>
 <body class="bg-brand-black min-h-screen flex items-center justify-center font-sans">
     <div class="max-w-md w-full bg-white p-12 shadow-2xl">

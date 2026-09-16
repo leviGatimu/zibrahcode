@@ -45,11 +45,11 @@ $pageTitle = 'Admin Login | Zibrah Code';
     <title><?php echo e($pageTitle); ?></title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            theme: { extend: { colors: { brand: { black: '#1A1A1A', gold: '#B89441', 'gold-light': '#D4B876' } }, fontFamily: { display: ['var(--font-serif)'], serif: ['var(--font-serif)'], sans: ['var(--font-sans)'] } } }
+            theme: { extend: { colors: { brand: { black: '#1A1A1A', gold: '#B89441', 'gold-light': '#D4B876' } }, fontFamily: { display: ['var(--font-sans)'], serif: ['var(--font-serif)'], sans: ['var(--font-sans)'] } } }
         }
     </script>
     <link rel="stylesheet" href="/assets/css/style.css?v=<?php echo ASSETS_VERSION; ?>">
@@ -66,7 +66,7 @@ $pageTitle = 'Admin Login | Zibrah Code';
         </div>
 
         <div class="bg-white p-10 sm:p-12 shadow-2xl">
-            <h1 class="font-serif text-3xl font-bold text-brand-black mb-2">Sign In.</h1>
+            <h1 class="font-display text-3xl font-bold text-brand-black mb-2">Sign In.</h1>
             <p class="text-sm text-brand-gray-500 mb-8">Zibrah Code content management.</p>
             <?php if ($error): ?><p class="mb-6 p-4 bg-red-50 border border-red-300 text-red-700 text-sm"><?php echo e($error); ?></p><?php endif; ?>
             <form method="POST" class="space-y-6">

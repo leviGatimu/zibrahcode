@@ -1,9 +1,11 @@
 /* Zibrah Code — shared design system (black / white / gold) */
 
-/* The site's two typefaces. Change them here and nowhere else. */
+/* The site's two typefaces. Change them here and nowhere else.
+   Poppins is the book cover's typeface: brand, headings and all UI text.
+   The serif exists for one job, long-form reading in post bodies. */
 :root {
+    --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 html {
@@ -15,12 +17,12 @@ body {
     color: #1A1A1A;
 }
 
-/* The serif is loaded at 400-700 only, so font-black headings render as Bold:
-   the heavier and the large-optical-size cuts are the high-contrast look this
-   site moved away from. The text cut (opsz 24) is used at every size. */
+/* Every heading is the cover face. `.serif` is the legacy class name for the
+   display face and is kept because the markup uses it everywhere. Poppins is
+   loaded up to 700 only, so font-black headings render as Bold, the same
+   weight as "ZIBRAH" on the cover. */
 h1, h2, h3, h4, h5, .serif, .font-display {
-    font-family: var(--font-serif);
-    font-variation-settings: 'opsz' 24;
+    font-family: var(--font-sans);
 }
 
 .section-container {
@@ -275,7 +277,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Editorial drop cap — used on long-form narrative copy (e.g. About page bio) */
 .drop-cap::first-letter {
-    font-family: var(--font-serif);
     float: left;
     font-size: 5.5rem;
     line-height: 0.75;
@@ -287,6 +288,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Rich-text elements inside a post body (post.php's .article-body), so
    images/headings/quotes/lists inserted via the admin editor render well. */
+.article-body {
+    font-family: var(--font-serif);
+    font-variation-settings: 'opsz' 24; /* the text cut at every size */
+}
 
 /* Post bodies come straight out of the Quill editor, where every Enter is its
    own <p> with no margin, a blank line is <p><br></p>, and tabs/multiple
@@ -312,7 +317,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
 }
 .article-body h2, .article-body h3 {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-weight: 700;
     color: #1A1A1A;
     line-height: 1.2;

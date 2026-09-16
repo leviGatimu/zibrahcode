@@ -235,7 +235,7 @@ require __DIR__ . '/includes/header.php';
     <div class="section-container">
         <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">The Author</h4>
-            <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight italic">Two frameworks.</h2>
+            <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black font-black tracking-tight">Two frameworks.</h2>
             <p class="text-lg text-brand-gray-600 font-light leading-relaxed mt-6">Two decades in the making.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">

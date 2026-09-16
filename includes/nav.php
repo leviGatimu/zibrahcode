@@ -44,7 +44,7 @@ $navTransparentAtTop = $navTransparentAtTop ?? false;
      the nav has no background at all until scrolled — see .nav-mobile-transparent-top in style.css. -->
 <nav class="fixed top-0 w-full z-50 transition-all duration-700 px-6 md:px-16 flex justify-between items-center nav-translucent py-6 lg:py-8 <?php echo $navTransparentAtTop ? 'nav-mobile-transparent-top' : ''; ?>"
     :class="scrolled ? 'nav-scrolled py-4 shadow-sm' : ''" aria-label="Primary">
-    <a href="/index.php" class="font-bold tracking-[0.4em] text-sm uppercase text-brand-black">ZIBRAH CODE<span
+    <a href="/index.php" class="tracking-[0.3em] text-sm uppercase text-brand-black"><span class="font-bold">ZIBRAH</span> <span class="font-light">CODE</span><span
             class="text-[8px] align-top ml-1 opacity-50">™</span></a>
 
     <!-- Desktop links -->
@@ -150,7 +150,7 @@ $navTransparentAtTop = $navTransparentAtTop ?? false;
          x-transition:leave-end="translate-y-full"
          class="mobile-more-sheet absolute inset-x-0 bottom-0 bg-white border-t-2 border-brand-gold shadow-2xl px-6 pt-6 max-h-[85vh] overflow-y-auto">
         <div class="flex items-center justify-between mb-6">
-            <div class="font-bold tracking-[0.3em] text-xs uppercase text-brand-black">ZIBRAH CODE<span class="text-brand-gold text-[8px] align-top ml-1">™</span></div>
+            <div class="tracking-[0.3em] text-xs uppercase text-brand-black"><span class="font-bold">ZIBRAH</span> <span class="font-light">CODE</span><span class="text-brand-gold text-[8px] align-top ml-1">™</span></div>
             <button type="button" @click="moreSheet = false" class="w-11 h-11 -mr-2 flex items-center justify-center text-brand-black/50 hover:text-brand-gold transition-colors" aria-label="Close menu">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />

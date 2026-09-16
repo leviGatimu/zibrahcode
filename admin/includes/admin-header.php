@@ -33,7 +33,7 @@ $adminNavItems = [
          weight 400 with italics for blockquotes. Loading only 600/700 here left
          the browser synthesising those faces, which is why the preview never
          looked like the published page. -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // Mirrors the public theme in includes/header.php. The admin previously
@@ -64,7 +64,7 @@ $adminNavItems = [
                     // Two typefaces only; defined once in style.css (:root)
                     fontFamily: {
                         serif: ['var(--font-serif)'],
-                        display: ['var(--font-serif)'],
+                        display: ['var(--font-sans)'],
                         sans: ['var(--font-sans)'],
                     }
                 }
