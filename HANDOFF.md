@@ -1,23 +1,22 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Remove every dash from the site's visible copy and drop the line separators
-between the home page sections.
+2026-09-16: Footer remake (owner: "it's AI slop"). includes/footer.php rewritten.
 
 ## Status
-Solved, uncommitted (working tree). Ready to commit; pushing `main` deploys to production.
+Solved, uncommitted. Awaiting owner's go-ahead to commit/push (main deploys to production).
 
 ## Progress
-- [x] Em/en dashes rewritten (comma, colon, period or parentheses) in all public templates,
-      meta descriptions, alt text, JSON-LD, form flash messages (actions/*) and
-      includes/axioms.php + functions.php angle-state copy. `&mdash;` entities included.
-- [x] Migration 034 rewrites the 11 `&mdash;` + 2 meta-description dashes in the two seeded
-      blog posts (exact-phrase matching, posts + post_drafts). Ran clean locally.
-- [x] Home: `border-y`/`border-t border-brand-gray-100` removed from the four sections.
-      The `gold-divider` hr inside "What is Zibrah Code?" was left (an in-section accent).
-- [x] Verified with headless Playwright: every public page + the three posts render with zero
-      dashes in innerText/meta/alt; zero sections with borders on /home.
-- [ ] Not touched on purpose: code comments, HTML comments, admin dashboard UI strings.
+- [x] New three-tier footer: wordmark + real book subtitle + "A book and framework by
+      Ibrahim Ngugi." | plainly worded newsletter form (source=footer, sr-only label) |
+      one row of site links + external links (Amazon, YouTube, X) | credit line + Sign in /
+      Your account (currentUser()).
+- [x] Removed: invented quote, decorative rings, "Company" column, Admin link,
+      "Zibrah Research Collective", tagline strip, tracking-[0.4em] everywhere.
+- [x] Verified headless at 1280 and 390: no horizontal overflow, last link clears the mobile
+      tab bar by 44px, form submit recorded with source=footer (test row deleted).
+- [ ] Follow-up candidate: the home "Connect." section ("Institutional Correspondence")
+      has the same tone problem and now duplicates the footer form.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -38,6 +37,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Footer rebuilt as a quiet three-tier colophon.
 - 2026-09-16: Dash purge across public copy + migration 034; home section separator lines removed.
 - 2026-09-15: Home page rebuilt on one section system (eyebrow → serif h2 4xl/5xl → light body → CTA; alternating white/gray-50/black). Removed dead cruft: undefined pattern-bg/zebra-wedge classes, the 'Details' button whose modal never existed (modalBook state dropped from header.php). Angle devices trimmed back to the framework + home cards only (footer strip, page-header marks, book strip removed; angleScale() deleted).
 - 2026-09-14: Mobile pass — vertical rhythm is now responsive on all public pages (unprefixed py/pt/pb/mb/mt 40/32/24/20/16 get phone values, original kept behind md:), home book/asset images fit the phone width, footer angle strip fits one row. Desktop values unchanged (owner rejected desktop-scale changes earlier).

@@ -1,63 +1,57 @@
     <!-- FOOTER -->
-    <footer class="pt-24 md:pt-32 pb-16 bg-brand-black text-white relative overflow-hidden border-t border-white/5">
-        <div class="absolute -bottom-64 -right-64 w-[800px] h-[800px] border border-white/5 rounded-full pointer-events-none"></div>
-        <div class="absolute -bottom-96 -right-96 w-[800px] h-[800px] border border-white/5 rounded-full pointer-events-none opacity-50"></div>
-        <div class="section-container relative z-10">
-            <div class="grid lg:grid-cols-12 gap-16 mb-12 md:mb-24">
-                <div class="lg:col-span-4">
-                    <div class="text-3xl font-display font-black tracking-[0.3em] text-white uppercase mb-8">
-                        ZIBRAH CODE<span class="text-brand-gold">™</span>
-                    </div>
-                    <p class="text-white/50 text-lg serif italic font-light leading-relaxed max-w-lg mb-10">
-                        "Strategic Intelligence and Epistemic Alignment Systems. Modeling the geometry of human disagreement and the architecture of wisdom."
-                    </p>
-                    <form action="/actions/newsletter-subscribe" method="POST" class="flex max-w-sm mb-10">
+    <?php $footerUser = currentUser(); ?>
+    <footer class="bg-brand-black text-white pt-16 md:pt-24 pb-10">
+        <div class="section-container">
+
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20 pb-14 md:pb-20 border-b border-white/10">
+                <div>
+                    <a href="/index.php" class="inline-block font-bold tracking-[0.4em] text-sm uppercase text-white">ZIBRAH CODE<span class="text-brand-gold text-[9px] align-top ml-1">™</span></a>
+                    <p class="mt-6 text-2xl md:text-3xl serif italic font-light leading-snug text-white/90 max-w-sm">The Geometry of Truth and Wisdom</p>
+                    <p class="mt-3 text-base text-white/50 font-light">A book and framework by Ibrahim Ngugi.</p>
+                </div>
+
+                <div class="md:max-w-md md:justify-self-end w-full">
+                    <p class="text-white/90 text-base mb-1">New essays, by email.</p>
+                    <p class="text-white/50 text-sm font-light leading-relaxed mb-6">Occasional writing on truth, perception and belief, sent when there is something worth reading. Unsubscribe any time.</p>
+                    <form action="/actions/newsletter-subscribe" method="POST" class="flex border-b border-white/30 focus-within:border-brand-gold transition-colors">
                         <?php echo csrfField(); ?>
                         <?php echo spamGuardFields(); ?>
-                        <input type="email" name="email" required placeholder="Your email"
-                            class="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-brand-gold transition-all">
-                        <button type="submit" class="btn-gold text-[10px] px-6">Join</button>
+                        <input type="hidden" name="source" value="footer">
+                        <label for="footer-email" class="sr-only">Email address</label>
+                        <input id="footer-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com"
+                            class="flex-1 min-w-0 bg-transparent py-3 text-base text-white placeholder-white/30 focus:outline-none">
+                        <button type="submit" class="text-xs font-bold uppercase tracking-widest text-brand-gold hover:text-white transition-colors pl-6 py-3">Subscribe</button>
                     </form>
-                    <div class="flex items-center gap-5">
-                        <a href="<?php echo e(YOUTUBE_URL); ?>" target="_blank" rel="noopener" aria-label="YouTube" class="text-white/40 hover:text-brand-gold transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 576 512" fill="currentColor"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"/></svg>
-                        </a>
-                        <a href="<?php echo e(X_URL); ?>" target="_blank" rel="noopener" aria-label="X (Twitter)" class="text-white/40 hover:text-brand-gold transition-colors">
-                            <svg class="w-5 h-5" viewBox="0 0 512 512" fill="currentColor"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-3 lg:col-start-6">
-                    <h5 class="text-brand-gold font-bold text-xs uppercase tracking-[0.4em] mb-10">Explore</h5>
-                    <ul class="space-y-5">
-                        <li><a href="/book.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">The Book</a></li>
-                        <li><a href="/about.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">The Author</a></li>
-                        <li><a href="/framework.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Framework</a></li>
-                        <li><a href="/blog.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="/podcast.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Podcast</a></li>
-                    </ul>
-                </div>
-                <div class="lg:col-span-3">
-                    <h5 class="text-brand-gold font-bold text-xs uppercase tracking-[0.4em] mb-10">Company</h5>
-                    <ul class="space-y-5">
-                        <li><a href="<?php echo e(AMAZON_URL); ?>" target="_blank" rel="noopener" class="text-lg font-light text-white/40 hover:text-white transition-colors">Amazon Store</a></li>
-                        <li><a href="/contact.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Contact</a></li>
-                        <li><a href="/login.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Sign In</a></li>
-                        <li><a href="/admin/login.php" class="text-lg font-light text-white/40 hover:text-white transition-colors">Admin</a></li>
-                    </ul>
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/20">
-                    &copy; <?php echo date('Y'); ?> Zibrah Research Collective. All rights reserved.
-                </div>
-                <div class="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-gold/60 italic">
-                    Angles show what words cannot tell
-                </div>
-                <div class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/20">
-                    Ibrahim Ngugi Gatimu
-                </div>
+
+            <nav aria-label="Footer" class="py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <ul class="flex flex-wrap gap-x-7 gap-y-3 text-sm text-white/70">
+                    <li><a href="/book.php" class="hover:text-white transition-colors">The Book</a></li>
+                    <li><a href="/about.php" class="hover:text-white transition-colors">The Author</a></li>
+                    <li><a href="/framework.php" class="hover:text-white transition-colors">Framework</a></li>
+                    <li><a href="/blog.php" class="hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="/podcast.php" class="hover:text-white transition-colors">Podcast</a></li>
+                    <li><a href="/events.php" class="hover:text-white transition-colors">Events</a></li>
+                    <li><a href="/inquire.php" class="hover:text-white transition-colors">Inquire</a></li>
+                    <li><a href="/contact.php" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+                <ul class="flex flex-wrap gap-x-7 gap-y-3 text-sm text-white/70">
+                    <li><a href="<?php echo e(AMAZON_URL); ?>" target="_blank" rel="noopener" class="hover:text-white transition-colors">Buy on Amazon<span class="text-white/40 ml-1" aria-hidden="true">&#8599;</span></a></li>
+                    <li><a href="<?php echo e(YOUTUBE_URL); ?>" target="_blank" rel="noopener" class="hover:text-white transition-colors">YouTube<span class="text-white/40 ml-1" aria-hidden="true">&#8599;</span></a></li>
+                    <li><a href="<?php echo e(X_URL); ?>" target="_blank" rel="noopener" class="hover:text-white transition-colors">X<span class="text-white/40 ml-1" aria-hidden="true">&#8599;</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-white/40">
+                <p>&copy; <?php echo date('Y'); ?> Ibrahim Ngugi Gatimu</p>
+                <?php if ($footerUser): ?>
+                    <a href="/account/index.php" class="hover:text-white transition-colors">Your account</a>
+                <?php else: ?>
+                    <a href="/login.php" class="hover:text-white transition-colors">Sign in</a>
+                <?php endif; ?>
             </div>
+
         </div>
     </footer>
 
