@@ -1,22 +1,31 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Author page rebuilt on the same product-page pattern as the book page (owner
-likes the content, rejected the hero and the section-band structure).
+2026-09-16: Book and author pages rebuilt AGAIN as full sectioned pages on the framework
+page's system. Owner rejected the two-column "brief" versions ("those are not pages, those
+are briefs; look at framework, it has different sections, do the same").
 
 ## Status
 Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] No hero (both the mobile full-bleed and desktop boxed variants removed). Breadcrumb,
-      then sticky portrait + facts (Based in, Education, Author of, Affiliations, Portfolio)
-      on the left; right column in reading order: name, role, intro, Get in Touch, four stats,
-      Biography (same three paragraphs), Journey, Organizations, Areas of engagement, Books
-      (two thumbnail rows instead of hover cards), closing quote.
-- [x] All content kept ($stats/$journey/$ventures/$engagements untouched; books moved to a
-      $books array). Facts rendered once via ob_start; after the quote on phones.
-- [x] SEO head (ProfilePage + Breadcrumb JSON-LD) unchanged. Height 6894 -> 4140 at 1280.
-      Verified 390/1280: no overflow.
+- [x] Both pages copy framework.php's structure and classes exactly: grey-50 page-header band
+      (eyebrow, serif h1 sentence, intro, two CTAs, figure-in-white-panel with caption) then
+      full-width sections alternating white / black / white / grey-50, each with
+      eyebrow -> h2 -> body and the 2/5 : 3/5 grid or the sticky 4/12 : 8/12 grid.
+- [x] Book: header, The Argument, Inside the Book (black, five axioms with lead sentences),
+      Who It's For (axiom-item columns), The Author (photo + bio + "Also by"), Get the Book
+      (CTA + facts table).
+- [x] Author: header, Biography (3 paragraphs + education/affiliations/based-in list),
+      In Numbers (black stat band), The Journey, Ventures, Areas of Engagement, Books (two
+      cards + closing quote). All content from the previous version kept.
+- [x] Verified 390/1280: no overflow, no heading leaves its column. Lazy cover images in the
+      Books cards load on scroll (headless full-page capture fires before them; not a bug).
+
+## Lesson
+Owner's objection to the earlier hero was its LOOK (8xl uppercase, ghost back cover, gold
+frame, chips), not the presence of a page header. The framework-style header is accepted.
+Do not collapse sub-pages into a single two-column layout.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -37,8 +46,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
-- 2026-09-16: Author page rebuilt on the product-page pattern (no hero).
-- 2026-09-16: Book page rebuilt as a compact product page (no hero).
+- 2026-09-16: Book + author pages rebuilt as sectioned pages on the framework system (after two rejected one-column 'brief' versions).
 - 2026-09-16: Fonts: Poppins (cover face) for brand/headings/UI + Source Serif 4 for post bodies only; Inter dropped.
 - 2026-09-16: Footer restyled on its original structure (owner rejected the colophon layout).
 - 2026-09-16: Dash purge across public copy + migration 034; home section separator lines removed.
