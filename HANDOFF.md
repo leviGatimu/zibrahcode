@@ -1,24 +1,22 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Owner wants the book cover's typeface on the site. Identified as Poppins
-("ZIBRAH" Bold / "CODE" Light / subtitle Regular).
+2026-09-16: Book page rebuilt as a product page (owner: a hero on a sub-page makes no
+sense, too much info, style/structure it better).
 
 ## Status
-Solved. Committed and pushed; production auto-deploys from `main`.
+Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] --font-sans = Poppins (body, UI, every heading incl. `.serif`/`.font-display`);
-      --font-serif = Source Serif 4, now used ONLY by `.article-body` (post reading), with
-      in-article h2/h3 back in Poppins. Inter removed. Still exactly two fonts.
-- [x] Poppins loaded 200-700 (+ italic 300/400/700) so font-black renders as Bold, matching
-      the cover weight. Italic dropped from the four big display headings (cover is upright;
-      bold italic was being synthesised).
-- [x] Wordmarks (hero, desktop nav, mobile nav, footer): both words bold (owner asked for
-      CODE to match ZIBRAH). Hero subtitle upright. "Key Statements." resized 8xl->6xl (Poppins is
-      wider; it collided with the right column). ASSETS_VERSION 1.0.39.
-- [x] Verified headless at 390/1280 on all public pages: no overflow, no h1/h2 leaving its
-      column; only Poppins (+ serif on posts) computed.
+- [x] No hero, no alternating bands, no repeated CTA/pull quote. One layout: breadcrumb, then
+      cover (sticky on desktop) + facts on the left, and on the right in reading order: title,
+      subtitle, author, Buy on Amazon, About the book (one paragraph), Inside the book (five
+      axioms, lead sentence each), Who it's for (three lines), About the author.
+- [x] Facts (Formats/Language/Subjects/Available at + "Also by the author") are rendered once
+      via ob_start into $factsHtml and placed under the cover on lg, after the author on phones
+      so the title follows the cover there.
+- [x] SEO head (Book + Breadcrumb JSON-LD, meta, canonical) unchanged. Page height 5634 -> ~3200
+      at 1280. Verified at 390/1280: no overflow.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -39,6 +37,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Book page rebuilt as a compact product page (no hero).
 - 2026-09-16: Fonts: Poppins (cover face) for brand/headings/UI + Source Serif 4 for post bodies only; Inter dropped.
 - 2026-09-16: Footer restyled on its original structure (owner rejected the colophon layout).
 - 2026-09-16: Dash purge across public copy + migration 034; home section separator lines removed.
