@@ -46,9 +46,9 @@ $latestEpisode = getDb()->query(
 <header class="section-container lg:min-h-[80vh] flex items-center pt-24 lg:pt-20 relative overflow-hidden">
     <div class="hero-split gap-12 lg:gap-16 w-full relative z-10">
         <div class="active order-2 lg:order-1">
-            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] font-display leading-none text-brand-black mb-10 uppercase">
-                <span class="block font-bold">Zibrah</span>
-                <span class="block font-light">Code<span class="text-xl align-top ml-2 font-normal opacity-30">™</span></span>
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[8rem] font-display font-bold leading-none text-brand-black mb-10 uppercase">
+                <span class="block">Zibrah</span>
+                <span class="block">Code<span class="text-xl align-top ml-2 font-normal opacity-30">™</span></span>
             </h1>
             <h2 class="text-2xl md:text-2xl lg:text-4xl serif leading-tight text-brand-gray-600 mb-10 font-light opacity-90">
                 The Geometry of Truth and Wisdom Model

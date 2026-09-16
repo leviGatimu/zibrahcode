@@ -5,8 +5,8 @@
 
                 <!-- Brand -->
                 <div class="col-span-2 lg:col-span-5">
-                    <a href="/index.php" class="inline-flex items-baseline text-xl tracking-[0.3em] uppercase text-white">
-                        <span class="font-bold">ZIBRAH</span>&nbsp;<span class="font-light">CODE</span><span class="text-brand-gold text-xs ml-1">™</span>
+                    <a href="/index.php" class="inline-flex items-baseline text-xl font-bold tracking-[0.3em] uppercase text-white">
+                        ZIBRAH CODE<span class="text-brand-gold text-xs ml-1">™</span>
                     </a>
                     <blockquote class="mt-8 pl-5 border-l-2 border-brand-gold max-w-md">
                         <p class="serif italic text-lg md:text-xl leading-relaxed text-white/80">

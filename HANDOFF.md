@@ -5,7 +5,7 @@
 ("ZIBRAH" Bold / "CODE" Light / subtitle Regular).
 
 ## Status
-Solved, uncommitted. Awaiting go-ahead to commit/push.
+Solved. Committed and pushed; production auto-deploys from `main`.
 
 ## Progress
 - [x] --font-sans = Poppins (body, UI, every heading incl. `.serif`/`.font-display`);
@@ -14,8 +14,8 @@ Solved, uncommitted. Awaiting go-ahead to commit/push.
 - [x] Poppins loaded 200-700 (+ italic 300/400/700) so font-black renders as Bold, matching
       the cover weight. Italic dropped from the four big display headings (cover is upright;
       bold italic was being synthesised).
-- [x] Wordmarks (hero, desktop nav, mobile nav, footer) use the cover's split: ZIBRAH bold,
-      CODE light. Hero subtitle upright. "Key Statements." resized 8xl->6xl (Poppins is
+- [x] Wordmarks (hero, desktop nav, mobile nav, footer): both words bold (owner asked for
+      CODE to match ZIBRAH). Hero subtitle upright. "Key Statements." resized 8xl->6xl (Poppins is
       wider; it collided with the right column). ASSETS_VERSION 1.0.39.
 - [x] Verified headless at 390/1280 on all public pages: no overflow, no h1/h2 leaving its
       column; only Poppins (+ serif on posts) computed.
