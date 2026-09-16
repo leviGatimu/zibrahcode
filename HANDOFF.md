@@ -1,23 +1,22 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Phone pass ("must look like a website on phone").
+2026-09-16: Blog listing (blog.php) restyled on the site's section system.
 
 ## Status
 Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] style.css: phone scale under 640px using `body .utility` selectors (outrank Tailwind CDN
-      utilities injected later): text-5xl 40px, text-4xl 28px, 3xl 24, 2xl 20, xl 17, lg 16;
-      tracking 0.6em/0.5em -> 0.3em; py-16 -> 48px; gap-16 -> 40px; gap-12 -> 32px;
-      mb-10/12 -> 24px; space-y-8 -> 20px.
-- [x] includes/angle-cards.php: glyph (w-16) beside text on phones, stacked card from md.
-- [x] Axiom lists (home, book, framework): number inline with title on phones (3rem column,
-      text-3xl number). Home hero cover 210px / container 300px on phones.
-- [x] Home Latest: two posts side by side on phones (excerpt hidden < sm); book.png capped at
-      300px. ASSETS_VERSION 1.0.40.
-- [x] Verified at 390px on all 12 public pages: no horizontal overflow (only clipped decorative
-      rings pass the edge). Home 10454 -> 7978px, book 8791 -> 7484, framework 8503 -> 6877.
+- [x] Page header band (eyebrow "Insights", serif h1, intro) with the search form in the
+      right column. Category filter row (All + categories, gold underline on the active one)
+      with a result/count line; "Clear" when filtered.
+- [x] Latest post featured (image 7/12 + text) on the unfiltered first page only; remaining
+      posts in a 3-col grid (2 on tablet, 1 on phone). Sidebar removed (its "Latest updates"
+      repeated the list; the unused $latestUpdates query is gone too).
+- [x] Pagination: Newer / numbers / Older with aria-current. Empty state with a link back.
+      Episode play badge (episodeBadgeHtml) kept on images.
+- [x] Query logic, SEO head (noindex when filtered, canonical, breadcrumb) untouched.
+      Verified default / category / search / empty states at 1280 and phone at 390.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -38,6 +37,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Blog listing rebuilt as an editorial index (featured post + grid, filter row, no sidebar).
 - 2026-09-16: Phone pass: smaller type/spacing scale under 640px, compact angle cards and axiom rows.
 - 2026-09-16: Footer rebalanced into a quiet four-column layout (third pass).
 - 2026-09-16: Home page sections restyled on the shared section system; hero tidied.

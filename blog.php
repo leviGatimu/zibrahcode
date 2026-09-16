@@ -56,116 +56,143 @@ $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
 $stmt->execute();
 $posts = $stmt->fetchAll();
 
-$latestUpdates = $db->query('SELECT title, slug, featured_image_path, published_at FROM posts WHERE status = "published" ORDER BY published_at DESC LIMIT 3')->fetchAll();
 $categories = $db->query('SELECT DISTINCT category FROM posts WHERE status = "published" AND category IS NOT NULL ORDER BY category')->fetchAll(PDO::FETCH_COLUMN);
+
+// The newest post is featured only on the unfiltered first page; every other
+// view is a plain grid so search and category results stay predictable.
+$featured = (!$isFiltered && $page === 1 && count($posts) > 1) ? array_shift($posts) : null;
+
+$filterUrl = static function (string $cat = ''): string {
+    return '/blog.php' . ($cat !== '' ? '?category=' . urlencode($cat) : '');
+};
+$pageUrl = static function (int $p) use ($search, $category): string {
+    $q = ['page' => $p];
+    if ($search !== '') { $q['s'] = $search; }
+    if ($category !== '') { $q['category'] = $category; }
+    return '/blog.php?' . http_build_query($q);
+};
+$episodeFor = static function (array $post): ?array {
+    return $post['media_type']
+        ? ['media_type' => $post['media_type'], 'audio_file_path' => $post['audio_file_path'], 'video_file_path' => $post['video_file_path'], 'cover_image_path' => $post['cover_image_path'], 'title' => $post['episode_title']]
+        : null;
+};
+$metaLine = static function (array $post) use ($showViewCounts): string {
+    $parts = [date('M j, Y', strtotime($post['published_at']))];
+    if ($post['category']) { $parts[] = e($post['category']); }
+    if ($showViewCounts) { $parts[] = number_format($post['view_count']) . ' views'; }
+    return implode(' &middot; ', $parts);
+};
 ?>
 
-<div class="pt-28 md:pt-40 pb-8 section-container text-center reveal active">
-    <h1 class="text-4xl sm:text-5xl font-display font-black text-brand-black uppercase tracking-tight mb-4">Blog & Insights</h1>
-    <hr class="gold-divider w-24 mx-auto">
-</div>
-
-<main class="max-w-6xl mx-auto px-6 md:px-24 pb-16 md:pb-32 pt-16">
-    <div class="grid lg:grid-cols-12 gap-16">
-        <!-- POSTS -->
-        <div class="lg:col-span-8">
-            <?php if ($search !== '' || $category !== ''): ?>
-                <p class="text-sm text-brand-gray-500 uppercase tracking-widest mb-10">
-                    <?php echo $totalPosts; ?> result<?php echo $totalPosts === 1 ? '' : 's'; ?>
-                    <?php if ($search !== ''): ?> for "<?php echo e($search); ?>"<?php endif; ?>
-                    <?php if ($category !== ''): ?> in <?php echo e($category); ?><?php endif; ?>
-                    · <a href="/blog.php" class="text-brand-gold underline">Clear</a>
-                </p>
-            <?php endif; ?>
-
-            <?php if (empty($posts)): ?>
-                <div class="empty-state p-16 text-center">
-                    <p class="text-2xl serif italic text-brand-gray-600">No posts found.</p>
-                </div>
-            <?php endif; ?>
-
-            <div class="space-y-16">
-                <?php foreach ($posts as $post): ?>
-                    <article class="flex flex-col sm:flex-row gap-8 bg-white overflow-hidden group reveal active">
-                        <div class="sm:w-2/5 relative flex-shrink-0">
-                            <a href="/post.php?slug=<?php echo e($post['slug']); ?>" class="block h-full overflow-hidden">
-                                <img src="/<?php echo e($post['featured_image_path']); ?>" alt="<?php echo e($post['title']); ?>" class="w-full h-full object-cover min-h-[200px] shadow-sm transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
-                            </a>
-                            <?php echo episodeBadgeHtml(
-                                $post['media_type'] ? ['media_type' => $post['media_type'], 'audio_file_path' => $post['audio_file_path'], 'video_file_path' => $post['video_file_path'], 'cover_image_path' => $post['cover_image_path'], 'title' => $post['episode_title']] : null,
-                                $post['featured_image_path']
-                            ); ?>
-                        </div>
-                        <div class="sm:w-3/5 flex flex-col justify-center py-2">
-                            <span class="text-[10px] font-black text-brand-gold uppercase tracking-wider mb-2"><?php echo date('M j, Y', strtotime($post['published_at'])); ?><?php echo $post['category'] ? ' &middot; ' . e($post['category']) : ''; ?><?php echo $showViewCounts ? ' &middot; ' . number_format($post['view_count']) . ' views' : ''; ?></span>
-                            <h2 class="text-2xl serif font-bold text-brand-black leading-snug mb-3 group-hover:text-brand-gold transition-colors">
-                                <a href="/post.php?slug=<?php echo e($post['slug']); ?>"><?php echo e($post['title']); ?></a>
-                            </h2>
-                            <p class="text-brand-gray-600 text-[15px] leading-relaxed italic mb-4"><?php echo e($post['excerpt']); ?></p>
-                            <a href="/post.php?slug=<?php echo e($post['slug']); ?>" class="text-[10px] font-black uppercase tracking-widest text-brand-gold">Read More</a>
-                        </div>
-                    </article>
-                <?php endforeach; ?>
+<!-- PAGE HEADER -->
+<header class="bg-brand-gray-50 border-b border-brand-gray-100">
+    <div class="section-container pt-24 lg:pt-40 pb-12 lg:pb-16">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+            <div class="lg:col-span-7 reveal active">
+                <p class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Insights</p>
+                <h1 class="text-5xl sm:text-6xl serif text-brand-black leading-none tracking-tighter font-black">Essays on truth, perception and belief.</h1>
+                <p class="text-lg sm:text-xl text-brand-gray-600 font-light leading-relaxed mt-8 max-w-xl">Writing that extends the Zibrah Code framework into leadership, judgment and conflict.</p>
             </div>
-
-            <?php if ($totalPages > 1): ?>
-                <div class="flex justify-center gap-4 pt-16">
-                    <?php for ($p = 1; $p <= $totalPages; $p++): ?>
-                        <a href="/blog.php?page=<?php echo $p; ?><?php echo $search !== '' ? '&s=' . urlencode($search) : ''; ?><?php echo $category !== '' ? '&category=' . urlencode($category) : ''; ?>"
-                           class="w-10 h-10 flex items-center justify-center text-xs font-bold <?php echo $p === $page ? 'bg-brand-black text-white' : 'text-brand-black hover:text-brand-gold'; ?>">
-                           <?php echo $p; ?>
-                        </a>
-                    <?php endfor; ?>
+            <form action="/blog.php" method="GET" role="search" class="lg:col-span-5 reveal active">
+                <label for="blog-search" class="block text-xs font-bold uppercase tracking-widest text-brand-black mb-3">Search the blog</label>
+                <div class="flex">
+                    <input id="blog-search" type="search" name="s" value="<?php echo e($search); ?>" placeholder="Search essays"
+                        class="flex-1 min-w-0 h-12 bg-white border border-brand-gray-200 px-4 text-sm text-brand-black placeholder-brand-gray-400 focus:outline-none focus:border-brand-gold transition-colors">
+                    <button type="submit" class="h-12 px-5 bg-brand-black text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-gold transition-colors">Search</button>
                 </div>
-            <?php endif; ?>
-        </div>
-
-        <!-- SIDEBAR -->
-        <aside class="lg:col-span-4 space-y-10">
-            <form action="/blog.php" method="GET" class="relative shadow-sm">
-                <input type="text" name="s" value="<?php echo e($search); ?>" placeholder="Search..." class="w-full bg-brand-gray-50 border border-brand-gray-200 py-3.5 px-5 pr-12 text-[15px] focus:ring-2 focus:ring-brand-gold outline-none text-brand-gray-700 placeholder-brand-gray-400">
-                <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-brand-gray-400 hover:text-brand-gold transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </button>
             </form>
-
-            <div class="space-y-5">
-                <div class="bg-brand-black text-white uppercase tracking-wider text-[13px] py-3 px-4 font-bold">Latest Updates</div>
-                <div class="space-y-6">
-                    <?php foreach ($latestUpdates as $update): ?>
-                        <div class="flex gap-4 group">
-                            <div class="w-24 h-[72px] flex-shrink-0 overflow-hidden shadow-sm">
-                                <img src="/<?php echo e($update['featured_image_path']); ?>" alt="<?php echo e($update['title']); ?>" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" loading="lazy">
-                            </div>
-                            <div class="flex flex-col justify-center">
-                                <span class="text-[10px] font-black text-brand-gold uppercase tracking-wider mb-1"><?php echo date('M j, Y', strtotime($update['published_at'])); ?></span>
-                                <h4 class="text-[13px] font-black text-brand-black leading-snug group-hover:text-brand-gold transition-colors">
-                                    <a href="/post.php?slug=<?php echo e($update['slug']); ?>"><?php echo e($update['title']); ?></a>
-                                </h4>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-
-            <?php if ($categories): ?>
-                <div class="space-y-5">
-                    <div class="bg-brand-black text-white uppercase tracking-wider text-[13px] py-3 px-4 font-bold">Categories</div>
-                    <ul class="text-[13px] font-black text-brand-black uppercase space-y-3 pl-2">
-                        <?php foreach ($categories as $cat): ?>
-                            <li>
-                                <a href="/blog.php?category=<?php echo urlencode($cat); ?>" class="hover:text-brand-gold cursor-pointer flex items-center gap-3 transition-colors">
-                                    <span class="w-1.5 h-1.5 bg-brand-gold"></span> <?php echo e($cat); ?>
-                                </a>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-        </aside>
+        </div>
     </div>
+</header>
+
+<main class="section-container py-12 lg:py-20">
+
+    <!-- FILTERS + RESULT LINE -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-8 border-b border-brand-gray-200">
+        <nav aria-label="Categories" class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a href="<?php echo $filterUrl(); ?>" class="<?php echo $category === '' && $search === '' ? 'text-brand-black font-semibold border-b-2 border-brand-gold' : 'text-brand-gray-500 hover:text-brand-black'; ?> pb-1 transition-colors">All</a>
+            <?php foreach ($categories as $cat): ?>
+                <a href="<?php echo $filterUrl($cat); ?>" class="<?php echo $category === $cat ? 'text-brand-black font-semibold border-b-2 border-brand-gold' : 'text-brand-gray-500 hover:text-brand-black'; ?> pb-1 transition-colors"><?php echo e($cat); ?></a>
+            <?php endforeach; ?>
+        </nav>
+        <p class="text-sm text-brand-gray-500">
+            <?php if ($isFiltered): ?>
+                <?php echo $totalPosts; ?> result<?php echo $totalPosts === 1 ? '' : 's'; ?><?php if ($search !== ''): ?> for &ldquo;<?php echo e($search); ?>&rdquo;<?php endif; ?>
+                &middot; <a href="/blog.php" class="text-brand-black underline decoration-brand-gray-300 hover:decoration-brand-gold">Clear</a>
+            <?php else: ?>
+                <?php echo $totalPosts; ?> essay<?php echo $totalPosts === 1 ? '' : 's'; ?>
+            <?php endif; ?>
+        </p>
+    </div>
+
+    <?php if (empty($posts) && !$featured): ?>
+        <div class="empty-state p-12 md:p-16 text-center mt-12">
+            <p class="serif text-2xl font-bold text-brand-black">Nothing matches that yet.</p>
+            <p class="text-brand-gray-600 font-light mt-2">Try another word, or <a href="/blog.php" class="text-brand-black underline decoration-brand-gray-300 hover:decoration-brand-gold">browse every essay</a>.</p>
+        </div>
+    <?php endif; ?>
+
+    <!-- FEATURED (latest) -->
+    <?php if ($featured): ?>
+        <article class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center py-12 lg:py-16 border-b border-brand-gray-200 group reveal active">
+            <div class="lg:col-span-7 relative">
+                <a href="/post.php?slug=<?php echo e($featured['slug']); ?>" class="block aspect-[16/10] overflow-hidden bg-brand-gray-100">
+                    <img src="/<?php echo e($featured['featured_image_path']); ?>" alt="<?php echo e($featured['title']); ?>" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="eager" fetchpriority="high">
+                </a>
+                <?php echo episodeBadgeHtml($episodeFor($featured), $featured['featured_image_path']); ?>
+            </div>
+            <div class="lg:col-span-5">
+                <p class="text-brand-gold font-bold text-xs tracking-[0.3em] uppercase mb-4">Latest</p>
+                <p class="text-xs text-brand-gray-500 mb-3"><?php echo $metaLine($featured); ?></p>
+                <h2 class="serif text-3xl sm:text-4xl font-black text-brand-black tracking-tight leading-tight">
+                    <a href="/post.php?slug=<?php echo e($featured['slug']); ?>" class="group-hover:text-brand-gold transition-colors"><?php echo e($featured['title']); ?></a>
+                </h2>
+                <p class="text-lg text-brand-gray-600 font-light leading-relaxed mt-5"><?php echo e($featured['excerpt']); ?></p>
+                <a href="/post.php?slug=<?php echo e($featured['slug']); ?>" class="inline-block mt-6 text-xs font-bold uppercase tracking-widest text-brand-black hover:text-brand-gold transition-colors border-b border-brand-gray-300 hover:border-brand-gold pb-1">Read the essay &rarr;</a>
+            </div>
+        </article>
+    <?php endif; ?>
+
+    <!-- GRID -->
+    <?php if ($posts): ?>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 pt-12 lg:pt-16">
+            <?php foreach ($posts as $post): ?>
+                <article class="group reveal active">
+                    <div class="relative">
+                        <a href="/post.php?slug=<?php echo e($post['slug']); ?>" class="block aspect-[16/10] overflow-hidden bg-brand-gray-100">
+                            <img src="/<?php echo e($post['featured_image_path']); ?>" alt="<?php echo e($post['title']); ?>" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        </a>
+                        <?php echo episodeBadgeHtml($episodeFor($post), $post['featured_image_path']); ?>
+                    </div>
+                    <p class="text-xs text-brand-gray-500 mt-6 mb-2"><?php echo $metaLine($post); ?></p>
+                    <h2 class="serif text-xl sm:text-2xl font-bold text-brand-black leading-snug">
+                        <a href="/post.php?slug=<?php echo e($post['slug']); ?>" class="group-hover:text-brand-gold transition-colors"><?php echo e($post['title']); ?></a>
+                    </h2>
+                    <p class="text-brand-gray-600 font-light leading-relaxed mt-3"><?php echo e($post['excerpt']); ?></p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- PAGINATION -->
+    <?php if ($totalPages > 1): ?>
+        <nav aria-label="Pagination" class="flex items-center justify-between gap-6 mt-16 pt-8 border-t border-brand-gray-200 text-sm">
+            <?php if ($page > 1): ?>
+                <a href="<?php echo $pageUrl($page - 1); ?>" class="font-semibold text-brand-black hover:text-brand-gold transition-colors">&larr; Newer</a>
+            <?php else: ?><span></span><?php endif; ?>
+            <ol class="flex items-center gap-2">
+                <?php for ($p = 1; $p <= $totalPages; $p++): ?>
+                    <li>
+                        <a href="<?php echo $pageUrl($p); ?>" <?php echo $p === $page ? 'aria-current="page"' : ''; ?>
+                           class="w-9 h-9 flex items-center justify-center text-xs font-semibold <?php echo $p === $page ? 'bg-brand-black text-white' : 'text-brand-gray-600 hover:text-brand-black'; ?>"><?php echo $p; ?></a>
+                    </li>
+                <?php endfor; ?>
+            </ol>
+            <?php if ($page < $totalPages): ?>
+                <a href="<?php echo $pageUrl($page + 1); ?>" class="font-semibold text-brand-black hover:text-brand-gold transition-colors">Older &rarr;</a>
+            <?php else: ?><span></span><?php endif; ?>
+        </nav>
+    <?php endif; ?>
 </main>
 
 <?php require __DIR__ . '/includes/episode-player-modal.php'; ?>
