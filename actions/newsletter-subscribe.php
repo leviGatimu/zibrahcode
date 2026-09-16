@@ -25,7 +25,7 @@ if ($spamReason === 'rate-limit') {
 }
 if ($spamReason !== null) {
     error_log(sprintf('spam-guard: newsletter sign-up discarded (%s) from %s', $spamReason, $_SERVER['REMOTE_ADDR'] ?? '?'));
-    flashSet('success', "Thank you for subscribing — you're on the list.");
+    flashSet('success', "Thank you for subscribing, you're on the list.");
     redirectTo($referer);
 }
 
@@ -36,5 +36,5 @@ $stmt = getDb()->prepare(
 );
 $stmt->execute([$email, $name ?: null, $user['id'] ?? null, $source]);
 
-flashSet('success', 'Thank you for subscribing — you\'re on the list.');
+flashSet('success', 'Thank you for subscribing, you\'re on the list.');
 redirectTo($referer);

@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/bootstrap.php';
 
 $pageTitle = 'The Zibrah Code Podcast | Truth, Perception & Leadership';
-$pageDescription = 'Conversations on truth, perception, belief, and leadership — the Zibrah Code podcast with Ibrahim Ngugi.';
+$pageDescription = 'Conversations on truth, perception, belief, and leadership: the Zibrah Code podcast with Ibrahim Ngugi.';
 $canonicalPath = '/podcast.php';
 $activeNav = 'podcast';
 
@@ -24,7 +24,7 @@ require __DIR__ . '/includes/header.php';
     <div class="text-center mb-12 md:mb-24 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Listen In</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">The Podcast.</h1>
-        <p class="text-xl text-brand-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-10">Conversations on truth, perception, belief, and leadership — extending the Zibrah Code framework into voice.</p>
+        <p class="text-xl text-brand-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-10">Conversations on truth, perception, belief, and leadership, extending the Zibrah Code framework into voice.</p>
     </div>
 
     <?php if (empty($episodes)): ?>

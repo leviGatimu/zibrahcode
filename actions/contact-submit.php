@@ -55,5 +55,5 @@ if ($isSpam) {
     error_log(sprintf('spam-guard: contact message #%d flagged (%s) from %s', $db->lastInsertId(), $spamReason, $_SERVER['REMOTE_ADDR'] ?? '?'));
 }
 
-flashSet('success', 'Thank you — your message has been received. We will be in touch.');
+flashSet('success', 'Thank you, your message has been received. We will be in touch.');
 redirectTo('/contact.php');

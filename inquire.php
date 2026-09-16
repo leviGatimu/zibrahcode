@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/bootstrap.php';
 
 $pageTitle = 'Book a Consultation with Ibrahim Ngugi | Zibrah Code™';
-$pageDescription = 'Book a time to speak with Ibrahim Ngugi — for speaking engagements, consulting, media, or a personal conversation about the Zibrah Code.';
+$pageDescription = 'Book a time to speak with Ibrahim Ngugi for speaking engagements, consulting, media, or a personal conversation about the Zibrah Code.';
 $canonicalPath = '/inquire.php';
 $activeNav = 'inquire';
 $extraJsonLd = [
@@ -16,7 +16,7 @@ require __DIR__ . '/includes/header.php';
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Book a Time</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">Inquire.</h1>
         <p class="text-lg text-brand-gray-600 font-light leading-relaxed mt-10 max-w-xl mx-auto">
-            Request a time to speak with Ibrahim directly — for speaking engagements, consulting, media, or a personal conversation about the Zibrah Code.
+            Request a time to speak with Ibrahim directly for speaking engagements, consulting, media, or a personal conversation about the Zibrah Code.
         </p>
     </div>
 

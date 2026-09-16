@@ -19,7 +19,7 @@ if (!empty($_FILES['avatar']['name'])) {
     if ($uploadedAvatar) {
         $avatarPath = $uploadedAvatar;
     } else {
-        flashSet('error', 'Profile picture upload failed — please use a JPG, PNG, or WEBP under 5MB.');
+        flashSet('error', 'Profile picture upload failed. Please use a JPG, PNG, or WEBP under 5MB.');
         redirectTo('/account/index.php');
     }
 }

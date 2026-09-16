@@ -74,7 +74,7 @@ $categories = $db->query('SELECT DISTINCT category FROM posts WHERE status = "pu
                     <?php echo $totalPosts; ?> result<?php echo $totalPosts === 1 ? '' : 's'; ?>
                     <?php if ($search !== ''): ?> for "<?php echo e($search); ?>"<?php endif; ?>
                     <?php if ($category !== ''): ?> in <?php echo e($category); ?><?php endif; ?>
-                    — <a href="/blog.php" class="text-brand-gold underline">Clear</a>
+                    · <a href="/blog.php" class="text-brand-gold underline">Clear</a>
                 </p>
             <?php endif; ?>
 

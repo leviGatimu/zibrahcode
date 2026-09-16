@@ -34,7 +34,7 @@ $latestEpisode = getDb()->query(
 <div class="sr-only" aria-hidden="false">
     <h2>About Zibrah Code</h2>
     <p>
-        Zibrah Code — spelled Z-I-B-R-A-H — is an original geometric wisdom framework
+        Zibrah Code, spelled Z-I-B-R-A-H, is an original geometric wisdom framework
         and book by Ibrahim Ngugi. The Zibrah Code is not related to Zebra Code or any
         animal brand. Zibrah Code explores how truth and perception interact through
         geometry to reveal patterns of belief, conflict, and leadership. The full title
@@ -66,7 +66,7 @@ $latestEpisode = getDb()->query(
                 <img src="/assets/images/Back page.png" alt="Zibrah Code Back Cover" class="w-48 sm:w-56 lg:w-80 h-auto shadow-2xl">
             </div>
             <div class="relative z-10 max-w-[260px] sm:max-w-[290px] lg:max-w-[380px] transform -rotate-2 hover:rotate-0 transition-all duration-1000 group cursor-pointer shadow-[0_60px_120px_-20px_rgba(0,0,0,0.6)]">
-                <img src="/assets/images/Front page.png" alt="Zibrah Code Front Cover — The Geometry of Truth and Wisdom by Ibrahim Ngugi" class="w-full h-auto" fetchpriority="high">
+                <img src="/assets/images/Front page.png" alt="Zibrah Code Front Cover: The Geometry of Truth and Wisdom by Ibrahim Ngugi" class="w-full h-auto" fetchpriority="high">
                 <div class="absolute inset-0 border-l border-white/20 pointer-events-none"></div>
             </div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-brand-gold/10 -z-10 rounded-full scale-105"></div>
@@ -75,7 +75,7 @@ $latestEpisode = getDb()->query(
 </header>
 
 <!-- 2. CORE STATEMENT -->
-<section class="bg-white text-brand-black relative overflow-hidden border-y border-brand-gray-100">
+<section class="bg-white text-brand-black relative overflow-hidden">
     <div class="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center">
         <div class="w-[1200px] h-[1200px] border border-brand-gold rounded-full"></div>
     </div>
@@ -100,7 +100,7 @@ $latestEpisode = getDb()->query(
         <div class="max-w-2xl mx-auto text-center mb-10 md:mb-16">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Reading the Angle</h4>
             <h2 class="text-4xl sm:text-5xl md:text-7xl serif text-brand-black leading-tight tracking-tighter font-black">Belief does not collapse suddenly. It closes gradually.</h2>
-            <p class="text-lg sm:text-xl text-brand-gray-600 font-light leading-relaxed mt-8">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right &mdash; but each is visible, and visibility is the beginning of correction.</p>
+            <p class="text-lg sm:text-xl text-brand-gray-600 font-light leading-relaxed mt-8">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right, but each is visible, and visibility is the beginning of correction.</p>
         </div>
         <?php require __DIR__ . '/includes/angle-cards.php'; ?>
         <div class="text-center mt-14">
@@ -110,7 +110,7 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- FRAMEWORK TEASER (3 of 5 axioms) -->
-<section id="framework" class="py-20 md:py-40 pattern-bg border-y border-brand-gray-100 relative overflow-hidden">
+<section id="framework" class="py-20 md:py-40 pattern-bg relative overflow-hidden">
     <div class="section-container relative z-10">
         <div class="grid lg:grid-cols-12 gap-24">
             <div class="lg:col-span-4">
@@ -203,7 +203,7 @@ $latestEpisode = getDb()->query(
             <div class="order-1 lg:order-2 relative flex justify-center items-center">
                 <div class="relative z-10 w-full max-w-md bg-white p-8 shadow-2xl border border-brand-gray-100">
                     <div class="aspect-[4/5] overflow-hidden relative group">
-                        <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi — Author of Zibrah Code"
+                        <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi, Author of Zibrah Code"
                             class="w-full h-full object-cover transition-all duration-[2s]" loading="lazy">
                     </div>
                     <div class="mt-10 text-center">
@@ -220,7 +220,7 @@ $latestEpisode = getDb()->query(
 <div class="pattern-bg pattern-bg-fixed" style="height: 220px;" aria-hidden="true"></div>
 
 <!-- RECENT BLOGS -->
-<section class="py-20 md:py-40 bg-brand-gray-50 border-y border-brand-gray-100 overflow-hidden">
+<section class="py-20 md:py-40 bg-brand-gray-50 overflow-hidden">
     <div class="section-container">
         <div class="max-w-xl mb-12 md:mb-20 text-center mx-auto">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-4">Latest Insights</h4>
@@ -271,7 +271,7 @@ $latestEpisode = getDb()->query(
 </section>
 
 <!-- CONNECT -->
-<section id="connect" class="py-20 md:py-40 bg-white border-t border-brand-gray-100">
+<section id="connect" class="py-20 md:py-40 bg-white">
     <div class="section-container">
         <div class="max-w-3xl mx-auto text-center">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Institutional Correspondence</h4>

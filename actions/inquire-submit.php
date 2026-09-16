@@ -27,7 +27,7 @@ if ($spamReason === 'rate-limit') {
 }
 if ($spamReason !== null) {
     error_log(sprintf('spam-guard: inquiry discarded (%s) from %s', $spamReason, $_SERVER['REMOTE_ADDR'] ?? '?'));
-    flashSet('success', 'Thank you — your inquiry has been received. We will be in touch to confirm a time.');
+    flashSet('success', 'Thank you, your inquiry has been received. We will be in touch to confirm a time.');
     redirectTo('/inquire.php');
 }
 
@@ -45,5 +45,5 @@ $stmt->execute([
     $_SERVER['REMOTE_ADDR'] ?? null,
 ]);
 
-flashSet('success', 'Thank you — your inquiry has been received. We will be in touch to confirm a time.');
+flashSet('success', 'Thank you, your inquiry has been received. We will be in touch to confirm a time.');
 redirectTo('/inquire.php');

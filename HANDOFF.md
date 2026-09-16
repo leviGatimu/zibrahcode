@@ -1,31 +1,23 @@
 # HANDOFF
 
 ## Current Task
-About page remake (2026-09-14): pulled bio, journey, ventures, engagements and stats from Ibrahim's portfolio (PORTFOLIO_URL in config.php); replaced assets/images/auther.jpeg with the 1254px portrait from the portfolio (also used on home + OG). Portfolio testimonials deliberately NOT copied (unverified quotes).
-
-Previous: Four fixes requested 2026-09-14: blog spacing must match the Quill editor; bot spam on
-contact/inquire/newsletter forms; mobile bottom tab bar instead of the sidebar; desktop
-header grouped into fewer items.
+2026-09-16: Remove every dash from the site's visible copy and drop the line separators
+between the home page sections.
 
 ## Status
-Solved — committed locally, NOT pushed. `main` auto-deploys to production (cPanel), so
-pushing is the owner's call.
+Solved, uncommitted (working tree). Ready to commit; pushing `main` deploys to production.
 
 ## Progress
-- [x] Blog spacing: `.article-body p` now renders like Quill (margin 0, pre-wrap); `space-y-8`
-      removed from post.php + editor preview; migration 032 inserts `<p><br></p>` between
-      paragraphs of legacy prose posts (verse left untouched — rule: avg ≥ 60 chars/paragraph)
-- [x] Spam guard (`includes/spam-guard.php`): honeypot + signed render timestamp (3s min, 24h
-      max) + link density + per-IP rate limit (`rate_limit_hits`, migration 033) + duplicate
-      message check. Contact spam is stored with status=spam (admin Spam tab, noon purge);
-      inquire/newsletter spam is discarded. Sender always sees the normal success message.
-- [x] Mobile: bottom tab bar (Home · Book · Blog · Podcast · More) + "More" bottom sheet;
-      hamburger/sidebar removed; body gets bottom padding via `body.has-tab-bar`
-- [x] Desktop header: Home · About · The Book · Framework · Insights ▾ (Blog, Podcast) ·
-      Connect ▾ (Events, Inquire, Contact) · Sign In · Buy Now
-- [x] ASSETS_VERSION bumped to 1.0.36
-- [x] a4c4751 pushed to production by owner
-- [x] A site-wide sizing pass (cf1614e: smaller Tailwind display scale, tighter section padding) was REVERTED in f77bca2 at the owner's request — they want the original scale. Do not re-apply.
+- [x] Em/en dashes rewritten (comma, colon, period or parentheses) in all public templates,
+      meta descriptions, alt text, JSON-LD, form flash messages (actions/*) and
+      includes/axioms.php + functions.php angle-state copy. `&mdash;` entities included.
+- [x] Migration 034 rewrites the 11 `&mdash;` + 2 meta-description dashes in the two seeded
+      blog posts (exact-phrase matching, posts + post_drafts). Ran clean locally.
+- [x] Home: `border-y`/`border-t border-brand-gray-100` removed from the four sections.
+      The `gold-divider` hr inside "What is Zibrah Code?" was left (an in-section accent).
+- [x] Verified with headless Playwright: every public page + the three posts render with zero
+      dashes in innerText/meta/alt; zero sections with borders on /home.
+- [ ] Not touched on purpose: code comments, HTML comments, admin dashboard UI strings.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -46,6 +38,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Dash purge across public copy + migration 034; home section separator lines removed.
 - 2026-09-15: Home page rebuilt on one section system (eyebrow → serif h2 4xl/5xl → light body → CTA; alternating white/gray-50/black). Removed dead cruft: undefined pattern-bg/zebra-wedge classes, the 'Details' button whose modal never existed (modalBook state dropped from header.php). Angle devices trimmed back to the framework + home cards only (footer strip, page-header marks, book strip removed; angleScale() deleted).
 - 2026-09-14: Mobile pass — vertical rhythm is now responsive on all public pages (unprefixed py/pt/pb/mb/mt 40/32/24/20/16 get phone values, original kept behind md:), home book/asset images fit the phone width, footer angle strip fits one row. Desktop values unchanged (owner rejected desktop-scale changes earlier).
 - 2026-09-14: Angle glyph made a shared brand device: angleGlyph()/angleStates()/angleScale() in includes/functions.php + includes/angle-cards.php (home + framework). Home: scroll-reveal animations and spinning ring removed; A/W/Q cards replaced by Open/Hardening/Closed. Book: compact scale under the argument. Footer: scale on every page. Blog/Podcast/Events/Contact/Inquire headers: small gold angle mark.

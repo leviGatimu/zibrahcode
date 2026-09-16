@@ -89,7 +89,7 @@ $twitterCardType = ($ogImageWidth / max($ogImageHeight, 1)) >= 1.3 ? 'summary_la
         "alternateName": ["ZibrahCode", "Zibrah Code™"],
         "url": "<?php echo SITE_URL; ?>/",
         "logo": "<?php echo SITE_URL; ?>/assets/images/favicon.ico",
-        "description": "Zibrah Code — spelled Z-I-B-R-A-H — is an original intellectual brand and geometric wisdom model created by Ibrahim Ngugi. It is not related to Zebra or any animal brand.",
+        "description": "Zibrah Code, spelled Z-I-B-R-A-H, is an original intellectual brand and geometric wisdom model created by Ibrahim Ngugi. It is not related to Zebra or any animal brand.",
         "founder": {
             "@type": "Person",
             "name": "Ibrahim Ngugi",

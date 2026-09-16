@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/bootstrap.php';
 
 $pageTitle = 'About Ibrahim Ngugi Gatimu | Zibrah Code™';
-$pageDescription = 'Ibrahim Ngugi Gatimu — finance professional, author and social entrepreneur with two decades of leadership across East and Central Africa — created the Zibrah Code, a geometric model of truth, perception, belief and leadership.';
+$pageDescription = 'Ibrahim Ngugi Gatimu, a finance professional, author and social entrepreneur with two decades of leadership across East and Central Africa, created the Zibrah Code, a geometric model of truth, perception, belief and leadership.';
 $canonicalPath = '/about.php';
 $activeNav = 'about';
 $ogImage = SITE_URL . '/assets/images/auther.jpeg';
@@ -45,7 +45,7 @@ require __DIR__ . '/includes/header.php';
 
 <!-- FULL-BLEED PHOTO HERO — mobile only -->
 <header class="lg:hidden relative h-[65vh] min-h-[440px] w-full overflow-hidden mt-0">
-    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu — Author of Zibrah Code"
+    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu, Author of Zibrah Code"
         class="absolute inset-0 w-full h-full object-cover object-top" fetchpriority="high">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent"></div>
     <div class="absolute inset-0 bg-brand-black/20"></div>
@@ -74,7 +74,7 @@ require __DIR__ . '/includes/header.php';
         <div class="lg:col-span-2 reveal active">
             <div class="relative">
                 <div class="aspect-[4/5] overflow-hidden shadow-2xl">
-                    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu — Author of Zibrah Code"
+                    <img src="/assets/images/auther.jpeg?v=<?php echo ASSETS_VERSION; ?>" alt="Ibrahim Ngugi Gatimu, Author of Zibrah Code"
                         class="w-full h-full object-cover object-top" fetchpriority="high">
                 </div>
                 <div class="absolute -bottom-6 -left-6 bg-brand-black text-white px-6 py-4 shadow-xl">
@@ -108,7 +108,7 @@ require __DIR__ . '/includes/header.php';
                     </p>
                     <p>
                         Those same years were spent inside organizations auditing complex systems and organizational
-                        change &mdash; watching, from the inside, how belief actually moves under pressure rather than how
+                        change, watching, from the inside, how belief actually moves under pressure rather than how
                         theory says it should. The Zibrah Code is the residue of that observation: a structural way of
                         separating what is true from what is merely believed, built by someone whose day job was
                         finding the gap between what a system claims and what it actually does.

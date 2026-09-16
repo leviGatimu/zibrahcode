@@ -22,11 +22,11 @@ if ($event['event_time']) {
     $dateLabel .= ' at ' . date('g:i A', strtotime($event['event_time']));
 }
 if ($event['end_date'] && $event['end_date'] !== $event['event_date']) {
-    $dateLabel .= ' – ' . date('F j, Y', strtotime($event['end_date']));
+    $dateLabel .= ' to ' . date('F j, Y', strtotime($event['end_date']));
 }
 
 $pageTitle = $event['title'] . ' | Zibrah Code™ Events';
-$pageDescription = $event['location'] ? ($event['title'] . ' — ' . $dateLabel . ' at ' . $event['location']) : ($event['title'] . ' — ' . $dateLabel);
+$pageDescription = $event['location'] ? ($event['title'] . ', ' . $dateLabel . ' at ' . $event['location']) : ($event['title'] . ', ' . $dateLabel);
 $canonicalPath = '/event.php?slug=' . $event['slug'];
 $activeNav = 'events';
 $ogImage = $event['cover_image_path'] ? SITE_URL . '/' . $event['cover_image_path'] : SITE_URL . '/assets/images/Front page.png';

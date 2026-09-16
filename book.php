@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
 
-$pageTitle = 'The Book | Zibrah Code™ — The Geometry of Truth and Wisdom';
-$pageDescription = 'Zibrah Code: The Geometry of Truth and Wisdom by Ibrahim Ngugi — a geometric model separating truth and perception to reveal how belief and conflict evolve.';
+$pageTitle = 'The Book | Zibrah Code™: The Geometry of Truth and Wisdom';
+$pageDescription = 'Zibrah Code: The Geometry of Truth and Wisdom by Ibrahim Ngugi is a geometric model separating truth and perception to reveal how belief and conflict evolve.';
 $canonicalPath = '/book.php';
 $activeNav = 'book';
 $ogImage = SITE_URL . '/assets/images/Front page.png';
@@ -30,7 +30,7 @@ function axiomLead(string $body, int $minLength = 90): string
 
 $audiences = [
     ['title' => 'Leaders &amp; decision-makers', 'body' => 'See why decisions harden under pressure and how to keep a team&rsquo;s options open long enough for correction to matter.'],
-    ['title' => 'Mediators &amp; facilitators', 'body' => 'A structural, side-neutral way to read a conflict before anyone has to be declared right &mdash; the geometry is visible first.'],
+    ['title' => 'Mediators &amp; facilitators', 'body' => 'A structural, side-neutral way to read a conflict before anyone has to be declared right. The geometry is visible first.'],
     ['title' => 'Reflective thinkers', 'body' => 'Turn the same tool on yourself: observe your own angle before you react, and notice when a belief has stopped rotating.'],
 ];
 
@@ -57,7 +57,7 @@ require __DIR__ . '/includes/header.php';
                     <div class="absolute -inset-6 border border-brand-gold/20 pointer-events-none" aria-hidden="true"></div>
                     <img src="/assets/images/Back page.png" alt="" aria-hidden="true"
                         class="absolute top-6 -right-10 w-3/4 h-auto opacity-40 shadow-xl hidden sm:block" loading="lazy">
-                    <img src="/assets/images/Front page.png" alt="Zibrah Code — front cover"
+                    <img src="/assets/images/Front page.png" alt="Zibrah Code front cover"
                         class="relative w-full h-auto shadow-[0_40px_80px_-20px_rgba(0,0,0,0.45)]" fetchpriority="high">
                 </div>
             </div>
@@ -104,7 +104,7 @@ require __DIR__ . '/includes/header.php';
                 </p>
                 <p class="text-xl sm:text-2xl text-brand-gray-700 font-light leading-relaxed">
                     Rather than treating truth and perception as a single sliding scale, the Zibrah Code holds them
-                    apart as independent dimensions. What happens between them &mdash; the angle &mdash; is where belief
+                    apart as independent dimensions. What happens between them, the angle, is where belief
                     actually lives, and it is that angle, not the argument, that determines whether a conflict
                     opens or closes.
                 </p>
@@ -179,7 +179,7 @@ require __DIR__ . '/includes/header.php';
                 <div>
                     <p class="serif text-2xl font-bold text-brand-black group-hover:text-brand-gold transition-colors">Ibrahim Ngugi Gatimu</p>
                     <p class="text-[10px] uppercase tracking-[0.3em] text-brand-gray-500 mt-1 mb-4">Author &middot; Finance Professional &middot; Social Entrepreneur</p>
-                    <p class="text-brand-gray-600 font-light leading-relaxed">Two decades auditing complex systems across East and Central Africa &mdash; watching how belief actually moves under pressure. The Zibrah Code is the residue of that observation.</p>
+                    <p class="text-brand-gray-600 font-light leading-relaxed">Two decades auditing complex systems across East and Central Africa, watching how belief actually moves under pressure. The Zibrah Code is the residue of that observation.</p>
                     <span class="inline-block mt-5 text-xs font-bold uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">Meet the author &rarr;</span>
                 </div>
             </a>
@@ -187,7 +187,7 @@ require __DIR__ . '/includes/header.php';
             <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-gray-500 mt-10 mb-4">Also by the author</p>
             <a href="https://www.amazon.com/13TH-PROFESSIONAL-MINDSETS-Professional-Organizational-ebook/dp/B0D2WQCMHJ/" target="_blank" rel="noopener"
                class="group flex gap-6 items-center bg-white border border-brand-gray-200 p-5 hover:border-brand-black transition-colors">
-                <img src="/assets/images/profesional.jpg" alt="The 13th Professional — cover" class="w-16 h-auto shadow-md flex-shrink-0" loading="lazy">
+                <img src="/assets/images/profesional.jpg" alt="The 13th Professional cover" class="w-16 h-auto shadow-md flex-shrink-0" loading="lazy">
                 <div>
                     <p class="serif text-xl font-bold text-brand-black group-hover:text-brand-gold transition-colors">The 13th Professional</p>
                     <p class="text-sm text-brand-gray-600 font-light">A blueprint for values-based professional excellence.</p>

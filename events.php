@@ -50,7 +50,7 @@ function eventCard(array $event): string
     <div class="text-center mb-12 md:mb-24 reveal active">
         <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-10">Appearances</h4>
         <h1 class="text-4xl sm:text-5xl md:text-8xl serif text-brand-black leading-none tracking-tighter font-black">Events.</h1>
-        <p class="text-xl text-brand-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-10">Talks, book signings, and appearances — where to find Ibrahim Ngugi and the Zibrah Code framework in person.</p>
+        <p class="text-xl text-brand-gray-600 font-light leading-relaxed max-w-2xl mx-auto mt-10">Talks, book signings, and appearances: where to find Ibrahim Ngugi and the Zibrah Code framework in person.</p>
     </div>
 
     <?php if (empty($upcomingEvents) && empty($pastEvents)): ?>

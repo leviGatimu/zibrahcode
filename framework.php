@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/bootstrap.php';
 
 $pageTitle = 'The Zibrah Code Framework | Axioms of Truth & Perception';
-$pageDescription = 'The five axiomatic principles of the Zibrah Code — the structural logic behind how truth, perception, belief, and wisdom interact under pressure.';
+$pageDescription = 'The five axiomatic principles of the Zibrah Code: the structural logic behind how truth, perception, belief, and wisdom interact under pressure.';
 $canonicalPath = '/framework.php';
 $activeNav = 'framework';
 $ogImage = SITE_URL . '/assets/images/blog.png';
@@ -13,14 +13,14 @@ $extraJsonLd = [
 $axioms = require __DIR__ . '/includes/axioms.php';
 
 $applications = [
-    ['title' => 'Leadership', 'body' => 'Why decisions harden under pressure &mdash; and how to keep options open long enough for correction to matter.'],
+    ['title' => 'Leadership', 'body' => 'Why decisions harden under pressure, and how to keep options open long enough for correction to matter.'],
     ['title' => 'Conflict &amp; Mediation', 'body' => 'A side-neutral way to read a dispute: the geometry is visible before anyone has to be declared right.'],
     ['title' => 'Self-reflection', 'body' => 'The same tool turned inward: observing your own angle before you react, and noticing when it has stopped rotating.'],
 ];
 
 $furtherReading = [
-    ['slug' => 'zibrah-code-foundational-structure', 'title' => 'Zibrah Code Foundational Structure', 'blurb' => 'The two independent lines &mdash; and why the angle between them is where belief lives.'],
-    ['slug' => 'angles-show-what-words-cannot-tell', 'title' => 'Angles Show What Words Cannot Tell', 'blurb' => 'How belief moves, narrows and locks &mdash; and why arguments rarely interrupt the pattern.'],
+    ['slug' => 'zibrah-code-foundational-structure', 'title' => 'Zibrah Code Foundational Structure', 'blurb' => 'The two independent lines, and why the angle between them is where belief lives.'],
+    ['slug' => 'angles-show-what-words-cannot-tell', 'title' => 'Angles Show What Words Cannot Tell', 'blurb' => 'How belief moves, narrows and locks, and why arguments rarely interrupt the pattern.'],
 ];
 
 require __DIR__ . '/includes/header.php';
@@ -34,7 +34,7 @@ require __DIR__ . '/includes/header.php';
                 <p class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">The Framework</p>
                 <h1 class="text-5xl sm:text-6xl xl:text-7xl serif text-brand-black leading-none tracking-tighter font-black">The geometry of truth and wisdom.</h1>
                 <p class="text-lg sm:text-xl text-brand-gray-600 font-light leading-relaxed mt-8 max-w-xl">
-                    Two independent lines &mdash; truth and perception &mdash; set at an angle to each other, not stacked,
+                    Two independent lines, truth and perception, set at an angle to each other, not stacked,
                     not merged. Belief is what forms in the angle between them. Once the two are held apart, that
                     angle becomes something that can be seen and measured, not just argued about.
                 </p>
@@ -59,7 +59,7 @@ require __DIR__ . '/includes/header.php';
         <div class="max-w-2xl mb-10 md:mb-16 reveal active">
             <h4 class="text-brand-gold font-bold text-xs tracking-[0.6em] uppercase mb-6">Reading the Angle</h4>
             <h2 class="text-4xl sm:text-5xl serif text-brand-black font-black tracking-tight leading-tight mb-6">Belief does not collapse suddenly. It closes gradually.</h2>
-            <p class="text-lg text-brand-gray-600 font-light leading-relaxed">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right &mdash; but each is visible, and visibility is the beginning of correction.</p>
+            <p class="text-lg text-brand-gray-600 font-light leading-relaxed">A wide angle signals openness. A narrow angle signals rigid belief. Neither position is inherently right, but each is visible, and visibility is the beginning of correction.</p>
         </div>
         <?php require __DIR__ . '/includes/angle-cards.php'; ?>
     </div>

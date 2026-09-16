@@ -348,7 +348,7 @@ function angleStates(): array
     return [
         ['degrees' => 75, 'name' => 'Open', 'sub' => 'Wide angle', 'body' => 'Belief stays responsive. Listening works, correction lands, disagreement is information rather than threat.'],
         ['degrees' => 30, 'name' => 'Hardening', 'sub' => 'Narrowing angle', 'body' => 'Certainty accelerates faster than understanding. Reality is still acknowledged but no longer obeyed.'],
-        ['degrees' => 8, 'name' => 'Closed', 'sub' => 'Locked angle', 'body' => 'Belief can no longer rotate. Facts remain, but correction is ineffective &mdash; not because facts disappear, but because nothing moves.'],
+        ['degrees' => 8, 'name' => 'Closed', 'sub' => 'Locked angle', 'body' => 'Belief can no longer rotate. Facts remain, but correction is ineffective, not because facts disappear, but because nothing moves.'],
     ];
 }
 
