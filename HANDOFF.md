@@ -1,17 +1,23 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Footer, third pass ("still ain't professional").
+2026-09-16: Phone pass ("must look like a website on phone").
 
 ## Status
 Solved, uncommitted. Awaiting go-ahead to commit/push.
 
 ## Progress
-- [x] Same content, balanced 12-col grid: brand + description + newsletter (5) | Explore (2) |
-      Company (2) | Follow (2, YouTube/X as text links with inline icons). All type small and
-      regular weight; white column headings; white Join button; no italics, no bordered icon
-      boxes, no gold hairline, no big quote. Bottom bar: three plain 12px lines at 40% white.
-- [x] Verified 1280/390: no overflow; link columns pair up on phones.
+- [x] style.css: phone scale under 640px using `body .utility` selectors (outrank Tailwind CDN
+      utilities injected later): text-5xl 40px, text-4xl 28px, 3xl 24, 2xl 20, xl 17, lg 16;
+      tracking 0.6em/0.5em -> 0.3em; py-16 -> 48px; gap-16 -> 40px; gap-12 -> 32px;
+      mb-10/12 -> 24px; space-y-8 -> 20px.
+- [x] includes/angle-cards.php: glyph (w-16) beside text on phones, stacked card from md.
+- [x] Axiom lists (home, book, framework): number inline with title on phones (3rem column,
+      text-3xl number). Home hero cover 210px / container 300px on phones.
+- [x] Home Latest: two posts side by side on phones (excerpt hidden < sm); book.png capped at
+      300px. ASSETS_VERSION 1.0.40.
+- [x] Verified at 390px on all 12 public pages: no horizontal overflow (only clipped decorative
+      rings pass the edge). Home 10454 -> 7978px, book 8791 -> 7484, framework 8503 -> 6877.
 
 ## Working Notes
 Local dev: Apache vhost http://localhost:8081/ → this repo (added to
@@ -32,6 +38,7 @@ Known, out of scope (not changed):
 - register.php has no spam guard (bots could create accounts).
 
 ## Recently Completed
+- 2026-09-16: Phone pass: smaller type/spacing scale under 640px, compact angle cards and axiom rows.
 - 2026-09-16: Footer rebalanced into a quiet four-column layout (third pass).
 - 2026-09-16: Home page sections restyled on the shared section system; hero tidied.
 - 2026-09-16: Book + author pages rebuilt as sectioned pages on the framework system (after two rejected one-column 'brief' versions).

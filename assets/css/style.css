@@ -275,6 +275,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     box-shadow: 0 20px 50px -10px rgba(184, 148, 65, 0.35);
 }
 
+/* Phone scale. Sections are designed at desktop sizes; below 640px the same
+   utilities render too large for a 390px column and every page becomes one
+   long stack. `body` in the selector outranks Tailwind's single-class
+   utilities, which the CDN injects after this stylesheet. */
+@media (max-width: 639px) {
+    body .text-5xl { font-size: 2.5rem; line-height: 1.05; }
+    body .text-4xl { font-size: 1.75rem; line-height: 1.15; }
+    body .text-3xl { font-size: 1.5rem; line-height: 1.2; }
+    body .text-2xl { font-size: 1.25rem; line-height: 1.3; }
+    body .text-xl  { font-size: 1.0625rem; }
+    body .text-lg  { font-size: 1rem; }
+    body .tracking-\[0\.6em\] { letter-spacing: 0.3em; }
+    body .tracking-\[0\.5em\] { letter-spacing: 0.3em; }
+    body .py-16 { padding-top: 3rem; padding-bottom: 3rem; }
+    body .gap-16 { gap: 2.5rem; }
+    body .gap-12 { gap: 2rem; }
+    body .mb-10 { margin-bottom: 1.5rem; }
+    body .mb-12 { margin-bottom: 1.5rem; }
+    body .space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.25rem; }
+}
+
 /* Editorial drop cap — used on long-form narrative copy (e.g. About page bio) */
 .drop-cap::first-letter {
     float: left;

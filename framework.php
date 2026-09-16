@@ -90,8 +90,8 @@ require __DIR__ . '/includes/header.php';
             <ol class="lg:col-span-8 divide-y divide-white/10">
                 <?php foreach ($axioms as $axiom): ?>
                     <li id="axiom-<?php echo e($axiom['number']); ?>" class="py-10 first:pt-0 last:pb-0 scroll-mt-32 reveal active">
-                        <div class="grid sm:grid-cols-[5rem_1fr] gap-4 sm:gap-8">
-                            <span class="font-display font-black text-5xl text-brand-gold leading-none"><?php echo e($axiom['number']); ?></span>
+                        <div class="grid grid-cols-[3rem_1fr] sm:grid-cols-[5rem_1fr] gap-4 sm:gap-8">
+                            <span class="font-display font-black text-3xl sm:text-5xl text-brand-gold leading-none"><?php echo e($axiom['number']); ?></span>
                             <div>
                                 <h3 class="serif text-3xl md:text-4xl font-bold text-white tracking-tight mb-4"><?php echo e($axiom['title']); ?></h3>
                                 <p class="text-lg text-white/60 font-light leading-relaxed"><?php echo e($axiom['body']); ?></p>

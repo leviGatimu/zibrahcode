@@ -63,11 +63,11 @@ $latestEpisode = getDb()->query(
                 <a href="/framework.php" class="text-xs font-bold uppercase tracking-widest text-brand-gray-600 hover:text-brand-gold transition-colors border-b border-brand-gray-300 hover:border-brand-gold pb-1">Explore the Framework &rarr;</a>
             </div>
         </div>
-        <div class="order-1 lg:order-2 flex justify-center items-center active relative h-[380px] sm:h-[460px] lg:h-[650px] w-full mb-6 lg:mb-0 lg:mt-0">
+        <div class="order-1 lg:order-2 flex justify-center items-center active relative h-[300px] sm:h-[460px] lg:h-[650px] w-full mb-2 lg:mb-0 lg:mt-0">
             <div class="absolute transform -translate-x-14 sm:-translate-x-16 lg:-translate-x-24 translate-y-4 sm:translate-y-6 lg:translate-y-8 -rotate-12 opacity-30 transition-all duration-1000">
-                <img src="/assets/images/Back page.png" alt="Zibrah Code Back Cover" class="w-48 sm:w-56 lg:w-80 h-auto shadow-2xl">
+                <img src="/assets/images/Back page.png" alt="Zibrah Code Back Cover" class="w-40 sm:w-56 lg:w-80 h-auto shadow-2xl">
             </div>
-            <div class="relative z-10 max-w-[260px] sm:max-w-[290px] lg:max-w-[380px] transform -rotate-2 hover:rotate-0 transition-all duration-1000 group cursor-pointer shadow-[0_60px_120px_-20px_rgba(0,0,0,0.6)]">
+            <div class="relative z-10 max-w-[210px] sm:max-w-[290px] lg:max-w-[380px] transform -rotate-2 hover:rotate-0 transition-all duration-1000 group cursor-pointer shadow-[0_60px_120px_-20px_rgba(0,0,0,0.6)]">
                 <img src="/assets/images/Front page.png" alt="Zibrah Code Front Cover: The Geometry of Truth and Wisdom by Ibrahim Ngugi" class="w-full h-auto" fetchpriority="high">
                 <div class="absolute inset-0 border-l border-white/20 pointer-events-none"></div>
             </div>
@@ -129,8 +129,8 @@ $latestEpisode = getDb()->query(
             <ol class="lg:col-span-8 divide-y divide-white/10">
                 <?php foreach ($axioms as $axiom): ?>
                     <li class="py-6 first:pt-0 last:pb-0 reveal active">
-                        <a href="/framework.php#axiom-<?php echo e($axiom['number']); ?>" class="group grid sm:grid-cols-[5rem_1fr] gap-2 sm:gap-8 items-baseline">
-                            <span class="font-display font-black text-4xl text-brand-gold leading-none"><?php echo e($axiom['number']); ?></span>
+                        <a href="/framework.php#axiom-<?php echo e($axiom['number']); ?>" class="group flex sm:grid sm:grid-cols-[5rem_1fr] gap-4 sm:gap-8 items-baseline">
+                            <span class="font-display font-black text-2xl sm:text-4xl text-brand-gold leading-none"><?php echo e($axiom['number']); ?></span>
                             <h3 class="serif text-2xl md:text-3xl font-bold text-white tracking-tight group-hover:text-brand-gold transition-colors"><?php echo e($axiom['title']); ?></h3>
                         </a>
                     </li>
@@ -146,7 +146,7 @@ $latestEpisode = getDb()->query(
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <figure class="lg:col-span-6 lg:order-2 reveal active">
                 <a href="/book.php" class="block">
-                    <img src="/assets/images/book.png" alt="Zibrah Code Book by Ibrahim Ngugi" class="w-full h-auto" loading="lazy">
+                    <img src="/assets/images/book.png" alt="Zibrah Code Book by Ibrahim Ngugi" class="w-full max-w-[300px] lg:max-w-none mx-auto h-auto" loading="lazy">
                 </a>
             </figure>
             <div class="lg:col-span-6 lg:order-1 reveal active">
@@ -231,14 +231,14 @@ $latestEpisode = getDb()->query(
             </div>
             <div class="lg:col-span-3 reveal active">
                 <?php if ($recentPosts): ?>
-                    <div class="grid sm:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-8">
                         <?php foreach ($recentPosts as $post): ?>
                             <a href="/post.php?slug=<?php echo e($post['slug']); ?>" class="group block">
                                 <div class="aspect-[16/10] bg-brand-gray-100 mb-5 overflow-hidden">
                                     <img src="/<?php echo e($post['featured_image_path']); ?>" alt="<?php echo e($post['title']); ?>" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
                                 </div>
-                                <h3 class="serif text-xl font-bold text-brand-black group-hover:text-brand-gold transition-colors mb-2"><?php echo e($post['title']); ?></h3>
-                                <p class="text-sm text-brand-gray-600 font-light leading-relaxed"><?php echo e($post['excerpt']); ?></p>
+                                <h3 class="serif text-base sm:text-xl font-bold text-brand-black group-hover:text-brand-gold transition-colors mb-2"><?php echo e($post['title']); ?></h3>
+                                <p class="hidden sm:block text-sm text-brand-gray-600 font-light leading-relaxed"><?php echo e($post['excerpt']); ?></p>
                                 <span class="inline-block mt-3 text-xs font-bold uppercase tracking-widest text-brand-black group-hover:text-brand-gold transition-colors">Read &rarr;</span>
                             </a>
                         <?php endforeach; ?>
