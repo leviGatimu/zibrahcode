@@ -1,31 +1,40 @@
 # HANDOFF
 
 ## Current Task
-2026-09-16: Blog listing (blog.php) restyled on the site's section system.
+2026-09-18: Brand logo added — favicon set + logo in the site header.
 
 ## Status
 Solved. Committed and pushed; production auto-deploys from `main`.
 
 ## Progress
-- [x] Page header band (eyebrow "Insights", serif h1, intro) with the search form in the
-      right column. Category filter row (All + categories, gold underline on the active one)
-      with a result/count line; "Clear" when filtered.
-- [x] Latest post featured (image 7/12 + text) on the unfiltered first page only; remaining
-      posts in a 3-col grid (2 on tablet, 1 on phone). Sidebar removed (its "Latest updates"
-      repeated the list; the unused $latestUpdates query is gone too).
-- [x] Pagination: Newer / numbers / Older with aria-current. Empty state with a link back.
-      Episode play badge (episodeBadgeHtml) kept on images.
-- [x] Query logic, SEO head (noindex when filtered, canonical, breadcrumb) untouched.
-      Verified default / category / search / empty states at 1280 and phone at 390.
+- [x] Assets derived from `Zibrahcode logo/Transparent/Zibrahcode logo transparent.png` into
+      assets/images/: `logo.png` (294x168 lockup, hairlines lightly thickened so they hold at
+      56px on 1x screens), `logo-mark.png` (512 emblem), `favicon.ico` (16/32/48/64, transparent,
+      strokes thickened per size), `favicon-32x32.png`, `apple-touch-icon.png` (180, white bg),
+      `icon-192.png` / `icon-512.png` (manifest, white bg).
+- [x] includes/nav.php: text brand replaced by the logo image in the top bar (h-11 / lg:h-14 with
+      -my-2 / lg:-my-3 so nav height is unchanged: 103px desktop, 77.5px phone) and in the mobile
+      "More" sheet.
+- [x] includes/header.php: icon/apple-touch/manifest links (versioned), Organization JSON-LD
+      `logo` → logo.png. manifest.json icons → 192/512 PNGs. ASSETS_VERSION 1.0.41.
+- [x] Committed and pushed to main.
 
 ## Working Notes
-Local dev: Apache vhost http://localhost:8081/ → this repo (added to
-C:\xampp\apache\conf\extra\httpd-vhosts.conf; `Listen 8081` in httpd.conf). `.htaccess`
-HTTPS redirect now skips localhost. Local DB `zibrah_db` has the live poem post seeded as
-`3qt-mindset` for testing. Screenshots via Playwright helper in the session scratchpad.
+The master artwork folder `Zibrahcode logo/` sits untracked in the web root; decide whether to
+commit it (e.g. under assets/brand/) or keep it out of the repo.
 
-Migrations run automatically on first request after deploy (includes/db.php). 032 and 033
-were re-tested from scratch on a DB copy via runMigrations().
+Follow-ups worth doing: a white/inverted logo variant for the footer (still text on black) and
+for the mobile post-page hero where the nav is transparent over a dark image (black strokes
+vanish there, only the gold shows — same as the old black text did).
+
+Local dev: Apache vhost http://localhost:8081/ → this repo. On this machine port 3306 is held by
+an unrelated Docker container (central-mis-db), so XAMPP's MySQL can't start on its default port.
+For this session it was run ad hoc on 3316 (`mysqld --defaults-file=C:/xampp/mysql/bin/my.ini
+--port=3316 --standalone`) with DB_HOST temporarily set to `127.0.0.1;port=3316` in config.php,
+then reverted. Git Bash mangles `/index`-style URLs in curl; use `/home` or Playwright. Local DB
+`zibrah_db` has the live poem post seeded as `3qt-mindset`.
+
+Migrations run automatically on first request after deploy (includes/db.php).
 
 Known, out of scope (not changed):
 - config.php commits live DB/SMTP passwords and APP_SECRET to git.

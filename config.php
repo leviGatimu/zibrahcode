@@ -23,7 +23,7 @@ define('X_URL', 'https://x.com/zlbrahcode');
 define('PORTFOLIO_URL', 'https://ibrahim.zibrahcode.com');
 
 // Assets versioning to bust cache
-define('ASSETS_VERSION', '1.0.40');
+define('ASSETS_VERSION', '1.0.41');
 
 // How long a login stays valid, in seconds. Deliberately long: authors work in
 // the post editor for hours at a stretch without the browser making a single

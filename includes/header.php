@@ -88,7 +88,7 @@ $twitterCardType = ($ogImageWidth / max($ogImageHeight, 1)) >= 1.3 ? 'summary_la
         "name": "Zibrah Code",
         "alternateName": ["ZibrahCode", "Zibrah Code™"],
         "url": "<?php echo SITE_URL; ?>/",
-        "logo": "<?php echo SITE_URL; ?>/assets/images/favicon.ico",
+        "logo": "<?php echo SITE_URL; ?>/assets/images/logo.png",
         "description": "Zibrah Code, spelled Z-I-B-R-A-H, is an original intellectual brand and geometric wisdom model created by Ibrahim Ngugi. It is not related to Zebra or any animal brand.",
         "founder": {
             "@type": "Person",
@@ -121,9 +121,10 @@ $twitterCardType = ($ogImageWidth / max($ogImageHeight, 1)) >= 1.3 ? 'summary_la
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://unpkg.com">
 
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/assets/images/favicon.ico">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/images/favicon.ico?v=<?php echo ASSETS_VERSION; ?>" sizes="16x16 32x32 48x48 64x64">
+    <link rel="icon" href="/assets/images/favicon-32x32.png?v=<?php echo ASSETS_VERSION; ?>" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png?v=<?php echo ASSETS_VERSION; ?>" sizes="180x180">
+    <link rel="manifest" href="/manifest.json?v=<?php echo ASSETS_VERSION; ?>">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
